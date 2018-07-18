@@ -28,6 +28,7 @@ public class twmPanier implements Serializable {
     private String indexPan;
     
     @OneToMany(mappedBy = "panier")
+    @Column(insertable = false)
     private List<twmPanProd> panprod;
     
     @NotNull
@@ -37,7 +38,7 @@ public class twmPanier implements Serializable {
     @OneToOne(optional = false)
     private twmUser client;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date dateJour;
     
     @Column(columnDefinition = "int(1) unsigned not null default 0")

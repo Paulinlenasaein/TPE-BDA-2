@@ -30,6 +30,6 @@ public class twmStatistique implements Serializable {
     @NotNull
     private Double recette;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date dateJour; 
 }

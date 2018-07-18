@@ -27,7 +27,7 @@ public class twmPanProd implements Serializable {
     private twmPanier panier;
     
     @OneToOne
-    private twmProduit product;
+    private twmProduit produit;
     
     @Column(columnDefinition = "int unsigned not null default 1")
     private int nbreExempl;

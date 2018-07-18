@@ -26,6 +26,7 @@ public class twmProduit implements Serializable {
     
     @NotNull
     @Length(min = 2, max = 100)
+    @Column(unique = true)
     private String nomProd;
     
     @Column(nullable = true)
