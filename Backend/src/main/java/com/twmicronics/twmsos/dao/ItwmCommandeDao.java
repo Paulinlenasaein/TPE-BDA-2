@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ItwmCommandeDao extends JpaRepository<twmCommande, String> {
-    
+
     /**
      * retourne une commande ayant un index donné
      *
@@ -24,15 +24,16 @@ public interface ItwmCommandeDao extends JpaRepository<twmCommande, String> {
      * @return un objet twmCommande
      */
     public twmCommande findByIndexCom(String indexCom);
-    
+
     /**
      * retourne les commande d'un client donné
      *
      * @param client client ayant effectué des commande
+     * @param page pour la pagination des résultats
      * @return un objet twmCommande
      */
-    public twmCommande findByClient(twmUser client);
-    
+    public Page<twmCommande> findByClient(twmUser client, Pageable page);
+
     /**
      * retourne la commande correspondant à un panier donné
      *
@@ -40,7 +41,7 @@ public interface ItwmCommandeDao extends JpaRepository<twmCommande, String> {
      * @return un objet twmCommande
      */
     public twmCommande findByPanier(twmPanier panier);
-    
+
     /**
      * retourne les commande ayant un etat de solvabilité donné
      *
@@ -49,7 +50,7 @@ public interface ItwmCommandeDao extends JpaRepository<twmCommande, String> {
      * @return une page d'objets twmCommande
      */
     public Page<twmCommande> findByEtat(twmEtat etat, Pageable page);
-    
+
     /**
      * retourne les commandes faites à une date donné
      *
@@ -58,7 +59,7 @@ public interface ItwmCommandeDao extends JpaRepository<twmCommande, String> {
      * @return une page d'objets twmCommande
      */
     public Page<twmCommande> findByDateCommande(Date dateCommande, Pageable page);
-    
+
     /**
      * retourne les commandes à livrer à une date donné
      *
