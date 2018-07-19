@@ -2,9 +2,9 @@ package com.twmicronics.twmsos.service.impl;
 
 import com.twmicronics.twmsos.dao.ItwmCommandeDao;
 import com.twmicronics.twmsos.dao.ItwmEtatDao;
+import com.twmicronics.twmsos.dao.ItwmPanierDao;
+import com.twmicronics.twmsos.dao.ItwmUserDao;
 import com.twmicronics.twmsos.entities.twmCommande;
-import com.twmicronics.twmsos.entities.twmPanier;
-import com.twmicronics.twmsos.entities.twmUser;
 import com.twmicronics.twmsos.service.DataAccessException;
 import com.twmicronics.twmsos.service.ItwmCommandeService;
 import java.util.Date;
@@ -30,6 +30,12 @@ public class twmCommandeServiceImpl implements ItwmCommandeService {
     
     @Autowired
     private ItwmEtatDao etatDao;
+    
+    @Autowired
+    private ItwmUserDao clientDao;
+    
+    @Autowired
+    private ItwmPanierDao panierDao;
 
     @Override
     public twmCommande createOne(twmCommande commande) throws DataAccessException {
@@ -62,13 +68,13 @@ public class twmCommandeServiceImpl implements ItwmCommandeService {
     }
 
     @Override
-    public Page<twmCommande> findAllByClient(twmUser client, int from, int to) throws DataAccessException {
-        return commandeDao.findByClient(client, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "indexCom")));
+    public Page<twmCommande> findAllByClient(String client, int from, int to) throws DataAccessException {
+        return commandeDao.findByClient(clientDao.findByUsername(client), PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "indexCom")));
     }
 
     @Override
-    public twmCommande findAllByPanier(twmPanier panier, int from, int to) throws DataAccessException {
-        return commandeDao.findByPanier(panier);
+    public twmCommande findAllByPanier(String panier) throws DataAccessException {
+        return commandeDao.findByPanier(panierDao.findByIndexPan(panier));
     }
 
     @Override

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class MyConfig extends ResourceConfig {
 
     public MyConfig() {
-        
+        register(twmUserResource.class);
+        register(twmCommandeResource.class);
     }
 }

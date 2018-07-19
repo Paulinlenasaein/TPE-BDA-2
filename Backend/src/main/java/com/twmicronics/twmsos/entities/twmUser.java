@@ -43,9 +43,9 @@ public class twmUser implements Serializable {
             message = "Adresse mail invalide, veuillez le vérifier")
     private String email;
     
-    @Pattern(regexp = "^[0-9]$", 
+    @Pattern(regexp = "^[0-9]{9}$", 
             message = "Numéro de téléphone invalide")
-    @Column(nullable = true, unique = true)
+    @Column(nullable = true, unique = true, length = 9)
     private String telephone;
     
     @Temporal(TemporalType.TIMESTAMP)

@@ -1,8 +1,6 @@
 package com.twmicronics.twmsos.service;
 
 import com.twmicronics.twmsos.entities.twmCommande;
-import com.twmicronics.twmsos.entities.twmPanier;
-import com.twmicronics.twmsos.entities.twmUser;
 import java.util.Date;
 import org.springframework.data.domain.Page;
 
@@ -68,18 +66,16 @@ public interface ItwmCommandeService {
      * @return les commandes dont le nom est passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmCommande> findAllByClient(twmUser client, int from, int to) throws DataAccessException;
+    public Page<twmCommande> findAllByClient(String client, int from, int to) throws DataAccessException;
 
     /**
      * recherche la commande d'un panier passé en paramètre
      *
      * @param panier panier de la commande à rechercher
-     * @param from numéro de la page initiale
-     * @param to nombre de page à renvoyer
      * @return les commandes dont le nom est passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmCommande findAllByPanier(twmPanier panier, int from, int to) throws DataAccessException;
+    public twmCommande findAllByPanier(String panier) throws DataAccessException;
 
     /**
      * recherche les commandes ayant un état de solvabilité donné
