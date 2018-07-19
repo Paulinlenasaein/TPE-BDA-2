@@ -61,10 +61,12 @@ public interface ItwmPromotionService {
      * recherche les promotions déjà éffectuées sur un produit donné
      *
      * @param produit identifiant du produit concerné
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
      * @return les promotions d'un produit passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmPromotion> findOneByProduit(Long produit) throws DataAccessException;
+    public Page<twmPromotion> findOneByProduit(Long produit, int from, int to) throws DataAccessException;
 
     /**
      * recherche les promotion en cours ou passées

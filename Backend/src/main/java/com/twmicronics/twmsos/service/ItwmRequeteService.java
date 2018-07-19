@@ -60,19 +60,23 @@ public interface ItwmRequeteService {
      * recherche les requetes d'un client donné
      *
      * @param user client concerné
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
      * @return les requetes du client passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmRequete> findOneByClient(String user) throws DataAccessException;
+    public Page<twmRequete> findOneByClient(String user, int from, int to) throws DataAccessException;
 
     /**
      * recherche les requetes d'un administrateur donné
      *
-     * @param id identifiant de l'administrateur concerné
+     * @param admin identifiant de l'administrateur concerné
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
      * @return les requetes de l'administrateur passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmRequete> findOneByAdmin(Long id) throws DataAccessException;
+    public Page<twmRequete> findOneByAdmin(String admin, int from, int to) throws DataAccessException;
 
     /**
      * recherche les requetes envoyées à une date donné donnée

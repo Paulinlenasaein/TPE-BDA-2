@@ -22,19 +22,19 @@ public interface ItwmStatistiqueService {
     /**
      * recherche une statistique donné
      *
-     * @param statistique statistique à stocker
+     * @param id identifiant de la statistique echerchée
      * @return la statistique correspondant
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmStatistique findOne(String statistique) throws DataAccessException;
+    public twmStatistique findOne(Long id) throws DataAccessException;
 
     /**
      * supprime une statistique passé en paramètre, dans la base de données
      *
-     * @param statistique statistique à supprimer
+     * @param id identifiant de la statistique à supprimer
      * @throws DataAccessException si un événement non prévu survient
      */
-    public void deleteOne(String statistique) throws DataAccessException;
+    public void deleteOne(Long id) throws DataAccessException;
 
     /**
      * met à jour une statistique passé en paramètre. Ellel doit être déjà
@@ -57,13 +57,11 @@ public interface ItwmStatistiqueService {
     public Page<twmStatistique> findAll(int from, int to) throws DataAccessException;
 
     /**
-     * recherche les statistiques ayant le nom passé en paramètre
+     * recherche la statistique de la date passé en paramètre
      *
-     * @param dateJour date à laquelle on veut avoir les statistiques
-     * @param from numéro de la page initiale
-     * @param to nombre de page à renvoyer
-     * @return les statistiques correspondante à la date
+     * @param dateJour date à laquelle on veut avoir la statistique
+     * @return la statistique correspondante à la date
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmStatistique> findOneByDateJour(Date dateJour, int from, int to) throws DataAccessException;
+    public twmStatistique findOneByDateJour(Date dateJour) throws DataAccessException;
 }

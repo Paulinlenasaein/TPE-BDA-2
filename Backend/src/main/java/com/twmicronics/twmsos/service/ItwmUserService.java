@@ -1,6 +1,5 @@
 package com.twmicronics.twmsos.service;
 
-import com.twmicronics.twmsos.entities.twmRole;
 import com.twmicronics.twmsos.entities.twmUser;
 import org.springframework.data.domain.Page;
 
@@ -101,18 +100,22 @@ public interface ItwmUserService {
      * recherche les utilisateurs ayant etat donné
      *
      * @param state etat du compte utilisateur (1: activé et 0: bloqué)
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
      * @return les utilisateurs corresponsants
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmUser> findAllByState(int state) throws DataAccessException;
+    public Page<twmUser> findAllByState(int state, int from, int to) throws DataAccessException;
 
     /**
      * recherche les utilisateurs ayant role donné
      *
-     * @param role des utilisateurs recherchés
+     * @param role role des utilisateurs recherchés
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
      * @return les utilisateurs corresponsants
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmUser> findAllByRole(twmRole role) throws DataAccessException;
+    public Page<twmUser> findAllByRole(String role, int from, int to) throws DataAccessException;
 
 }

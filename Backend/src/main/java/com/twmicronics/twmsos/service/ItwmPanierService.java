@@ -70,13 +70,13 @@ public interface ItwmPanierService {
     /**
      * recherche les panier ayant un solde donné
      *
-     * @param indexPan identifiant du panier
+     * @param solde solde total du panier
      * @param from numéro de la page initiale
      * @param to nombre de page à renvoyer
      * @return le panier ayant le solde passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmPanier> findOneBySoldeTotal(String indexPan, int from, int to) throws DataAccessException;
+    public Page<twmPanier> findOneBySoldeTotal(Double solde, int from, int to) throws DataAccessException;
 
     /**
      * recherche les paniers des achats fait à une date donnée

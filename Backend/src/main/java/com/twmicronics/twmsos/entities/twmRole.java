@@ -15,7 +15,6 @@ import org.hibernate.validator.constraints.Length;
 @Data
 public class twmRole implements Serializable {
     
-    
     @Id
     @Length(min = 5, max = 10)
     private String roleName;
