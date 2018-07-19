@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ItwmEtatDao extends JpaRepository<twmEtat, Integer> {
-    
+
     /**
      * retourne l'etat des produits donné
      *

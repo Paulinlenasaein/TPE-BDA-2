@@ -31,10 +31,10 @@ public class twmPanier implements Serializable {
     @Column(insertable = false)
     private List<twmPanProd> panprod;
     
-    @NotNull
+    @NotNull(message = "Le solde total du panier doit être spécifié")
     private Double soldeTotal;
     
-    @NotNull
+    @NotNull(message = "Le client à qui appartient ce panier doit être spécifié")
     @OneToOne(optional = false)
     private twmUser client;
     

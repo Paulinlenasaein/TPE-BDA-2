@@ -36,7 +36,7 @@ public class twmFacture implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateFacturation;
     
-    @NotNull
+    @NotNull(message = "La signature de l'entreprise doit être spécifié")
     @Pattern(regexp = ".*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.png",
         message="Seulement les images de type JPEG, PNG ou GIF son supportées.")
     private String signTwm;

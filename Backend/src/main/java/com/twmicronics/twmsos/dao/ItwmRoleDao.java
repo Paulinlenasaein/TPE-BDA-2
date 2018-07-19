@@ -1,6 +1,7 @@
 package com.twmicronics.twmsos.dao;
 
 import com.twmicronics.twmsos.entities.twmRole;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * @author paulinlenasaein
  */
 @Repository
-public interface ItwmRoleDao {
+public interface ItwmRoleDao extends JpaRepository<twmRole, Object>{
 
     /**
      * retourne le nombre d'utilisateurs ayant un rôle donné
@@ -16,5 +17,5 @@ public interface ItwmRoleDao {
      * @param roleName role de l'utilisateur
      * @return un objet twmRole
      */
-    public twmRole findByUserAndStatus(String roleName);
+    public twmRole findByRoleName(String roleName);
 }

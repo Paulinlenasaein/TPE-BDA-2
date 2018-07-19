@@ -40,7 +40,7 @@ public interface ItwmUserDao extends JpaRepository<twmUser, Long> {
      * @return une page d'objets twmUser
      */
     public Page<twmUser> findByFirstNameAndLastNameIgnoreCase(String firstName, String lastName, Pageable page);
-    
+
     /**
      * retourne un utilisateur ayant une adresse mail donné
      *
@@ -56,7 +56,7 @@ public interface ItwmUserDao extends JpaRepository<twmUser, Long> {
      * @return un objet twmUser
      */
     public twmUser findByTelephone(String telephone);
-    
+
     /**
      * retourne les utilisateurs ayant un état du compte donné
      *
@@ -74,5 +74,5 @@ public interface ItwmUserDao extends JpaRepository<twmUser, Long> {
      * @return une page d'objets twmUser
      */
     public Page<twmUser> findByRoleIgnoreCase(twmRole role, Pageable page);
-    
+
 }

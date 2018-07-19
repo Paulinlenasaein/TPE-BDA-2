@@ -32,7 +32,7 @@ public class twmRequete implements Serializable {
     @OneToOne
     private twmUser admin;
     
-    @NotNull
+    @NotNull(message = "Le message d'une requête ou d'une réponse ne doit pas être vide(minimum 10 caractères)")
     @Length(min = 10)
     private String message;
     

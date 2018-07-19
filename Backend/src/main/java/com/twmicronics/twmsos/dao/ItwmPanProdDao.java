@@ -22,5 +22,5 @@ public interface ItwmPanProdDao extends JpaRepository<twmPanProd, Long> {
      * @return une page d'objets twmPanProd
      */
     public Page<twmPanProd> findByPanier(twmPanier panier, Pageable page);
-    
+
 }

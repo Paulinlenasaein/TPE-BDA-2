@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ItwmFactureDao extends JpaRepository<twmFacture, String> {
-    
+
     /**
      * retourne une facture ayant un numéro donné
      *
@@ -23,7 +23,7 @@ public interface ItwmFactureDao extends JpaRepository<twmFacture, String> {
      * @return un objet twmFacture
      */
     public twmFacture findByNumFacture(String numFacture);
-    
+
     /**
      * retourne les factures d'un client donné
      *
@@ -32,7 +32,7 @@ public interface ItwmFactureDao extends JpaRepository<twmFacture, String> {
      * @return une page d'objets twmFacture
      */
     public Page<twmFacture> findByClient(twmUser client, Pageable page);
-    
+
     /**
      * retourne la facture correspondant à un panier donné
      *
@@ -40,7 +40,7 @@ public interface ItwmFactureDao extends JpaRepository<twmFacture, String> {
      * @return un objet twmFacture
      */
     public twmFacture findByPanier(twmPanier panier);
-    
+
     /**
      * retourne les factures payées à une date donnée
      *
@@ -49,8 +49,8 @@ public interface ItwmFactureDao extends JpaRepository<twmFacture, String> {
      * @return une page d'objets twmFacture
      */
     public Page<twmFacture> findByDateAchat(Date dateAchat, Pageable page);
-    
-     /**
+
+    /**
      * retourne les factures donné au client à une date donnée
      *
      * @param dateFacturation date de la facturation

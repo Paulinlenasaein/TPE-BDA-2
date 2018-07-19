@@ -13,8 +13,8 @@ import org.springframework.stereotype.Repository;
  * @author paulinlenasaein
  */
 @Repository
-public interface ItwmPanierDao extends JpaRepository<twmPanier, String>{
-    
+public interface ItwmPanierDao extends JpaRepository<twmPanier, String> {
+
     /**
      * retourne un panier ayant un numéro donné
      *
@@ -22,7 +22,7 @@ public interface ItwmPanierDao extends JpaRepository<twmPanier, String>{
      * @return un objet twmPanier
      */
     public twmPanier findByIndexPan(String indexPan);
-    
+
     /**
      * retourne les paniers d'un client donné
      *
@@ -31,7 +31,7 @@ public interface ItwmPanierDao extends JpaRepository<twmPanier, String>{
      * @return une page d'objets twmPanier
      */
     public Page<twmPanier> findByClient(twmUser client, Pageable page);
-    
+
     /**
      * retourne les paniers ayant un solde total donné
      *
@@ -40,7 +40,7 @@ public interface ItwmPanierDao extends JpaRepository<twmPanier, String>{
      * @return une page d'objets twmPanier
      */
     public Page<twmPanier> findBySoldeTotal(Double solde, Pageable page);
-    
+
     /**
      * retourne un panier ayant un numéro donné
      *
@@ -49,7 +49,7 @@ public interface ItwmPanierDao extends JpaRepository<twmPanier, String>{
      * @return une page d'objets twmPanier
      */
     public Page<twmPanier> findByDateJour(Date dateJour, Pageable page);
-    
+
     /**
      * retourne les paniers validés (1 pour acquitté et 0 sinon)
      *

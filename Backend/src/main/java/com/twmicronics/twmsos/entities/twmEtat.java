@@ -22,7 +22,7 @@ public class twmEtat implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
-    @NotNull
+    @NotNull(message = "Le nom de l'état de solvabilité doit être spécifié")
     @Length(max = 50)
     private String stateName;
     

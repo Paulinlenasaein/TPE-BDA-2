@@ -32,6 +32,6 @@ public class twmPanProd implements Serializable {
     @Column(columnDefinition = "int unsigned not null default 1")
     private int nbreExempl;
     
-    @NotNull
+    @NotNull(message = "Le prix totol du produit doit être spécifié")
     private Double prixTotal;
 }

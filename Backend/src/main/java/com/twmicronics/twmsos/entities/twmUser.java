@@ -27,13 +27,13 @@ public class twmUser implements Serializable {
     private String username;
     
     @Length(min = 2)
-    @Column(nullable = false)
+    @NotNull(message = "Veuillez spécifier votre premier nom")
     private String firstName;
     
     @Column(nullable = true)
     private String lastName;
     
-    @NotNull
+    @NotNull(message = "Le mot de passe doit être spécifié")
     @Column(unique = true)
     @Length(min = 4)
     private String password;

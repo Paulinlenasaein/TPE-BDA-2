@@ -24,7 +24,7 @@ public class twmProduit implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    @NotNull
+    @NotNull(message = "Veuillez spécifier le nom du produit")
     @Length(min = 2, max = 100)
     @Column(unique = true)
     private String nomProd;
@@ -35,7 +35,7 @@ public class twmProduit implements Serializable {
     @ManyToOne(optional = false)
     private twmTypeProduit type;
     
-    @NotNull
+    @NotNull(message = "Le prix unitaire du produit doit être spécifié")
     private Double prixUnit;
     
     @Pattern(regexp = ".*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.png",

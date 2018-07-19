@@ -27,7 +27,7 @@ public class twmStatistique implements Serializable {
     @Column(columnDefinition = "bigint unsigned not null default 0")
     private Long nbre_prod;
     
-    @NotNull
+    @NotNull(message = "La recette du jour doit être spécifié")
     private Double recette;
     
     @Temporal(TemporalType.DATE)

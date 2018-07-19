@@ -51,7 +51,7 @@ public interface ItwmFactureService {
      *
      * @param from numéro de la page initiale
      * @param to nombre de page à renvoyer
-     * @return la liste des factures de solvabilité de la BDD
+     * @return la liste des factures de la BDD
      * @throws DataAccessException si un événement non prévu survient
      */
     public Page<twmFacture> findAll(int from, int to) throws DataAccessException;
@@ -76,7 +76,7 @@ public interface ItwmFactureService {
      * @return la facture dont le panier est passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmFacture findAllByPanier(String indexPan, int from, int to) throws DataAccessException;
+    public twmFacture findOneByPanier(String indexPan, int from, int to) throws DataAccessException;
 
     /**
      * recherche les factures des achats fait à une date donnée
@@ -88,7 +88,7 @@ public interface ItwmFactureService {
      * paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmFacture findAllByDateAchat(Date dateAchat, int from, int to) throws DataAccessException;
+    public Page<twmFacture> findAllByDateAchat(Date dateAchat, int from, int to) throws DataAccessException;
 
     /**
      * recherche les factures ayant une date de facturation donnée
@@ -99,5 +99,5 @@ public interface ItwmFactureService {
      * @return les factures correspondante
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmFacture findAllByDateFacturation(Date dateFacturation, int from, int to) throws DataAccessException;
+    public Page<twmFacture> findAllByDateFacturation(Date dateFacturation, int from, int to) throws DataAccessException;
 }

@@ -34,10 +34,10 @@ public class twmCommande implements Serializable {
     @OneToOne(optional = false)
     private twmEtat etat;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date dateCommande;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date dateLivraison;
     
 }

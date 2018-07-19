@@ -29,21 +29,21 @@ public class twmPromotion implements Serializable {
     @OneToOne
     private twmProduit produit;
     
-    @NotNull
+    @NotNull(message = "Le prix promo du produit doit être spécifié")
     private Double prixPromo;
     
     @Column(nullable = false)
     @Length(min = 10)
     private String descriptPromo;
     
-    @NotNull
+    @NotNull(message = "La durée de la promotion en jour doit être spécifié")
     @Column(columnDefinition = "int unsigned not null default 0")
     private int dureePromo;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date dateDebut;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     private Date dateFin;
     
     @Column(columnDefinition = "int(1) unsigned not null default 0")

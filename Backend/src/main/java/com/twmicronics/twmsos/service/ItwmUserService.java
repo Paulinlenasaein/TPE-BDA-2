@@ -66,7 +66,7 @@ public interface ItwmUserService {
      * @throws DataAccessException si un événement non prévu survient
      */
     public Page<twmUser> findAllByFirstName(String firstName, int from, int to) throws DataAccessException;
-    
+
     /**
      * recherche les utilisateurs ayant le nom passé en paramètre
      *
@@ -78,7 +78,7 @@ public interface ItwmUserService {
      * @throws DataAccessException si un événement non prévu survient
      */
     public Page<twmUser> findAllByFirstNameAndLastName(String firstName, String lastName, int from, int to) throws DataAccessException;
-    
+
     /**
      * recherche l'utilisateurs ayant l'adresse mail passé en paramètre
      *
@@ -87,7 +87,7 @@ public interface ItwmUserService {
      * @throws DataAccessException si un événement non prévu survient
      */
     public twmUser findOneByEmail(String email) throws DataAccessException;
-    
+
     /**
      * recherche l'utilisateurs ayant le numero de téléphone passé en paramètre
      *
@@ -96,7 +96,7 @@ public interface ItwmUserService {
      * @throws DataAccessException si un événement non prévu survient
      */
     public twmUser findOneByTelephone(String telephone) throws DataAccessException;
-    
+
     /**
      * recherche les utilisateurs ayant etat donné
      *
@@ -105,7 +105,7 @@ public interface ItwmUserService {
      * @throws DataAccessException si un événement non prévu survient
      */
     public Page<twmUser> findAllByState(int state) throws DataAccessException;
-    
+
     /**
      * recherche les utilisateurs ayant role donné
      *

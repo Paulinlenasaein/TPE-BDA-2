@@ -22,7 +22,7 @@ public class twmTypeProduit implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
-    @NotNull
+    @NotNull(message = "Le type du produit doit être spécifié")
     @Length(max = 50)
     private String type;
     

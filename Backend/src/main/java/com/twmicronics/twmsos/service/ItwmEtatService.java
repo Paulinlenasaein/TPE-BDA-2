@@ -8,7 +8,7 @@ import org.springframework.data.domain.Page;
  * @author paulinlenasaein
  */
 public interface ItwmEtatService {
-    
+
     /**
      * stocke l'état de solvabilité passé en paramètre dans la base de données
      *
@@ -28,7 +28,8 @@ public interface ItwmEtatService {
     public twmEtat findOne(int id) throws DataAccessException;
 
     /**
-     * supprime l'état de solvabilité passé en paramètre et présent dans la base de données
+     * supprime l'état de solvabilité passé en paramètre et présent dans la base
+     * de données
      *
      * @param id identifiant de l'état à supprimer
      * @throws DataAccessException si un événement non prévu survient
@@ -36,8 +37,8 @@ public interface ItwmEtatService {
     public void deleteOne(int id) throws DataAccessException;
 
     /**
-     * met à jour l'état de solvabilité passé en paramètre. L'etat doit être déjà présent
-     * dans la BDD
+     * met à jour l'état de solvabilité passé en paramètre. L'etat doit être
+     * déjà présent dans la BDD
      *
      * @param etat état à mettre à jour
      * @return l'état mis à jour
@@ -64,5 +65,5 @@ public interface ItwmEtatService {
      * @return les états de solvabilité dont le nom est passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmEtat findAllByStateName(String stateName, int from, int to) throws DataAccessException;   
+    public twmEtat findAllByStateName(String stateName, int from, int to) throws DataAccessException;
 }
