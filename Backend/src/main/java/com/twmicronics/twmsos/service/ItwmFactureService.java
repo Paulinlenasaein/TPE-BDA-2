@@ -71,12 +71,10 @@ public interface ItwmFactureService {
      * recherche la facture d'un panier passé en paramètre
      *
      * @param indexPan identifiant du panier
-     * @param from numéro de la page initiale
-     * @param to nombre de page à renvoyer
      * @return la facture dont le panier est passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmFacture findOneByPanier(String indexPan, int from, int to) throws DataAccessException;
+    public twmFacture findOneByPanier(String indexPan) throws DataAccessException;
 
     /**
      * recherche les factures des achats fait à une date donnée

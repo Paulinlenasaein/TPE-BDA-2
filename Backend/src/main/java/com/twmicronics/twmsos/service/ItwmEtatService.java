@@ -60,10 +60,8 @@ public interface ItwmEtatService {
      * recherche les états de solvabilités d'un client passé en paramètre
      *
      * @param stateName nom de l'état à rechercher
-     * @param from numéro de la page initiale
-     * @param to nombre de page à renvoyer
      * @return les états de solvabilité dont le nom est passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmEtat findAllByStateName(String stateName, int from, int to) throws DataAccessException;
+    public twmEtat findOneByStateName(String stateName) throws DataAccessException;
 }

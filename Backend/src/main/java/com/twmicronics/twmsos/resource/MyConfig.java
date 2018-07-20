@@ -15,5 +15,15 @@ public class MyConfig extends ResourceConfig {
     public MyConfig() {
         register(twmUserResource.class);
         register(twmCommandeResource.class);
+        register(twmEtatResource.class);
+        register(twmFactureResource.class);
+        register(twmPanProdResource.class);
+        register(twmPanierResource.class);
+        register(twmProduitResource.class);
+        register(twmPromotionResource.class);
+        register(twmRequeteResource.class);
+        register(twmRoleResource.class);
+        register(twmStatistiqueResource.class);
+        register(twmTypeProduitResource.class);
     }
 }

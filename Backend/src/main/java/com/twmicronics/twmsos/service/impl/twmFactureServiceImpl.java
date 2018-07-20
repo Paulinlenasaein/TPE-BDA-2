@@ -23,13 +23,13 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 @Transactional
 public class twmFactureServiceImpl implements ItwmFactureService {
-    
+
     @Autowired
     private ItwmFactureDao factureDao;
-    
+
     @Autowired
     private ItwmUserDao userDao;
-    
+
     @Autowired
     private ItwmPanierDao panierDao;
 
@@ -40,7 +40,7 @@ public class twmFactureServiceImpl implements ItwmFactureService {
 
     @Override
     public twmFacture findOne(String numFacture) throws DataAccessException {
-       return factureDao.findByNumFacture(numFacture);
+        return factureDao.findByNumFacture(numFacture);
     }
 
     @Override
@@ -69,7 +69,7 @@ public class twmFactureServiceImpl implements ItwmFactureService {
     }
 
     @Override
-    public twmFacture findOneByPanier(String indexPan, int from, int to) throws DataAccessException {
+    public twmFacture findOneByPanier(String indexPan) throws DataAccessException {
         return factureDao.findByPanier(panierDao.findByIndexPan(indexPan));
     }
 
@@ -82,6 +82,5 @@ public class twmFactureServiceImpl implements ItwmFactureService {
     public Page<twmFacture> findAllByDateFacturation(Date dateFacturation, int from, int to) throws DataAccessException {
         return factureDao.findByDateFacturation(dateFacturation, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "numFacture")));
     }
-    
-    
+
 }

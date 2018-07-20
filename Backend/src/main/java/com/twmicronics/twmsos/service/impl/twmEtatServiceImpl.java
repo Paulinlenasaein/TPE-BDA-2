@@ -58,7 +58,7 @@ public class twmEtatServiceImpl implements ItwmEtatService {
     }
 
     @Override
-    public twmEtat findAllByStateName(String stateName, int from, int to) throws DataAccessException {
+    public twmEtat findOneByStateName(String stateName) throws DataAccessException {
         return etatDao.findByStateNameIgnoreCase(stateName);
     }
 }

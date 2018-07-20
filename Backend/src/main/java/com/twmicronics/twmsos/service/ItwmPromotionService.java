@@ -66,7 +66,7 @@ public interface ItwmPromotionService {
      * @return les promotions d'un produit passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public Page<twmPromotion> findOneByProduit(Long produit, int from, int to) throws DataAccessException;
+    public Page<twmPromotion> findAllByProduit(Long produit, int from, int to) throws DataAccessException;
 
     /**
      * recherche les promotion en cours ou passées

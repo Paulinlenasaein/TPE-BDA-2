@@ -63,7 +63,7 @@ public class twmPromotionServiceImpl implements ItwmPromotionService {
     }
 
     @Override
-    public Page<twmPromotion> findOneByProduit(Long produit, int from, int to) throws DataAccessException {
+    public Page<twmPromotion> findAllByProduit(Long produit, int from, int to) throws DataAccessException {
         return promotionDao.findByProduit(produitDao.getOne(produit), PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "dateFin")));
     }
 
