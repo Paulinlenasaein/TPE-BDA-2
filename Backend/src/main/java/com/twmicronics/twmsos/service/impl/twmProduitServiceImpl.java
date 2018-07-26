@@ -55,10 +55,30 @@ public class twmProduitServiceImpl implements ItwmProduitService {
     public twmProduit updateOne(twmProduit produit) throws DataAccessException {
         return produitDao.save(produit);
     }
-
+    
     @Override
     public Page<twmProduit> findAll(int from, int to) throws DataAccessException {
+        return produitDao.findAll(PageRequest.of(from, to, Sort.by(Sort.Direction.ASC, "id")));
+    }
+
+    @Override
+    public Page<twmProduit> findAllAsc(int from, int to) throws DataAccessException {
         return produitDao.findAll(PageRequest.of(from, to, Sort.by(Sort.Direction.ASC, "nomProd")));
+    }
+    
+    @Override
+    public Page<twmProduit> findAllDesc(int from, int to) throws DataAccessException {
+        return produitDao.findAll(PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "nomProd")));
+    }
+    
+    @Override
+    public Page<twmProduit> findAllPrixUnitAsc(int from, int to) throws DataAccessException {
+        return produitDao.findAll(PageRequest.of(from, to, Sort.by(Sort.Direction.ASC, "prixUnit")));
+    }
+    
+    @Override
+    public Page<twmProduit> findAllPrixUnitDesc(int from, int to) throws DataAccessException {
+        return produitDao.findAll(PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "prixUnit")));
     }
 
     @Override

@@ -44,7 +44,7 @@ public interface ItwmProduitService {
      * @throws DataAccessException si un événement non prévu survient
      */
     public twmProduit updateOne(twmProduit produit) throws DataAccessException;
-
+    
     /**
      * renvoie la liste des produits stockés dans la base de données.
      *
@@ -54,6 +54,48 @@ public interface ItwmProduitService {
      * @throws DataAccessException si un événement non prévu survient
      */
     public Page<twmProduit> findAll(int from, int to) throws DataAccessException;
+
+    /**
+     * renvoie la liste des produits stockés dans la base de données par ordre
+     * ascendant de nom.
+     *
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
+     * @return la liste des produits de la BDD
+     * @throws DataAccessException si un événement non prévu survient
+     */
+    public Page<twmProduit> findAllAsc(int from, int to) throws DataAccessException;
+
+    /**
+     * renvoie la liste des produits stockés dans la base de données par ordre
+     * descendant de nom.
+     *
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
+     * @return la liste des produits de la BDD
+     * @throws DataAccessException si un événement non prévu survient
+     */
+    public Page<twmProduit> findAllDesc(int from, int to) throws DataAccessException;
+    
+    /**
+     * renvoie la liste des produits stockés dans la base de données par prix unitaire ascendant.
+     *
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
+     * @return la liste des produits de la BDD
+     * @throws DataAccessException si un événement non prévu survient
+     */
+    public Page<twmProduit> findAllPrixUnitAsc(int from, int to) throws DataAccessException;
+
+    /**
+     * renvoie la liste des produits stockés dans la base de données par prix unitaire descendant.
+     *
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
+     * @return la liste des produits de la BDD
+     * @throws DataAccessException si un événement non prévu survient
+     */
+    public Page<twmProduit> findAllPrixUnitDesc(int from, int to) throws DataAccessException;
 
     /**
      * recherche les produits ayant un nom dobbé

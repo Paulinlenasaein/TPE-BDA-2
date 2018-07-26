@@ -43,6 +43,9 @@ public class twmProduit implements Serializable {
     @Length(max = 50)
     private String image;
     
+    @NotNull(message = "Veuillez spécifier la taille du fichier")
+    private Double size;
+    
     @Column(columnDefinition = "int(1) unsigned not null default 1")
     private int state;
 }

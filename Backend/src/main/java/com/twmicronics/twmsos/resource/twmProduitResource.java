@@ -35,12 +35,41 @@ public class twmProduitResource {
     public twmProduit returnOne(@PathParam("id") Long id) throws DataAccessException {
         return produitService.findOne(id);
     }
-
+    
     @GET
     @Produces(value = MediaType.APPLICATION_JSON)
     public Page<twmProduit> returnAll(@DefaultValue("0") @QueryParam("from") int from, @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {
         return produitService.findAll(from, to);
     }
+
+    @GET
+    @Path("/nomasc")
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Page<twmProduit> returnAllAsc(@DefaultValue("0") @QueryParam("from") int from, @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {
+        return produitService.findAllAsc(from, to);
+    }
+    
+    @GET
+     @Path("/nomdesc")
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Page<twmProduit> returnAllDesc(@DefaultValue("0") @QueryParam("from") int from, @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {
+        return produitService.findAllDesc(from, to);
+    }
+    
+    @GET
+    @Path("/prixasc")
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Page<twmProduit> returnAllPrixAsc(@DefaultValue("0") @QueryParam("from") int from, @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {
+        return produitService.findAllPrixUnitAsc(from, to);
+    }
+    
+    @GET
+    @Path("/prixdesc")
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public Page<twmProduit> returnAllPrixDesc(@DefaultValue("0") @QueryParam("from") int from, @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {
+        return produitService.findAllPrixUnitDesc(from, to);
+    }
+
 
     @POST
     @Produces(value = MediaType.APPLICATION_JSON)

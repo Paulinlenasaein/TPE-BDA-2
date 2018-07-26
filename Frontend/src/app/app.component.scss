@@ -1,0 +1,64 @@
+.btn-lg-style {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.btn-lg-style-filter {
+  width: auto;
+  height: 50px;
+}
+
+.panier {
+  width: 60px;
+  height: 60px;
+  border-radius: 25px;
+}
+
+.pan-block{
+ display: inline-block;
+ vertical-align: middle;
+ float: none;
+}
+
+.nbreprod{
+  width: 20px;
+  height: 20px;
+  background-color: #1E90FF;
+  padding-left: 6px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.inline-form input {
+  display: inline-block;
+  width: 100px;
+}
+
+.linkApp {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-brand, .navbar-nav li a { line-height: 80px; height: 80px; padding-top: 0;}
+
+.img {
+    vertical-align: middle;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 80px;
+    height: auto;
+}
+
+ul li {
+  font-size: 18px;
+}
+
+.position-responsive {padding-top: 10px;font-size: 18px;font-weight: bold;text-align: center;}
+.langue {padding-top: 20px;padding-right: 20px;font-size: 18px;font-weight: bold;text-align: center;}
+
+ul li {font-weight: bold;}

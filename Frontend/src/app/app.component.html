@@ -1,21 +1,82 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container-fluid">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle collapsed" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Menu</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="/en_US/" class="navbar-brand logo">
+            <span alt="Logo of TW Micronics" title="TW Micronics"><img class="img img-responsive" src="../assets/home/images/logo.png"/></span>
+        </a>
+        <div class="position-responsive"><a class="disabled linkApp" > TW MICRONICS SECURE ONLINE SHARE </a></div>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li routerLinkActive="active"><a routerLink="home"><span class="glyphicon glyphicon-share"></span>  Shop </a></li>
+          <li routerLinkActive="active"><a routerLink="panier"><span class="glyphicon glyphicon-shopping-cart"></span>  Mon panier</a></li>
+          <li routerLinkActive="active"><a routerLink="about"><span class="glyphicon glyphicon-tint"></span>  About</a></li>
+          <li routerLinkActive="active" class="navbar-right"><a routerLink="account"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
+        </ul>
+        <div class="navbar-nav navbar-right langue">
+          <p-splitButton label="Choisir la langue" icon="fa fa-adjust" (onClick)="save()" [model]="items1"></p-splitButton>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-<router-outlet></router-outlet>
+  <div class="container-fluid">
+    <div class="jumbotron">
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <div class="row">
+            <hr>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+              <button class="btn btn-info btn-lg-style"><span class="glyphicon glyphicon-circle-arrow-down"></span></button>
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+              <button class="btn btn-info btn-lg btn-block">All products</button>
+            </div>
+          </div>
+          <hr>
+          <p-panelMenu [model]="items2" [multiple] = false></p-panelMenu>
+        </div>
+        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <div class="ui-inputgroup">
+                      <input type="text" pInputText placeholder="product of TW Micronics" class="btn-block">
+                      <button pButton type="button" label="Search" class="ui-button-primary"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 btn-lg-style-filter">
+                  <div class="ui-splitbutton-button">
+                    <p-splitButton label="Sort By" icon="fa fa-filter" (onClick)="save()" [model]="items3"></p-splitButton>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]" pageLinkSize="7" (onPageChange)="paginate($event)"></p-paginator>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pan-block">
+              <div class="pan-block"><div class="nbreprod">0</div><button type="button" (click)="showCart()" pButton icon="fa fa-cart-arrow-down" class="panier"><img src="../assets/home/images/panier.png" alt="Mon panier" class="img-rounded panier"></button></div>
+            </div>
+          </div>
+          <hr>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+      <hr>
+      <button class="btn btn-primary btn-lg-style"><span class="glyphicon glyphicon-user"></span></button>
+      <button class="btn btn-warning btn-lg-style"><span class="glyphicon glyphicon-comment"></span></button>
+      <button class="btn btn-success btn-lg-style"><span class="glyphicon glyphicon-calendar"></span></button>
+      <button class="btn btn-danger btn-lg-style"><span class="glyphicon glyphicon-shopping-cart"></span></button>
+      <button class="btn btn-info btn-lg-style"><span class="glyphicon glyphicon-bullhorn"></span></button>
+    </div>
+  </div>
+</div>
