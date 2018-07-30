@@ -1,27 +1,43 @@
 import { Component } from '@angular/core';
-import {SplitButtonModule} from 'primeng/splitbutton';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {MenuItem} from 'primeng/api';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
-import {PaginatorModule} from 'primeng/paginator';
+import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+
+import { UtilService } from './services/util.service';
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  providers: [UtilService],
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('goals', [
+      transition('* => *', [
+
+        query(':enter', style({ opacity: 0 }), {optional: true}),
+
+        query(':enter', stagger('300ms', [
+          animate('.6s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
+            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
+            style({opacity: 1, transform: 'translateY(0)',     offset: 1.0}),
+          ]))]), {optional: true})
+      ])
+    ])
+  ]
 })
 export class AppComponent {
   title = 'Service online de ventesécurisée de TW Micronics';
   items1: MenuItem[];
   items2: MenuItem[];
-  items3: MenuItem[];
+  display: boolean = false;
 
-  constructor() {
-     this.items1 = [];
-     this.items2 = [];
-     this.items2 = [];
+  constructor(private utilService: UtilService) {
+    this.items1 = [];
+    this.items2 = [];
    }
 
   ngOnInit() {
@@ -110,31 +126,10 @@ export class AppComponent {
                 ]
             }
         ];
-
-        this.items3 = [
-            {label: 'sort ascending price', icon: 'fa fa-sort-asc', command: () => {
-                this.english();
-            }},
-            {label: 'sort descending price', icon: 'fa fa-sort-desc', command: () => {
-                this.french();
-            }},
-            {label: 'Name - A to Z', icon: 'fa fa-sort-alpha-asc', command: () => {
-                this.english();
-            }},
-            {label: 'Name - Z to A', icon: 'fa fa-sort-alpha-desc', command: () => {
-                this.french();
-            }}
-        ];
   }
 
   english(){}
 
   french(){}
 
-  paginate(event) {
-    //event.first = Index of the first record
-    //event.rows = Number of rows to display in new page
-    //event.page = Index of the new page
-    //event.pageCount = Total number of pages
-  }
 }

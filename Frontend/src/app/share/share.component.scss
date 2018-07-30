@@ -1,0 +1,113 @@
+h1.title {
+	font-size: 50px;
+	font-family: 'Passion One', cursive;
+	font-weight: 400;
+}
+
+hr{
+	width: 10%;
+	color: #fff;
+}
+
+h2{
+	font-weight: bold;
+	font-size: 2.5em;
+	font-family: "Times New Roman", Times, serif;
+	color: #1E90FF;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.form-group{
+	margin-bottom: 15px;
+}
+
+label{
+	margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login, .main-pan{
+ 	background-color: #fff;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 10px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+ 	margin-top: 30px;
+ 	margin: 0 auto;
+  padding: 20px 20px
+}
+
+.form-control {
+    height: auto!important;
+		padding: 8px 12px !important;
+}
+.input-group {
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.21)!important;
+}
+
+span.input-group-addon i {
+    color: #009edf;
+    font-size: 17px;
+}
+
+.btn-login {
+	background-color: #59B2E0;
+	outline: none;
+	color: #fff;
+	font-size: 14px;
+	height: auto;
+	font-weight: normal;
+	padding: 14px 0;
+	text-transform: uppercase;
+	border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+	color: #fff;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
+}
+
+.nav-head{
+	color: #000;
+	width: 50%;
+}
+
+.text-transform{
+	font-weight: bold;
+	font-size: 20px;
+	color: #1E90FF;
+	text-align: center;
+}
+
+.price{
+	text-align: center;
+	font-weight: bold;
+	height: 25px;
+	width: auto;
+}
+
+.pass_show{position: relative}
+
+.pass_show .ptxt {
+	cursor: pointer;
+	font-weight: bold;
+	color: #000;
+}
+
+.pass_show .ptxt:hover{color: #1E90FF;}

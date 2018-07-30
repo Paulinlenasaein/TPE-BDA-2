@@ -16,7 +16,7 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li routerLinkActive="active"><a routerLink="home"><span class="glyphicon glyphicon-share"></span>  Shop </a></li>
-          <li routerLinkActive="active"><a routerLink="panier"><span class="glyphicon glyphicon-shopping-cart"></span>  Mon panier</a></li>
+          <li routerLinkActive="active"><a routerLink="share"><span class="glyphicon glyphicon-shopping-cart"></span>  Mon panier</a></li>
           <li routerLinkActive="active"><a routerLink="about"><span class="glyphicon glyphicon-tint"></span>  About</a></li>
           <li routerLinkActive="active" class="navbar-right"><a routerLink="account"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
         </ul>
@@ -31,8 +31,8 @@
     <div class="jumbotron">
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <hr>
           <div class="row">
-            <hr>
             <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
               <button class="btn btn-info btn-lg-style"><span class="glyphicon glyphicon-circle-arrow-down"></span></button>
             </div>
@@ -44,39 +44,66 @@
           <p-panelMenu [model]="items2" [multiple] = false></p-panelMenu>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div class="row">
-                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                    <div class="ui-inputgroup">
-                      <input type="text" pInputText placeholder="product of TW Micronics" class="btn-block">
-                      <button pButton type="button" label="Search" class="ui-button-primary"><span class="glyphicon glyphicon-search"></span></button>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 btn-lg-style-filter">
-                  <div class="ui-splitbutton-button">
-                    <p-splitButton label="Sort By" icon="fa fa-filter" (onClick)="save()" [model]="items3"></p-splitButton>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-              <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]" pageLinkSize="7" (onPageChange)="paginate($event)"></p-paginator>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 pan-block">
-              <div class="pan-block"><div class="nbreprod">0</div><button type="button" (click)="showCart()" pButton icon="fa fa-cart-arrow-down" class="panier"><img src="../assets/home/images/panier.png" alt="Mon panier" class="img-rounded panier"></button></div>
-            </div>
-          </div>
-          <hr>
           <router-outlet></router-outlet>
         </div>
       </div>
-      <hr>
-      <button class="btn btn-primary btn-lg-style"><span class="glyphicon glyphicon-user"></span></button>
-      <button class="btn btn-warning btn-lg-style"><span class="glyphicon glyphicon-comment"></span></button>
-      <button class="btn btn-success btn-lg-style"><span class="glyphicon glyphicon-calendar"></span></button>
-      <button class="btn btn-danger btn-lg-style"><span class="glyphicon glyphicon-shopping-cart"></span></button>
-      <button class="btn btn-info btn-lg-style"><span class="glyphicon glyphicon-bullhorn"></span></button>
     </div>
   </div>
 </div>
+
+<!-- Footer -->
+<section id="footer">
+  <div class="container">
+    <div class="row text-center text-xs-center text-sm-left text-md-left">
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <h3>Services</h3>
+        <ul class="list-unstyled quick-links">
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <h3>Join us</h3>
+        <ul class="list-unstyled quick-links">
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-4 col-md-4">
+        <h3>TW Micronics</h3>
+        <ul class="list-unstyled quick-links">
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
+          <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+          <li><a href="#" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+        <ul class="list-unstyled list-inline social text-center">
+          <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+          <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+          <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-google-plus"></i></a></li>
+          <li class="list-inline-item"><a href="javascript:void();" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </div>
+      <hr>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+        <p class="copyright"> All right Reversed. Copyright © <a class="text-green ml-2" href="https://web.facebook.com/fotsing.annick" target="_blank">FOTSING TEDJON ANNICK PAULIN</a></p>
+      </div>
+      <hr>
+    </div>
+  </div>
+</section>
+<!-- ./Footer -->

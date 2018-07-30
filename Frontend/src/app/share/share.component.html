@@ -1,0 +1,189 @@
+<div class="container">
+	<div class="row main">
+		<section class="col-lg-9 col-md-9 col-sm-9 col-xs-12 main-login main-center">
+      <ul class="nav nav-pills text-transform">
+        <li class="active" style="padding-left:10%;padding-right: 40%;"><a href="#register" data-toggle="tab">Register</a></li>
+        <li style="padding-right:10%;"><a href="#login" data-toggle="tab">Log in</a></li>
+      </ul>
+			<hr class="nav-head">
+      <div class="tab-content">
+        <div class="tab-pane active fade in" id="register">
+					<form class="" method="post" action="#">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+								<label for="name" class="cols-sm-2 control-label">First Name</label>
+								<div class="cols-sm-10">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+										<input type="text" pInputText pKeyFilter="alpha" class="form-control" name="firstname" id="firstname"  placeholder="Enter your FirstName"/>
+									</div>
+								</div>
+							</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="name" class="cols-sm-2 control-label">Last Name</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+											<input type="text" pInputText pKeyFilter="alpha" class="form-control" name="lastname" id="lastname"  placeholder="Enter your LastName"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="email" class="cols-sm-2 control-label">Your Email</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+											<input type="text" pInputText [pKeyFilter]="mail" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="email" class="cols-sm-2 control-label">Your phone number</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-mobile-phone fa" aria-hidden="true"></i></span>
+											<input type="text" pInputText [pKeyFilter]="phoneNumber" class="form-control" name="email" id="email"  placeholder="Enter your phone number"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="username" class="cols-sm-2 control-label">Your Username</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+											<input type="text" pInputText pKeyFilter="alphanum" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="form-group">
+									<label for="password" class="cols-sm-2 control-label">Your Password</label>
+									<div class="cols-sm-10">
+										<div class="input-group pass_show">
+											<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+											<input type="password" pInputText pKeyFilter="alphanum" pPassword class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+											<span class="input-group-addon ptxt">Show</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group pass_show">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input type="password" pInputText pKeyFilter="alphanum" pPassword class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<span class="input-group-addon ptxt">Show</span>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<button pButton type="button" (click)="showInforms()" label="Register" icon="fa fa-registered" tabindex="4" class="form-control btn btn-primary btn-lg btn-login"></button>
+							</div>
+						</div><br>
+						<div class="login-register">
+						  <a href="">Veuillez bien sauvegarder ces informations</a>
+						</div>
+					</form>
+				</div>
+
+				<div class="tab-pane fade in" id="login">
+					<div class="form-group">
+						 <label for="email" class="cols-sm-2 control-label">Your username or email</label>
+						 <div class="cols-sm-10">
+							 <div class="input-group">
+								 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+								 <input type="text" pInputText pKeyFilter="alphanum" class="form-control" name="email" id="email"  placeholder="Enter your Username or Email"/>
+								 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+							 </div>
+						 </div>
+					 </div>
+					 <div class="form-group">
+						 <label for="email" class="cols-sm-2 control-label">Your password</label>
+						 <div class="cols-sm-10">
+							 <div class="input-group pass_show">
+								 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+								 <input type="password" pPassword pInputText pKeyFilter="alphanum" class="form-control" name="email" id="email"  placeholder="Enter your phone number"/>
+								 <span class="input-group-addon ptxt">Show</span>
+							 </div>
+						 </div>
+					 </div>
+					 <hr>
+					 <div class="row">
+						 <div class="col-sm-6 col-sm-offset-3">
+							 <button pButton type="button" (click)="showInforms()" label="Log in" icon="fa fa-hand-o-right" tabindex="4" class="form-control btn btn-primary btn-lg btn-login"></button>
+						 </div>
+					 </div>
+	      </div>
+      </div>
+    </section>
+		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			<p-panel>
+			    <p-header>
+		        <div class="ui-helper-clearfix">
+		            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px;font-weight:bold">
+									<i class="fa fa-cart-arrow-down fa-lg" aria-hidden="true"></i> Mon panier
+								</span>
+		        </div>
+			    </p-header>
+			        The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+			        His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+			        Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+			        kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
+			    <p-footer class="price">
+			        <span> 200 000 FCFA</span>
+			    </p-footer>
+			</p-panel>
+		</div>
+	</div>
+</div>
+<p-dialog header="Detail sur le produit" [(visible)]="display4" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
+			[maximizable]="false" [baseZIndex]="10000" (onHide)="display4=false" class="ui-dialog-titlebar">
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
+			<div class="ui-dialog-content">
+				<span>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+				His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+				Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+				kind and benevolent to those who give respect,
+				but given to ruthless violence whenever anything stands against the good of the family.
+				</span>
+			</div>
+		</div>
+	</div>
+	<p-footer class="ui-dialog-footer">
+			<button type="button" pButton icon="fa fa-check" (click)="saveInform()" label="confirm"></button>
+			<button type="button" pButton icon="fa fa-close" (click)="display4=false" label="Cancel"></button>
+	</p-footer>
+</p-dialog>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.pass_show').append('<span class="ptxt">Show</span>');
+	});
+
+	$(document).on('click','.pass_show .ptxt', function(){
+		$(this).text($(this).text() == "Show" ? "Hide" : "Show");
+		$(this).prev().attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; });
+	});
+</script>

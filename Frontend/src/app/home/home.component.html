@@ -2,69 +2,163 @@
   <p-growl [(value)]="msgs" [style] = "{'padding-top':'70px'}"></p-growl>
 </div>
 <div class="row">
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <div class="ui-inputgroup">
+        <input type="text" pInputText placeholder="Product of TW Micronics" class="btn-block">
+        <button pButton type="button" label="Search" class="btn ui-button-primary"><span class="glyphicon glyphicon-search"></span></button>
+      </div>
+  </div>
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 btn-lg-style-filter">
+    <div class="ui-splitbutton-button">
+      <p-splitButton label="Sort By" icon="fa fa-filter" (onClick)="save()" [model]="items3"></p-splitButton>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    <div class="btn-block ui-splitbutton-button">
+      <p-splitButton label="Pricelist of TW Micronics" icon="fa fa-balance-scale" (onClick)="save()" [model]="items4"></p-splitButton>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+    <div class="ui-inputgroup">
+      <div class="promotion btn-block">
+        <span>Aucune promotion en cours...</span>
+      </div>
+      <button pButton type="button" label="see detail" icon="fa fa-dot-circle-o" (click)="showPromotion()" class="detail-promo"></button>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]" pageLinkSize="7" (onPageChange)="paginate($event)"></p-paginator>
+  </div>
+  <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+    <div class="panier-block"><div class="nbreprod">0</div><button type="button" (click)="showCart()" class="btn-lg-style button-pan"><img src="../assets/home/images/panier.png" alt="Mon panier" class="img-panier"/></button></div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim">
     <p-card title="Formation bureatique essentiel" subtitle="340 000 FCFA" styleClass="ui-card-shadow" [style]="{'font-size': '10px','font-weight': 'bold'}">
         <p-header>
             <img src="Card" src="../assets/home/images/usercard.jpeg">
         </p-header>
         <p-footer>
-            <button pButton type="button" (click)="showDialogAdd()" label="Add to cart"  class="ui-button-success card-responsive"></button>
-            <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="ui-inputgroup">
+                <button pButton type="button" (click)="showDialogAdd()" icon="fa fa-cart-plus" label="Add to cart"  class="ui-button-success card-responsive"></button>
+                <button type="button" (click)="showDialog()" pButton icon="fa fa-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
+              </div>
+            </div>
+          </div>
         </p-footer>
     </p-card>
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim">
     <p-card title="Formation en marketing Digital" subtitle="200 000 FCFA" styleClass="ui-card-shadow" [style]="{'font-size': '10px','font-weight': 'bold'}">
         <p-header>
             <img src="Card" src="../assets/home/images/usercard.jpeg">
         </p-header>
         <p-footer>
-            <button pButton type="button" (click)="showDialogAdd()" label="Add to cart"  class="ui-button-success card-responsive"></button>
-            <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="ui-inputgroup">
+                <button pButton type="button" (click)="showDialogAdd()" icon="fa fa-cart-plus" label="Add to cart"  class="ui-button-success card-responsive"></button>
+                <button type="button" (click)="showDialog()" pButton icon="fa fa-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
+              </div>
+            </div>
+          </div>
         </p-footer>
     </p-card>
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim">
     <p-card title="Formation MOS Pro 1 voucher" subtitle="60 000 FCFA" styleClass="ui-card-shadow" [style]="{'font-size': '10px','font-weight': 'bold'}">
         <p-header>
             <img src="Card" src="../assets/home/images/usercard.jpeg">
         </p-header>
         <p-footer>
-            <button pButton type="button" (click)="showDialogAdd()" label="Add to cart"  class="ui-button-success card-responsive"></button>
-            <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="ui-inputgroup">
+                <button pButton type="button" (click)="showDialogAdd()" icon="fa fa-cart-plus" label="Add to cart"  class="ui-button-success card-responsive"></button>
+                <button type="button" (click)="showDialog()" pButton icon="fa fa-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
+              </div>
+            </div>
+          </div>
         </p-footer>
     </p-card>
   </div>
-  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim">
     <p-card title="Formation MOS Pro 2 voucher" subtitle="90 000 FCFA" styleClass="ui-card-shadow" [style]="{'font-size': '10px','font-weight': 'bold'}">
         <p-header>
             <img src="Card" src="../assets/home/images/usercard.jpeg">
         </p-header>
         <p-footer>
-            <button pButton type="button" (click)="showDialogAdd()" label="Add to cart"  class="ui-button-success card-responsive"></button>
-            <button type="button" (click)="showDialog()" pButton icon="pi pi-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="ui-inputgroup">
+                <button pButton type="button" (click)="showDialogAdd()" icon="fa fa-cart-plus" label="Add to cart"  class="ui-button-success card-responsive"></button>
+                <button type="button" (click)="showDialog()" pButton icon="fa fa-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
+              </div>
+            </div>
+          </div>
         </p-footer>
     </p-card>
   </div>
 
-
-  <p-dialog header="Detail sur le produit" [(visible)]="display" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
+  <p-dialog header="Detail sur le produit" [(visible)]="display1" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
         [maximizable]="false" [baseZIndex]="10000" (onHide)="CancelAdd()" class="ui-dialog-titlebar">
     <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11 ui-dialog-content">
-        <span>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
-        His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-        Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-        kind and benevolent to those who give respect,
-        but given to ruthless violence whenever anything stands against the good of the family.
-        </span>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
+        <div class="ui-dialog-content">
+          <span>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
+          His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
+          Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
+          kind and benevolent to those who give respect,
+          but given to ruthless violence whenever anything stands against the good of the family.
+          </span>
+          <p-spinner *ngIf="add === true" size="1" [(ngModel)]="val" [min]="1"></p-spinner>
+        </div>
       </div>
     </div>
-    <p-spinner *ngIf="add === true" size="1" [(ngModel)]="val" [min]="1"></p-spinner>
     <p-footer class="ui-dialog-footer">
-        <button *ngIf="add === false" type="button" pButton icon="fa fa-check" (click)="display=false" label="Ok"></button>
+        <button *ngIf="add === false" type="button" pButton icon="fa fa-check" (click)="display1=false" label="Ok"></button>
         <button *ngIf="add === true" type="button" icon="fa fa-cart-plus" pButton (click)="AddToCard()" label="confirm the addition"></button>
-        <button *ngIf="add === true" type="button" pButton icon="fa fa-close" (click)="CancelAdd()" label="Annuler"></button>
+        <button *ngIf="add === true" type="button" pButton icon="fa fa-close" (click)="CancelAdd()" label="Cancel"></button>
+    </p-footer>
+  </p-dialog>
+
+  <p-dialog header="Mon panier" [(visible)]="display2" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
+        [maximizable]="false" [baseZIndex]="10000" (onHide)="CancelBuy()" class="ui-dialog-titlebar">
+    <div class="row" [@goals]="goals.length">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
+        <div class="ui-dialog-content">
+          <p class="life-container" *ngFor="let goal of goals; let i = index">
+            {{goal}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <p-footer class="ui-dialog-footer">
+        <button type="button" pButton icon="fa fa-mail-reply" (click)="display2=false" label="continue shopping"></button>
+        <button type="button" icon="fa fa-bolt" pButton (click)="BuyNow()" label="Buy now"></button>
+    </p-footer>
+  </p-dialog>
+
+  <p-dialog header="Details sur les promotions" [(visible)]="display3" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
+        [maximizable]="false" [baseZIndex]="10000" (onHide)="CancelPromotion()" class="ui-dialog-titlebar">
+    <div class="row" [@goals]="goals.length">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
+        <div class="ui-dialog-content">
+          <span class="">
+            Aucune promotion en cours
+          </span>
+        </div>
+      </div>
+    </div>
+    <p-footer class="ui-dialog-footer">
+        <button type="button" pButton icon="fa fa-check" (click)="display3=false" label="Ok"></button>
     </p-footer>
   </p-dialog>
 
