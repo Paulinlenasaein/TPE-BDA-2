@@ -161,14 +161,14 @@
 									</div>
 								</div>
 								<div id="vignets">
-									<div *ngIf="formreg.get('confirm').touched && formreg.get('confirm').invalid" class="alert alert-danger">
+									<div *ngIf="(formreg.get('confirm').touched && formreg.get('confirm').invalid) || formreg.errors" class="alert alert-danger">
 										<div *ngIf="formreg.get('confirm').hasError('required')">
 											Confirm password is required!
 										</div>
 										<div *ngIf="formreg.get('confirm').hasError('minlength')">
 											Less than 5 characters!
 										</div>
-										<div *ngIf="formreg.get('confirm').errors.validPassword && !formreg.get('confirm').hasError('minlength') && !formreg.get('confirm').hasError('required')">
+										<div *ngIf="formreg.errors.validPassword && !formreg.get('confirm').hasError('minlength') && !formreg.get('confirm').hasError('required')">
 											This password is not the same as the one above
 										</div>
 									</div>
@@ -262,17 +262,24 @@
 		</div>
 	</div>
 </div>
-<p-dialog header="Detail sur le produit" [(visible)]="display4" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
-			[maximizable]="false" [baseZIndex]="10000" (onHide)="display4=false" class="ui-dialog-titlebar">
+<p-dialog header="Your informations" [(visible)]="display4" [modal]="true" [responsive]="true" [width]="400" [minWidth]="200" [minY]="70"
+			[maximizable]="false" [baseZIndex]="10000" [closeOnEscape]="false" [closable]="false" (onHide)="display4=false" class="ui-dialog-titlebar">
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
 			<div class="ui-dialog-content">
-
+				<ul class="list-group">
+					<li class="list-group-item">FirstName: <i class="form-item">{{formreg.get('firstname').value}}</i></li>
+					<li class="list-group-item">LastName: <i class="form-item">{{formreg.get('lastname').value}}</i></li>
+					<li class="list-group-item">Email: <i class="form-item">{{formreg.get('email').value}}</i></li>
+					<li class="list-group-item">Phone number: <i class="form-item">{{formreg.get('number').value}}</i></li>
+					<li class="list-group-item">Username: <i class="form-item">{{formreg.get('username').value}}</i></li>
+					<li class="list-group-item">Password: <i class="form-item">{{formreg.get('password').value}}</i></li>
+				</ul>
 			</div>
 		</div>
 	</div>
 	<p-footer class="ui-dialog-footer">
-			<button type="button" pButton icon="fa fa-check" (click)="saveInform()" label="confirm"></button>
+			<button type="button" pButton icon="fa fa-check" (click)="saveInform()" label="I confirm them"></button>
 			<button type="button" pButton icon="fa fa-close" (click)="display4=false" label="Cancel"></button>
 	</p-footer>
 </p-dialog>

@@ -61,8 +61,10 @@ export class ShareComponent implements OnInit {
   }
 
   passwordMatchValidator(g: FormGroup) {
+    console.log(g.get('password').value);
+    console.log(g.get('confirm').value);
    return g.get('password').value === g.get('confirm').value
-      ? {'validPassword': true} : null;
+      ? null : {'validPassword': true};
   }
 
 }
