@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
+import { User } from '../models/user';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
@@ -13,8 +13,6 @@ import { PasswordValidator } from '../validators/password.validator';
   styleUrls: ['./share.component.scss']
 })
 export class ShareComponent implements OnInit {
-
-  user : User;
 
   formreg: FormGroup;
   formlog: FormGroup;

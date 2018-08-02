@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {CardModule} from 'primeng/card';
+import { ActivatedRoute } from '@angular/router';
 
+import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import {DialogModule} from 'primeng/dialog';
 import {MenuItem} from 'primeng/api';
@@ -46,14 +47,19 @@ export class HomeComponent implements OnInit {
   items3: MenuItem[];
   items4: MenuItem[];
 
+  type: string;
+
   //For test
   goals = ['My first life goal', 'I want to climb a mountain', 'Go ice skiing'];
 
-  constructor(private utilService: UtilService, private router : Router) {
+  constructor(private utilService: UtilService, private router : Router, private route: ActivatedRoute) {
       this.items3 = [];
   }
 
   ngOnInit() {
+
+    this.type = this.route.snapshot.params['type'];
+
     this.items3 = [
         {label: 'sort ascending price', icon: 'fa fa-sort-asc', command: () => {
             this.priceasc();

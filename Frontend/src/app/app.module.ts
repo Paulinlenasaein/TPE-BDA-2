@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import {AccordionModule} from 'primeng/accordion';
 import {CardModule} from 'primeng/card';
 import {SplitButtonModule} from 'primeng/splitbutton';
@@ -23,6 +24,8 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 
 import { UtilService } from './services/util.service';
+import { ProductService } from './services/product.service';
+import { CartService } from './services/cart.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -39,6 +42,7 @@ import { ShareComponent } from './share/share.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AccordionModule,
     CardModule,
@@ -58,6 +62,8 @@ import { ShareComponent } from './share/share.component';
     MessageModule
   ],
   providers: [
+    ProductService,
+    CartService,
     UtilService
   ],
   bootstrap: [AppComponent]
