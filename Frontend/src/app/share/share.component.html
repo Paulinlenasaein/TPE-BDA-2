@@ -8,18 +8,31 @@
 			<hr class="nav-head">
       <div class="tab-content">
         <div class="tab-pane active fade in" id="register">
-					<form class="" method="post" action="#">
+					<form class="" novalidate [formGroup]="formreg" (ngSubmit)="addUser()">
 						<div class="row">
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="form-group">
-								<label for="name" class="cols-sm-2 control-label">First Name</label>
-								<div class="cols-sm-10">
-									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-										<input type="text" pInputText pKeyFilter="alpha" class="form-control" name="firstname" id="firstname"  placeholder="Enter your FirstName"/>
+									<label for="name" class="cols-sm-2 control-label">First Name</label>
+									<div class="cols-sm-10">
+										<div class="input-group">
+											<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+											<input type="text" pInputText pKeyFilter="alpha" class="form-control" formControlName="firstname" id="firstname" placeholder="Enter your FirstName"/>
+										</div>
 									</div>
 								</div>
-							</div>
+								<div id="vignets">
+									<div *ngIf="formreg.get('firstname').touched && formreg.get('firstname').invalid" class="cross-validation-error-message alert alert-danger">
+										<div *ngIf="formreg.get('firstname').hasError('required')">
+											First name is required!
+										</div>
+										<div *ngIf="formreg.get('firstname').hasError('minlength')">
+											Less than 2 characters!
+										</div>
+										<div *ngIf="formreg.get('firstname').hasError('maxlength')">
+											More than 30 characters!
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="form-group">
@@ -27,7 +40,14 @@
 									<div class="cols-sm-10">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-											<input type="text" pInputText pKeyFilter="alpha" class="form-control" name="lastname" id="lastname"  placeholder="Enter your LastName"/>
+											<input type="text" pInputText pKeyFilter="alpha" class="form-control" formControlName="lastname" id="lastname" placeholder="Enter your LastName"/>
+										</div>
+									</div>
+								</div>
+								<div id="vignets">
+									<div *ngIf="formreg.get('lastname').touched && formreg.get('lastname').invalid" class="alert alert-danger">
+										<div *ngIf="formreg.get('lastname').hasError('maxlength')">
+											More than 30 characters!
 										</div>
 									</div>
 								</div>
@@ -41,18 +61,38 @@
 									<div class="cols-sm-10">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-											<input type="text" pInputText [pKeyFilter]="mail" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+											<input type="text" pInputText pKeyFilter="email" class="form-control" formControlName="email" id="email" placeholder="Enter your Email"/>
+										</div>
+									</div>
+								</div>
+								<div id="vignets">
+									<div *ngIf="formreg.get('email').touched && formreg.get('email').invalid" class="alert alert-danger">
+										<div *ngIf="formreg.get('email').hasError('required')">
+											email is required!
+										</div>
+										<div *ngIf="formreg.get('email').hasError('email') && !formreg.get('email').hasError('required')">
+											Invalid email!
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 								<div class="form-group">
-									<label for="email" class="cols-sm-2 control-label">Your phone number</label>
+									<label for="number" class="cols-sm-2 control-label">Your phone number</label>
 									<div class="cols-sm-10">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-mobile-phone fa" aria-hidden="true"></i></span>
-											<input type="text" pInputText [pKeyFilter]="phoneNumber" class="form-control" name="email" id="email"  placeholder="Enter your phone number"/>
+											<input type="text" pInputText [pKeyFilter]="phoneNumber" class="form-control" formControlName="number" id="number" placeholder="Enter your phone number"/>
+										</div>
+									</div>
+								</div>
+								<div id="vignets">
+									<div *ngIf="formreg.get('number').touched && formreg.get('number').invalid" class="alert alert-danger">
+										<div *ngIf="formreg.get('number').hasError('required')">
+											phone number is required!
+										</div>
+										<div *ngIf="formreg.get('number').hasError('pattern')">
+											Invalid phone number, required 9 digits!
 										</div>
 									</div>
 								</div>
@@ -66,7 +106,20 @@
 									<div class="cols-sm-10">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-											<input type="text" pInputText pKeyFilter="alphanum" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+											<input type="text" pInputText pKeyFilter="alphanum" class="form-control" formControlName="username" id="username" placeholder="Enter your Username"/>
+										</div>
+									</div>
+								</div>
+								<div id="vignets">
+									<div *ngIf="formreg.get('username').touched && formreg.get('username').invalid" class="alert alert-danger">
+										<div *ngIf="formreg.get('username').hasError('required')">
+											Username is required!
+										</div>
+										<div *ngIf="formreg.get('username').hasError('minlength')">
+											Less than 4 characters!
+										</div>
+										<div *ngIf="formreg.get('username').hasError('maxlength')">
+											More than 30 characters!
 										</div>
 									</div>
 								</div>
@@ -77,28 +130,55 @@
 									<div class="cols-sm-10">
 										<div class="input-group pass_show">
 											<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-											<input type="password" pInputText pKeyFilter="alphanum" pPassword class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+											<input type="password" pInputText pKeyFilter="alphanum" pPassword class="form-control" formControlName="password" id="password" placeholder="Enter your Password"/>
 											<span class="input-group-addon ptxt">Show</span>
+										</div>
+									</div>
+								</div>
+								<div id="vignets">
+									<div *ngIf="formreg.get('password').touched && formreg.get('password').invalid" class="alert alert-danger">
+										<div *ngIf="formreg.get('password').hasError('required')">
+											Password is required!
+										</div>
+										<div *ngIf="formreg.get('password').hasError('minlength')">
+											Less than 5 characters!
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="form-group">
-							<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-							<div class="cols-sm-10">
-								<div class="input-group pass_show">
-									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" pInputText pKeyFilter="alphanum" pPassword class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-									<span class="input-group-addon ptxt">Show</span>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="form-group">
+									<label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+									<div class="cols-sm-10">
+										<div class="input-group pass_show">
+											<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+											<input type="password" pInputText pKeyFilter="alphanum" pPassword class="form-control" formControlName="confirm" id="confirm" placeholder="Confirm your Password"/>
+											<span class="input-group-addon ptxt">Show</span>
+										</div>
+									</div>
+								</div>
+								<div id="vignets">
+									<div *ngIf="formreg.get('confirm').touched && formreg.get('confirm').invalid" class="alert alert-danger">
+										<div *ngIf="formreg.get('confirm').hasError('required')">
+											Confirm password is required!
+										</div>
+										<div *ngIf="formreg.get('confirm').hasError('minlength')">
+											Less than 5 characters!
+										</div>
+										<div *ngIf="formreg.get('confirm').errors.validPassword && !formreg.get('confirm').hasError('minlength') && !formreg.get('confirm').hasError('required')">
+											This password is not the same as the one above
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 						<hr>
 						<div class="row">
 							<div class="col-sm-6 col-sm-offset-3">
-								<button pButton type="button" (click)="showInforms()" label="Register" icon="fa fa-registered" tabindex="4" class="form-control btn btn-primary btn-lg btn-login"></button>
+								<button pButton type="submit" (click)="showInforms()" [disabled]="formreg.invalid" label="Register" icon="fa fa-registered" tabindex="4" class="form-control btn btn-primary btn-lg btn-login" style="font-weight:bold;"></button>
 							</div>
 						</div><br>
 						<div class="login-register">
@@ -108,32 +188,57 @@
 				</div>
 
 				<div class="tab-pane fade in" id="login">
-					<div class="form-group">
-						 <label for="email" class="cols-sm-2 control-label">Your username or email</label>
-						 <div class="cols-sm-10">
-							 <div class="input-group">
-								 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-								 <input type="text" pInputText pKeyFilter="alphanum" class="form-control" name="email" id="email"  placeholder="Enter your Username or Email"/>
-								 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+					<form class="" novalidate [formGroup]="formlog" (ngsubmit)="verifyUser()">
+						<div class="form-group">
+							 <label for="useremail" class="cols-sm-2 control-label">Your username or email</label>
+							 <div class="cols-sm-10">
+								 <div class="input-group">
+									 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+									 <input type="text" pInputText pKeyFilter="alphanum" class="form-control" formControlName="useremail" id="useremail" placeholder="Enter your Username or Email"/>
+									 <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+								 </div>
 							 </div>
 						 </div>
-					 </div>
-					 <div class="form-group">
-						 <label for="email" class="cols-sm-2 control-label">Your password</label>
-						 <div class="cols-sm-10">
-							 <div class="input-group pass_show">
-								 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-								 <input type="password" pPassword pInputText pKeyFilter="alphanum" class="form-control" name="email" id="email"  placeholder="Enter your phone number"/>
-								 <span class="input-group-addon ptxt">Show</span>
+						 <div id="vignets">
+							 <div *ngIf="formlog.get('useremail').touched && formlog.get('useremail').invalid" class="alert alert-danger">
+								 <div *ngIf="formlog.get('useremail').hasError('required')">
+									 Username or email is required!
+								 </div>
+								 <div *ngIf="formlog.get('useremail').hasError('minlength')">
+									 Less than 4 characters!
+								 </div>
+								 <div *ngIf="formlog.get('useremail').hasError('maxlength')">
+									 More than 30 characters!
+								 </div>
 							 </div>
 						 </div>
-					 </div>
-					 <hr>
-					 <div class="row">
-						 <div class="col-sm-6 col-sm-offset-3">
-							 <button pButton type="button" (click)="showInforms()" label="Log in" icon="fa fa-hand-o-right" tabindex="4" class="form-control btn btn-primary btn-lg btn-login"></button>
+						 <div class="form-group">
+							 <label for="password" class="cols-sm-2 control-label">Your password</label>
+							 <div class="cols-sm-10">
+								 <div class="input-group pass_show">
+									 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									 <input type="password" pPassword pInputText pKeyFilter="alphanum" class="form-control" formControlName="password" id="email" placeholder="Enter your password"/>
+									 <span class="input-group-addon ptxt">Show</span>
+								 </div>
+							 </div>
 						 </div>
-					 </div>
+						 <div id="vignets">
+							 <div *ngIf="formlog.get('password').touched && formlog.get('password').invalid" class="alert alert-danger">
+								 <div *ngIf="formlog.get('password').hasError('required')">
+									 Password is required!
+								 </div>
+								 <div *ngIf="formlog.get('password').hasError('minlength')">
+									 Less than 5 characters!
+								 </div>
+							 </div>
+						 </div>
+						 <hr>
+						 <div class="row">
+							 <div class="col-sm-6 col-sm-offset-3">
+								 <button pButton type="submit" (click)="showInforms()" [disabled]="formlog.invalid" style="font-weight:bold;" label="Log in" icon="fa fa-hand-o-right" tabindex="4" class="form-control btn btn-primary btn-lg btn-login"></button>
+							 </div>
+						 </div>
+					</form>
 	      </div>
       </div>
     </section>
@@ -162,12 +267,7 @@
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
 			<div class="ui-dialog-content">
-				<span>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
-				His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-				Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-				kind and benevolent to those who give respect,
-				but given to ruthless violence whenever anything stands against the good of the family.
-				</span>
+
 			</div>
 		</div>
 	</div>
@@ -176,14 +276,3 @@
 			<button type="button" pButton icon="fa fa-close" (click)="display4=false" label="Cancel"></button>
 	</p-footer>
 </p-dialog>
-
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('.pass_show').append('<span class="ptxt">Show</span>');
-	});
-
-	$(document).on('click','.pass_show .ptxt', function(){
-		$(this).text($(this).text() == "Show" ? "Hide" : "Show");
-		$(this).prev().attr('type', function(index, attr){return attr == 'password' ? 'text' : 'password'; });
-	});
-</script>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import {AccordionModule} from 'primeng/accordion';
@@ -18,6 +19,8 @@ import {SpinnerModule} from 'primeng/spinner';
 import {PaginatorModule} from 'primeng/paginator';
 import {PasswordModule} from 'primeng/password';
 import {KeyFilterModule} from 'primeng/keyfilter';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 import { UtilService } from './services/util.service';
 
@@ -36,6 +39,7 @@ import { ShareComponent } from './share/share.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     AccordionModule,
     CardModule,
     SplitButtonModule,
@@ -49,7 +53,9 @@ import { ShareComponent } from './share/share.component';
     SpinnerModule,
     PaginatorModule,
     PasswordModule,
-    KeyFilterModule
+    KeyFilterModule,
+    MessagesModule,
+    MessageModule
   ],
   providers: [
     UtilService
