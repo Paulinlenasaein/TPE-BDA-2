@@ -24,13 +24,15 @@ import org.hibernate.validator.constraints.Length;
 public class twmUser implements Serializable {
     
     @Id
+    @Length(min = 2, max = 30)
     private String username;
     
-    @Length(min = 2)
+    @Length(min = 2, max = 30)
     @NotNull(message = "Veuillez spécifier votre premier nom")
     private String firstName;
     
     @Column(nullable = true)
+    @Length(min = 0, max = 30)
     private String lastName;
     
     @NotNull(message = "Le mot de passe doit être spécifié")
