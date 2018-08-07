@@ -1,5 +1,26 @@
 .card-responsive {font-size: 12px;font-weight: bold;}
 
+.card-title{
+  font-size: 13px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 5px;
+  color: #E35505;
+}
+
+.card-price{
+  font-weight: bold;
+  font-size: 12px;
+  color: #000;
+}
+
+#card-content{
+  width: 200px;
+  height: 50px;
+  background-color: #fff;
+  overflow: auto;
+}
+
 .ui-growl { z-index: 2 !important; }
 
 .panier-block{

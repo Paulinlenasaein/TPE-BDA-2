@@ -13,23 +13,27 @@ export class ProductService {
     return this.http.get<any>('http://localhost:8080/twmsos-api/produits', { observe: 'response' });
   }
 
+  product(id: number): Observable<HttpResponse<any>> {
+    return this.http.get<any>('http://localhost:8080/twmsos-api/produits/'+id, { observe: 'response' });
+  }
+
   prodType(type: string): Observable<HttpResponse<any>> {
     return this.http.get<any>('http://localhost:8080/twmsos-api/typeprod/'+type, { observe: 'response' });
   }
 
-  nomAsc(): Observable<HttpResponse<any>> {
+  nameAsc(): Observable<HttpResponse<any>> {
     return this.http.get<any>('http://localhost:8080/twmsos-api/nomasc', { observe: 'response' });
   }
 
-  nomDesc(): Observable<HttpResponse<any>> {
+  nameDesc(): Observable<HttpResponse<any>> {
     return this.http.get<any>('http://localhost:8080/twmsos-api/nomdesc', { observe: 'response' });
   }
 
-  prixAsc(): Observable<HttpResponse<any>> {
+  priceAsc(): Observable<HttpResponse<any>> {
     return this.http.get<any>('http://localhost:8080/twmsos-api/prixasc', { observe: 'response' });
   }
 
-  prixDesc(): Observable<HttpResponse<any>> {
+  priceDesc(): Observable<HttpResponse<any>> {
     return this.http.get<any>('http://localhost:8080/twmsos-api/prixdesc', { observe: 'response' });
   }
 

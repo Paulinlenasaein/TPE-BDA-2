@@ -50,7 +50,7 @@ public class twmProduitResource {
     }
     
     @GET
-     @Path("/nomdesc")
+    @Path("/nomdesc")
     @Produces(value = MediaType.APPLICATION_JSON)
     public Page<twmProduit> returnAllDesc(@DefaultValue("0") @QueryParam("from") int from, @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {
         return produitService.findAllDesc(from, to);

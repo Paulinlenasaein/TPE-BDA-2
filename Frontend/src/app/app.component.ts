@@ -52,8 +52,8 @@ export class AppComponent {
 
     this.items2 = [
             {
-                label: 'File',
-                icon: 'fa fa-fw fa-file-o',
+                label: 'SOFTWARE & CLOUD',
+                icon: 'fa fa-fw fa-cloud',
                 items: [{
                         label: 'New',
                         icon: 'fa fa-fw fa-plus',
@@ -70,16 +70,16 @@ export class AppComponent {
                 }
             },
             {
-                label: 'Edit',
-                icon: 'fa fa-fw fa-edit',
+                label: 'TRAINING AND CERTIFICATIONS',
+                icon: 'fa fa-fw fa-certificate',
                 items: [
                     {label: 'Undo', icon: 'fa fa-fw fa-mail-forward'},
                     {label: 'Redo', icon: 'fa fa-fw fa-mail-reply'}
                 ]
             },
             {
-                label: 'Help',
-                icon: 'fa fa-fw fa-question',
+                label: 'DIGITAL MARKETING',
+                icon: 'fa fa-fw fa-bookmark',
                 items: [
                     {
                         label: 'Contents',
@@ -105,8 +105,8 @@ export class AppComponent {
                 ]
             },
             {
-                label: 'Actions',
-                icon: 'fa fa-fw fa-gear',
+                label: 'INTERNET OF THINGS',
+                icon: 'fa fa-fw fa-internet-explorer',
                 items: [
                     {
                         label: 'Edit',
