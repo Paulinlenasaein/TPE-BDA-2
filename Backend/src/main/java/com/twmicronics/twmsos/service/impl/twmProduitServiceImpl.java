@@ -82,8 +82,8 @@ public class twmProduitServiceImpl implements ItwmProduitService {
     }
 
     @Override
-    public twmProduit findOneByNomProd(String nomProd) throws DataAccessException {
-        return produitDao.findByNomProdIgnoreCase(nomProd);
+    public Page<twmProduit> findAllByNomProd(String nomProd, int from, int to) throws DataAccessException {
+        return produitDao.findByNomProdIgnoreCaseLike(nomProd, PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "prixUnit")));
     }
 
     @Override

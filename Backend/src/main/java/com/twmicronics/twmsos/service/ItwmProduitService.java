@@ -101,10 +101,12 @@ public interface ItwmProduitService {
      * recherche les produits ayant un nom dobbé
      *
      * @param nomProd nom du produit
-     * @return le produit dont le nom est passé en paramètre
+     * @param from numéro de la page initiale
+     * @param to nombre de page à renvoyer
+     * @return la liste des produits dont le nom est semblable à celui passé en paramètre
      * @throws DataAccessException si un événement non prévu survient
      */
-    public twmProduit findOneByNomProd(String nomProd) throws DataAccessException;
+    public Page<twmProduit> findAllByNomProd(String nomProd, int from, int to) throws DataAccessException;
 
     /**
      * recherche les produit ayant un solde donné

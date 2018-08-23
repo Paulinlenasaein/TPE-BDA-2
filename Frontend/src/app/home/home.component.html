@@ -4,8 +4,8 @@
 <div class="row">
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
       <div class="ui-inputgroup">
-        <input type="text" pInputText placeholder="Product of TW Micronics" class="btn-block">
-        <button pButton type="button" label="Search" class="btn ui-button-primary detail-promo"><span class="glyphicon glyphicon-search"></span></button>
+        <input type="text" pInputText placeholder="Product of TW Micronics" class="btn-block" [(ngModel)]="search">
+        <button pButton type="button" label="Search" (onClick)="searchProd()" class="btn ui-button-primary detail-promo"><span class="glyphicon glyphicon-search"></span></button>
       </div>
   </div>
   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 btn-lg-style-filter">
@@ -37,17 +37,16 @@
   </div>
   <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
     <div class="panier-block">
-      <div class="nbreprod" *ngIf="carts!==undefined">{{carts.length}}</div>
-      <div class="nbreprod" *ngIf="carts===undefined">0</div>
+      <div class="nbreprod">{{lengthPan}}</div>
       <button type="button" (click)="showCart()" class="btn-lg-style button-pan"><img src="../assets/home/images/panier.png" alt="Mon panier" class="img-panier"/></button>
     </div>
   </div>
 </div>
 <hr>
 <div class="row">
-  <div *ngFor="let product of products">
+  <div *ngFor="let product of products;let index=index">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim">
-      <p-card styleClass="ui-card-shadow">
+      <p-card styleClass="ui-card-shadow" [@goals]="products.length">
           <p-header>
               <img src="Card" src="../assets/home/images/products/{{product.image}}">
           </p-header>
@@ -59,17 +58,17 @@
               {{product.prixUnit}} {{devise}}
             </div>
             <div class="card-price" *ngIf="devise==='dollar'">
-              $ {{product.prixUnit * 0.0018}}
+              <i class="fa fa-dollar"></i> {{roundDecimal(product.prixUnit * 0.0018, 2)}}
             </div>
             <div class="card-price" *ngIf="devise==='euro'">
-              {{product.prixUnit * 0.0015}} £ (euro)
+              {{roundDecimal(product.prixUnit * 0.0015, 2)}} <i class="fa fa-euro"></i>
             </div>
           </div>
           <p-footer>
             <div class="row">
               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="ui-inputgroup">
-                  <button pButton type="button" (click)="showDialogAdd(product.id)" icon="fa fa-cart-plus" label="Add to cart"  class="ui-button-success card-responsive"></button>
+                  <button pButton type="button" (click)="showDialogAdd(product.id, index)" icon="fa fa-cart-plus" label="Add to cart"  class="ui-button-success card-responsive"></button>
                   <button type="button" (click)="showDialog(product.id)" pButton icon="fa fa-info-circle" label="Detail prod" class="ui-button-secondary card-responsive"></button>
                 </div>
               </div>
@@ -85,7 +84,7 @@
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
       <div class="ui-dialog-content">
-        <ul class="list-group" *ngIf="product !== undefined">
+        <ul class="list-group" *ngIf="product!==undefined">
           <li class="list-group-item">Nom du produit: <i class="form-item">{{product.nomProd}}</i></li>
           <li class="list-group-item">Prix unitaire: <i class="form-item">{{product.prixUnit}}</i></li>
           <li class="list-group-item">Type du produit: <i class="form-item">{{product.type.type}}</i></li>
@@ -98,40 +97,78 @@
   </div>
   <p-footer class="ui-dialog-footer">
       <button *ngIf="add === false" type="button" pButton icon="fa fa-check" (click)="display1=false" label="Ok"></button>
-      <button *ngIf="add === true" type="button" icon="fa fa-cart-plus" pButton (click)="AddToCard()" label="confirm the addition"></button>
+      <button *ngIf="add === true" type="button" icon="fa fa-cart-plus" pButton (click)="AddToCard(product.id)" label="confirm the addition"></button>
       <button *ngIf="add === true" type="button" pButton icon="fa fa-close" (click)="CancelAdd()" label="Cancel"></button>
   </p-footer>
 </p-dialog>
 
-<p-dialog header="Mon panier" [(visible)]="display2" [modal]="true" [responsive]="true" [width]="350" [minWidth]="200" [minY]="70"
-      [maximizable]="false" [baseZIndex]="10000" (onHide)="CancelBuy()" class="ui-dialog-titlebar">
+<p-dialog header="Mon panier" [(visible)]="display2" [modal]="true" [responsive]="true" [minWidth]="400"
+[maximizable]="false" [baseZIndex]="10000" (onHide)="CancelBuy()" class="ui-dialog-titlebar">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
-      <div class="ui-dialog-content" *ngIf="cart!==undefined">
-        <div class="life-container" *ngFor="let panprod of panprods; let i = index">
-          <ul class="list-group">
-            <li class="list-group-item">Produit: <i class="form-item">{{panprod.produit.nomProd}}</i></li>
-            <li class="list-group-item">Nbre exemplaire: <i class="form-item">{{panprod.nbreExempl}}</i></li>
-            <li class="list-group-item">Prix: <i class="form-item">{{prixTotal}}</i></li>
-            <hr>
-            <li class="list-group-item">Taxe: <i class="form-item">{{taxe}} XAF</i></li>
-            <li class="list-group-item">Solde Total: <i class="form-item">{{cart.soldeTotal}}</i></li>
-          </ul>
-        </div>
+      <div class="ui-dialog-content" *ngIf="lengthPan!==0">
+        <p-table [columns]="cols" [value]="panprods" selectionMode="single" [responsive]="true">
+          <ng-template pTemplate="caption">
+              Detail of my cart
+          </ng-template>
+          <ng-template pTemplate="header">
+              <tr>
+                <th *ngFor="let col of columns">
+                    {{col.header}}
+                </th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-panprod>
+            <tr>
+                <td>
+                    {{panprod.produit.nomProd}}
+                </td>
+                <td>
+                    {{panprod.produit.prixUnit}}
+                </td>
+                <td>
+                    {{panprod.nbreExempl}}
+                </td>
+                <td>
+                    {{panprod.prixTotal}}
+                </td>
+                <td>
+                    <button type="button" pButton icon="fa fa-close" class="btn btn-danger"(click)="CancelToCart(panprod)" label="Delete"></button>
+                </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="footer">
+              <tr>
+                <td colspan="3">Prix hors Taxe</td>
+                <td>{{cart.soldeTotal}}</td>
+              </tr>
+              <tr>
+                <td colspan="3">Taxe</td>
+                <td>{{prixTaxe}}</td>
+              </tr>
+              <tr>
+                <td colspan="3">Somme totale</td>
+                <td>{{prixTaxe + cart.soldeTotal}}</td>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="summary">
+              There are {{panprods?.length}} product(s)
+          </ng-template>
+        </p-table>
       </div>
-      <div class="ui-dialog-content" *ngIf="cart===undefined">
+      <div class="ui-dialog-content" *ngIf="lengthPan===0">
         <i class="form-item">Votre panier est vide pour l'instant...</i>
       </div>
     </div>
   </div>
   <p-footer class="ui-dialog-footer">
       <button type="button" pButton icon="fa fa-mail-reply" (click)="display2=false" label="continue shopping"></button>
-      <button type="button" icon="fa fa-bolt" pButton (click)="BuyNow()" label="Buy now"></button>
+      <button type="button" icon="fa fa-bolt" pButton (click)="BuyNow()" label="Buy now" [disabled]="lengthPan===0"></button>
   </p-footer>
 </p-dialog>
 
 <p-dialog header="Details sur les promotions" [(visible)]="display3" [modal]="true" [responsive]="true" [minWidth]="400" [minY]="70"
-      [maximizable]="false" [baseZIndex]="10000" class="ui-dialog-titlebar">
+      [maximizable]="true" [baseZIndex]="10000" class="ui-dialog-titlebar">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
       <div class="ui-dialog-content" *ngIf="promos!==undefined">
@@ -144,7 +181,6 @@
             <li class="list-group-item">Date de début: <i class="form-item">{{promo.dateDebut}}</i></li>
             <li class="list-group-item">Date de fin: <i class="form-item">{{promo.dateFin}}</i></li>
           </ul>
-          <hr>
         </div>
       </div>
     </div>

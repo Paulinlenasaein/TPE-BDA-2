@@ -94,8 +94,8 @@ public class twmProduitResource {
     @GET
     @Path("/nomprod/{nomprod}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public twmProduit returnOneByNomProd(@PathParam("nomprod") String nomProd) throws DataAccessException {
-        return produitService.findOneByNomProd(nomProd);
+    public Page<twmProduit> returnAllByNomProd(@PathParam("nomprod") String nomProd, @PathParam("type") int type, @DefaultValue("0") @QueryParam("from") int from, @DefaultValue("50") @QueryParam("to") int to) throws DataAccessException {
+        return produitService.findAllByNomProd(nomProd, from, to);
     }
 
     @GET

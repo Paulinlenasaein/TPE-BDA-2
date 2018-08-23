@@ -5,7 +5,7 @@ export class Cart {
     public indexPan: string,
     public soldeTotal: number,
     public client: User,
-    public dateJour: Date,
+    public dateJour: string,
     public ack: number
   ){}
 }

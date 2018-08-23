@@ -39,8 +39,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var routes = [
     { path: 'home', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
     { path: 'home/:type', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
-    { path: 'home/:sort', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
+    { path: 'home/priceasc/:sort', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
+    { path: 'home/pricedesc/:sort', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
+    { path: 'home/nameasc/:sort', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
+    { path: 'home/namedesc/:sort', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
+    { path: 'home/search/:nameprod', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
     { path: 'share', component: __WEBPACK_IMPORTED_MODULE_3__share_share_component__["a" /* ShareComponent */] },
+    { path: 'cart', component: __WEBPACK_IMPORTED_MODULE_3__share_share_component__["a" /* ShareComponent */] },
     { path: '', pathMatch: 'full', redirectTo: 'home' }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -62,14 +67,14 @@ var AppRoutingModule = /** @class */ (function () {
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid\">\n  <nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" data-target=\".navbar-collapse\" data-toggle=\"collapse\" class=\"navbar-toggle collapsed\" aria-expanded=\"false\" aria-controls=\"navbar\">\n          <span class=\"sr-only\">Menu</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a href=\"/en_US/\" class=\"navbar-brand logo\">\n            <span alt=\"Logo of TW Micronics\" title=\"TW Micronics\"><img class=\"img img-responsive\" src=\"../assets/home/images/logo.png\"/></span>\n        </a>\n        <div class=\"position-responsive\"><a class=\"disabled linkApp\" > TW MICRONICS SECURE ONLINE SHARE </a></div>\n      </div>\n      <div class=\"navbar-collapse collapse\">\n        <ul class=\"nav navbar-nav\">\n          <li routerLinkActive=\"active\"><a routerLink=\"home\"><span class=\"glyphicon glyphicon-share\"></span>  Shop </a></li>\n          <li routerLinkActive=\"active\"><a routerLink=\"share\"><span class=\"glyphicon glyphicon-shopping-cart\"></span>  Mon panier</a></li>\n          <li routerLinkActive=\"active\"><a routerLink=\"about\"><span class=\"glyphicon glyphicon-tint\"></span>  About</a></li>\n          <li routerLinkActive=\"active\" class=\"navbar-right\"><a routerLink=\"account\"><span class=\"glyphicon glyphicon-user\"></span> Sign in</a></li>\n        </ul>\n        <div class=\"navbar-nav navbar-right langue\">\n          <p-splitButton label=\"Choisir la langue\" icon=\"fa fa-adjust\" (onClick)=\"save()\" [model]=\"items1\"></p-splitButton>\n        </div>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"container-fluid\">\n    <div class=\"jumbotron\">\n      <div class=\"row\">\n        <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12\">\n          <hr>\n          <div class=\"row\">\n            <div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-2\">\n              <button class=\"btn btn-info btn-lg-style\"><span class=\"glyphicon glyphicon-circle-arrow-down\"></span></button>\n            </div>\n            <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\">\n              <button class=\"btn btn-info btn-lg btn-block\">All products</button>\n            </div>\n          </div>\n          <hr>\n          <p-panelMenu [model]=\"items2\" [multiple] = false class=\"panel-menu\"></p-panelMenu>\n        </div>\n        <div class=\"col-lg-9 col-md-9 col-sm-9 col-xs-12\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- Footer -->\n<section id=\"footer\">\n  <div class=\"container\">\n    <div class=\"row text-center text-xs-center text-sm-left text-md-left\">\n      <div class=\"col-xs-12 col-sm-4 col-md-4\">\n        <h3>Services</h3>\n        <ul class=\"list-unstyled quick-links\">\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Home</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>About</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>FAQ</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Get Started</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Videos</a></li>\n        </ul>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-md-4\">\n        <h3>Join us</h3>\n        <ul class=\"list-unstyled quick-links\">\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Home</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>About</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>FAQ</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Get Started</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Videos</a></li>\n        </ul>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-md-4\">\n        <h3>TW Micronics</h3>\n        <ul class=\"list-unstyled quick-links\">\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Home</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>About</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>FAQ</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Get Started</a></li>\n          <li><a href=\"#\" title=\"Design and developed by\"><i class=\"fa fa-angle-double-right\"></i>Imprint</a></li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5\">\n        <ul class=\"list-unstyled list-inline social text-center\">\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\"><i class=\"fa fa-facebook\"></i></a></li>\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\"><i class=\"fa fa-twitter\"></i></a></li>\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\"><i class=\"fa fa-instagram\"></i></a></li>\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\"><i class=\"fa fa-google-plus\"></i></a></li>\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\" target=\"_blank\"><i class=\"fa fa-envelope\"></i></a></li>\n        </ul>\n      </div>\n      <hr>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white\">\n        <p class=\"copyright\"> All right Reversed. Copyright © <a class=\"text-green ml-2\" href=\"https://web.facebook.com/fotsing.annick\" target=\"_blank\">FOTSING TEDJON ANNICK PAULIN</a></p>\n      </div>\n      <hr>\n    </div>\n  </div>\n</section>\n<!-- ./Footer -->\n"
+module.exports = "<div class=\"container-fluid\">\n  <nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" data-target=\".navbar-collapse\" data-toggle=\"collapse\" class=\"navbar-toggle collapsed\" aria-expanded=\"false\" aria-controls=\"navbar\">\n          <span class=\"sr-only\">Menu</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <a href=\"/en_US/\" class=\"navbar-brand logo\">\n            <span alt=\"Logo of TW Micronics\" title=\"TW Micronics\"><img class=\"img img-responsive\" src=\"../assets/home/images/logo.png\"/></span>\n        </a>\n        <div class=\"position-responsive\"><a class=\"disabled linkApp\" > TW MICRONICS SECURE ONLINE SHARE </a></div>\n      </div>\n      <div class=\"navbar-collapse collapse\">\n        <ul class=\"nav navbar-nav\">\n          <li routerLinkActive=\"active\"><a routerLink=\"home\"><span class=\"fa fa-shopping-bag\"></span>  Shop </a></li>\n          <li routerLinkActive=\"active\"><a routerLink=\"cart\"><span class=\"glyphicon glyphicon-shopping-cart\"></span>  Mon panier</a></li>\n          <li routerLinkActive=\"active\" class=\"navbar-right\"><a routerLink=\"account\"><span class=\"glyphicon glyphicon-user\"></span> Mon compte</a></li>\n        </ul>\n        <div class=\"navbar-nav navbar-right langue\">\n          <a routerLink=\"account\" class=\"signin\"><span class=\"fa fa-user-circle fa\"></span> Login</a>\n          <p-splitButton label=\"Choisir la langue\" icon=\"fa fa-adjust\" (onClick)=\"save()\" [model]=\"items1\"></p-splitButton>\n        </div>\n      </div>\n    </div>\n  </nav>\n\n  <div class=\"container-fluid\">\n    <div class=\"jumbotron\">\n      <div class=\"row\">\n        <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12\">\n          <hr>\n          <div class=\"row\">\n            <div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-2\">\n              <button class=\"btn btn-info btn-lg-style\"><span class=\"glyphicon glyphicon-circle-arrow-down\"></span></button>\n            </div>\n            <div class=\"col-lg-10 col-md-10 col-sm-10 col-xs-10\">\n              <button class=\"btn btn-info btn-lg btn-block\">All products</button>\n            </div>\n          </div>\n          <hr>\n          <p-panelMenu [model]=\"items2\" [multiple] = false class=\"panel-menu\"></p-panelMenu>\n        </div>\n        <div class=\"col-lg-9 col-md-9 col-sm-9 col-xs-12\">\n          <router-outlet></router-outlet>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<!-- Footer -->\n<section id=\"footer\">\n  <div class=\"container\">\n    <div class=\"row text-center text-xs-center text-sm-left text-md-left\">\n      <div class=\"col-xs-12 col-sm-4 col-md-4\">\n        <h3>Services</h3>\n        <ul class=\"list-unstyled quick-links\">\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Home</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>About</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>FAQ</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Get Started</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Videos</a></li>\n        </ul>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-md-4\">\n        <h3>Join us</h3>\n        <ul class=\"list-unstyled quick-links\">\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Home</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>About</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>FAQ</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Get Started</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Videos</a></li>\n        </ul>\n      </div>\n      <div class=\"col-xs-12 col-sm-4 col-md-4\">\n        <h3>TW Micronics</h3>\n        <ul class=\"list-unstyled quick-links\">\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Home</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>About</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>FAQ</a></li>\n          <li><a href=\"javascript:void();\"><i class=\"fa fa-angle-double-right\"></i>Get Started</a></li>\n          <li><a href=\"#\" title=\"Design and developed by\"><i class=\"fa fa-angle-double-right\"></i>Imprint</a></li>\n        </ul>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5\">\n        <ul class=\"list-unstyled list-inline social text-center\">\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\"><i class=\"fa fa-facebook\"></i></a></li>\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\"><i class=\"fa fa-twitter\"></i></a></li>\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\"><i class=\"fa fa-instagram\"></i></a></li>\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\"><i class=\"fa fa-google-plus\"></i></a></li>\n          <li class=\"list-inline-item\"><a href=\"javascript:void();\" target=\"_blank\"><i class=\"fa fa-envelope\"></i></a></li>\n        </ul>\n      </div>\n      <hr>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white\">\n        <p class=\"copyright\"> All right Reversed. Copyright © <a class=\"text-green ml-2\" href=\"https://web.facebook.com/fotsing.annick\" target=\"_blank\">FOTSING TEDJON ANNICK PAULIN</a></p>\n      </div>\n      <hr>\n    </div>\n  </div>\n</section>\n<!-- ./Footer -->\n"
 
 /***/ }),
 
 /***/ "./src/app/app.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".btn-lg-style-filter {\n  width: auto;\n  height: 50px; }\n\n.inline-form input {\n  display: inline-block;\n  width: 100px; }\n\n.linkApp {\n  cursor: pointer;\n  text-decoration: none; }\n\n.navbar-brand, .navbar-nav li a {\n  line-height: 80px;\n  height: 80px;\n  padding-top: 0; }\n\n.img {\n  vertical-align: middle; }\n\n.img-responsive {\n  display: block;\n  max-width: 80px;\n  height: auto; }\n\nul li {\n  font-size: 18px; }\n\n.position-responsive {\n  padding-top: 10px;\n  font-size: 18px;\n  font-weight: bold;\n  text-align: center; }\n\n.langue {\n  padding-top: 20px;\n  padding-right: 20px;\n  font-size: 18px;\n  font-weight: bold;\n  text-align: center; }\n\nul li {\n  font-weight: bold; }\n\n.panel-menu {\n  color: #e35505;\n  font-weight: bold; }\n\n/* Footer */\n\nsection {\n  padding: 60px 0; }\n\nsection .section-title {\n  text-align: center;\n  color: #007b5e;\n  margin-bottom: 50px;\n  text-transform: uppercase; }\n\n#footer {\n  background: #007b5e !important; }\n\n#footer h5, h3 {\n  padding-left: 10px;\n  border-left: 3px solid #eeeeee;\n  padding-bottom: 6px;\n  margin-bottom: 20px;\n  color: #ffffff; }\n\n#footer a {\n  color: #ffffff;\n  text-decoration: none !important;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\n#footer ul.social li {\n  padding: 3px 0; }\n\n#footer ul.social li a i {\n  margin-right: 5px;\n  font-size: 25px;\n  -webkit-transition: .5s all ease;\n  transition: .5s all ease; }\n\n#footer ul.social li:hover a i {\n  font-size: 30px;\n  margin-top: -10px; }\n\n#footer ul.social li a,\n#footer ul.quick-links li a {\n  color: #ffffff; }\n\n#footer ul.social li a:hover {\n  color: #eeeeee; }\n\n#footer ul.quick-links li {\n  padding: 3px 0;\n  -webkit-transition: .5s all ease;\n  transition: .5s all ease; }\n\n#footer ul.quick-links li:hover {\n  padding: 3px 0;\n  margin-left: 5px;\n  font-weight: 700; }\n\n#footer ul.quick-links li a i {\n  margin-right: 5px; }\n\n#footer ul.quick-links li:hover a i {\n  font-weight: 700; }\n\n@media (max-width: 767px) {\n  #footer h5 {\n    padding-left: 0;\n    border-left: transparent;\n    padding-bottom: 0px;\n    margin-bottom: 10px; } }\n\n.copyright {\n  font-weight: bolder;\n  font-size: 18px;\n  padding: 10px 10px 10px 10px;\n  color: #fff; }\n"
+module.exports = ".btn-lg-style-filter {\n  width: auto;\n  height: 50px; }\n\n.inline-form input {\n  display: inline-block;\n  width: 100px; }\n\n.linkApp {\n  cursor: pointer;\n  text-decoration: none; }\n\n.navbar-brand, .navbar-nav li a {\n  line-height: 80px;\n  height: 80px;\n  padding-top: 0; }\n\n.img {\n  vertical-align: middle; }\n\n.img-responsive {\n  display: block;\n  max-width: 80px;\n  height: auto; }\n\nul li {\n  font-size: 18px; }\n\n.position-responsive {\n  padding-top: 10px;\n  font-size: 18px;\n  font-weight: bold;\n  text-align: center; }\n\n.langue {\n  padding-top: 20px;\n  padding-right: 20px;\n  font-size: 18px;\n  font-weight: bold;\n  text-align: center; }\n\n.signin {\n  padding-right: 15px;\n  float: left;\n  text-decoration: none;\n  font-weight: bold;\n  color: #fff; }\n\nul li {\n  font-weight: bold; }\n\n.panel-menu {\n  color: #e35505;\n  font-weight: bold; }\n\n/* Footer */\n\nsection {\n  padding: 60px 0; }\n\nsection .section-title {\n  text-align: center;\n  color: #007b5e;\n  margin-bottom: 50px;\n  text-transform: uppercase; }\n\n#footer {\n  background: #007b5e !important; }\n\n#footer h5, h3 {\n  padding-left: 10px;\n  border-left: 3px solid #eeeeee;\n  padding-bottom: 6px;\n  margin-bottom: 20px;\n  color: #ffffff; }\n\n#footer a {\n  color: #ffffff;\n  text-decoration: none !important;\n  background-color: transparent;\n  -webkit-text-decoration-skip: objects; }\n\n#footer ul.social li {\n  padding: 3px 0; }\n\n#footer ul.social li a i {\n  margin-right: 5px;\n  font-size: 25px;\n  -webkit-transition: .5s all ease;\n  transition: .5s all ease; }\n\n#footer ul.social li:hover a i {\n  font-size: 30px;\n  margin-top: -10px; }\n\n#footer ul.social li a,\n#footer ul.quick-links li a {\n  color: #ffffff; }\n\n#footer ul.social li a:hover {\n  color: #eeeeee; }\n\n#footer ul.quick-links li {\n  padding: 3px 0;\n  -webkit-transition: .5s all ease;\n  transition: .5s all ease; }\n\n#footer ul.quick-links li:hover {\n  padding: 3px 0;\n  margin-left: 5px;\n  font-weight: 700; }\n\n#footer ul.quick-links li a i {\n  margin-right: 5px; }\n\n#footer ul.quick-links li:hover a i {\n  font-weight: 700; }\n\n@media (max-width: 767px) {\n  #footer h5 {\n    padding-left: 0;\n    border-left: transparent;\n    padding-bottom: 0px;\n    margin-bottom: 10px; } }\n\n.copyright {\n  font-weight: bolder;\n  font-size: 18px;\n  padding: 10px 10px 10px 10px;\n  color: #fff; }\n"
 
 /***/ }),
 
@@ -79,8 +84,7 @@ module.exports = ".btn-lg-style-filter {\n  width: auto;\n  height: 50px; }\n\n.
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("./node_modules/@angular/animations/fesm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_util_service__ = __webpack_require__("./src/app/services/util.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_util_service__ = __webpack_require__("./src/app/services/util.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -90,7 +94,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 var AppComponent = /** @class */ (function () {
@@ -195,24 +198,10 @@ var AppComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
-            providers: [__WEBPACK_IMPORTED_MODULE_2__services_util_service__["a" /* UtilService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_1__services_util_service__["a" /* UtilService */]],
             styles: [__webpack_require__("./src/app/app.component.scss")],
-            animations: [
-                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["trigger"])('goals', [
-                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["transition"])('* => *', [
-                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["query"])(':enter', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["style"])({ opacity: 0 }), { optional: true }),
-                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["query"])(':enter', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["stagger"])('300ms', [
-                            Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["animate"])('.6s ease-in', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["keyframes"])([
-                                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["style"])({ opacity: 0, transform: 'translateY(-75%)', offset: 0 }),
-                                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["style"])({ opacity: .5, transform: 'translateY(35px)', offset: 0.3 }),
-                                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["style"])({ opacity: 1, transform: 'translateY(0)', offset: 1.0 }),
-                            ]))
-                        ]), { optional: true })
-                    ])
-                ])
-            ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_util_service__["a" /* UtilService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_util_service__["a" /* UtilService */]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -262,18 +251,25 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19_primeng_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_19_primeng_messages__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_primeng_message__ = __webpack_require__("./node_modules/primeng/message.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_primeng_message___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_primeng_message__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_util_service__ = __webpack_require__("./src/app/services/util.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_product_service__ = __webpack_require__("./src/app/services/product.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_cart_service__ = __webpack_require__("./src/app/services/cart.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__app_component__ = __webpack_require__("./src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__share_share_component__ = __webpack_require__("./src/app/share/share.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_primeng_table__ = __webpack_require__("./node_modules/primeng/table.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_primeng_table___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_21_primeng_table__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_util_service__ = __webpack_require__("./src/app/services/util.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_product_service__ = __webpack_require__("./src/app/services/product.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_cart_service__ = __webpack_require__("./src/app/services/cart.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__services_promotion_service__ = __webpack_require__("./src/app/services/promotion.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__share_share_component__ = __webpack_require__("./src/app/share/share.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
 
 
 
@@ -308,9 +304,9 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_24__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_25__home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__share_share_component__["a" /* ShareComponent */]
+                __WEBPACK_IMPORTED_MODULE_27__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_28__home_home_component__["a" /* HomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_29__share_share_component__["a" /* ShareComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -333,14 +329,17 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_17_primeng_password__["PasswordModule"],
                 __WEBPACK_IMPORTED_MODULE_18_primeng_keyfilter__["KeyFilterModule"],
                 __WEBPACK_IMPORTED_MODULE_19_primeng_messages__["MessagesModule"],
-                __WEBPACK_IMPORTED_MODULE_20_primeng_message__["MessageModule"]
+                __WEBPACK_IMPORTED_MODULE_20_primeng_message__["MessageModule"],
+                __WEBPACK_IMPORTED_MODULE_21_primeng_table__["TableModule"]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_22__services_product_service__["a" /* ProductService */],
-                __WEBPACK_IMPORTED_MODULE_23__services_cart_service__["a" /* CartService */],
-                __WEBPACK_IMPORTED_MODULE_21__services_util_service__["a" /* UtilService */]
+                __WEBPACK_IMPORTED_MODULE_23__services_product_service__["a" /* ProductService */],
+                __WEBPACK_IMPORTED_MODULE_24__services_cart_service__["a" /* CartService */],
+                __WEBPACK_IMPORTED_MODULE_22__services_util_service__["a" /* UtilService */],
+                __WEBPACK_IMPORTED_MODULE_25__services_promotion_service__["a" /* PromotionService */],
+                __WEBPACK_IMPORTED_MODULE_26__services_user_service__["a" /* UserService */]
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_24__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_27__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -353,14 +352,14 @@ var AppModule = /** @class */ (function () {
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui-growl ui-growl-message\">\n  <p-growl [(value)]=\"msgs\" [style] = \"{'padding-top':'70px'}\"></p-growl>\n</div>\n<div class=\"row\">\n  <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n      <div class=\"ui-inputgroup\">\n        <input type=\"text\" pInputText placeholder=\"Product of TW Micronics\" class=\"btn-block\">\n        <button pButton type=\"button\" label=\"Search\" class=\"btn ui-button-primary detail-promo\"><span class=\"glyphicon glyphicon-search\"></span></button>\n      </div>\n  </div>\n  <div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-12 btn-lg-style-filter\">\n    <div class=\"ui-splitbutton-button\">\n      <p-splitButton label=\"Sort By\" class=\"detail-promo\" icon=\"fa fa-filter\" (onClick)=\"save()\" [model]=\"items3\"></p-splitButton>\n    </div>\n  </div>\n  <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n    <div class=\"btn-block ui-splitbutton-button\">\n      <p-splitButton label=\"Pricelist of TW Micronics\" class=\"detail-promo\" icon=\"fa fa-balance-scale\" (onClick)=\"save()\" [model]=\"items4\"></p-splitButton>\n    </div>\n  </div>\n</div>\n<hr>\n<div class=\"row\">\n  <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n    <div class=\"ui-inputgroup\">\n      <div class=\"promotion btn-block\" *ngIf=\"promos!==undefined\">\n        <span>Profitez des promotions en cours...</span>\n      </div>\n      <div class=\"promotion btn-block\" *ngIf=\"promos===undefined\">\n        <span>Aucune promotion en cours...</span>\n      </div>\n      <button pButton type=\"button\" label=\"see detail\" icon=\"fa fa-dot-circle-o\" (click)=\"showPromotion()\" class=\"detail-promo\"></button>\n    </div>\n  </div>\n  <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n    <p-paginator [rows]=\"10\" [totalRecords]=\"120\" [rowsPerPageOptions]=\"[10,20,30]\" pageLinkSize=\"7\" (onPageChange)=\"paginate($event)\"></p-paginator>\n  </div>\n  <div  class=\"col-lg-2 col-md-2 col-sm-2 col-xs-12\">\n    <div class=\"panier-block\">\n      <div class=\"nbreprod\" *ngIf=\"carts!==undefined\">{{carts.length}}</div>\n      <div class=\"nbreprod\" *ngIf=\"carts===undefined\">0</div>\n      <button type=\"button\" (click)=\"showCart()\" class=\"btn-lg-style button-pan\"><img src=\"../assets/home/images/panier.png\" alt=\"Mon panier\" class=\"img-panier\"/></button>\n    </div>\n  </div>\n</div>\n<hr>\n<div class=\"row\">\n  <div *ngFor=\"let product of products\">\n    <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim\">\n      <p-card styleClass=\"ui-card-shadow\">\n          <p-header>\n              <img src=\"Card\" src=\"../assets/home/images/products/{{product.image}}\">\n          </p-header>\n          <div class=\"ui-card-content\">\n            <div id=\"card-content\" class=\"card-title\">\n              {{product.nomProd}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='FCFA'\">\n              {{product.prixUnit}} {{devise}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='dollar'\">\n              $ {{product.prixUnit * 0.0018}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='euro'\">\n              {{product.prixUnit * 0.0015}} £ (euro)\n            </div>\n          </div>\n          <p-footer>\n            <div class=\"row\">\n              <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n                <div class=\"ui-inputgroup\">\n                  <button pButton type=\"button\" (click)=\"showDialogAdd(product.id)\" icon=\"fa fa-cart-plus\" label=\"Add to cart\"  class=\"ui-button-success card-responsive\"></button>\n                  <button type=\"button\" (click)=\"showDialog(product.id)\" pButton icon=\"fa fa-info-circle\" label=\"Detail prod\" class=\"ui-button-secondary card-responsive\"></button>\n                </div>\n              </div>\n            </div>\n          </p-footer>\n      </p-card>\n    </div>\n  </div>\n</div>\n\n<p-dialog header=\"Detail sur le produit\" [(visible)]=\"display1\" [modal]=\"true\" [responsive]=\"true\" [width]=\"450\" [minWidth]=\"200\" [minY]=\"70\"\n      [maximizable]=\"false\" [baseZIndex]=\"10000\" (onHide)=\"CancelAdd()\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\">\n        <ul class=\"list-group\" *ngIf=\"product !== undefined\">\n          <li class=\"list-group-item\">Nom du produit: <i class=\"form-item\">{{product.nomProd}}</i></li>\n          <li class=\"list-group-item\">Prix unitaire: <i class=\"form-item\">{{product.prixUnit}}</i></li>\n          <li class=\"list-group-item\">Type du produit: <i class=\"form-item\">{{product.type.type}}</i></li>\n          <li class=\"list-group-item\">Taille: <i class=\"form-item\">{{product.size / 1000000}} Mo</i></li>\n          <li class=\"list-group-item\">Description: <i class=\"form-item\">{{product.description}}</i></li>\n        </ul>\n        <hr>\n        <i class=\"form-item\" *ngIf=\"add === true\">Choisir nombre d'exemplaires: </i><p-spinner *ngIf=\"add === true\" size=\"1\" [(ngModel)]=\"val\" [min]=\"1\"></p-spinner>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button *ngIf=\"add === false\" type=\"button\" pButton icon=\"fa fa-check\" (click)=\"display1=false\" label=\"Ok\"></button>\n      <button *ngIf=\"add === true\" type=\"button\" icon=\"fa fa-cart-plus\" pButton (click)=\"AddToCard()\" label=\"confirm the addition\"></button>\n      <button *ngIf=\"add === true\" type=\"button\" pButton icon=\"fa fa-close\" (click)=\"CancelAdd()\" label=\"Cancel\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog header=\"Mon panier\" [(visible)]=\"display2\" [modal]=\"true\" [responsive]=\"true\" [width]=\"350\" [minWidth]=\"200\" [minY]=\"70\"\n      [maximizable]=\"false\" [baseZIndex]=\"10000\" (onHide)=\"CancelBuy()\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\" *ngIf=\"cart!==undefined\">\n        <div class=\"life-container\" *ngFor=\"let panprod of panprods; let i = index\">\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\">Produit: <i class=\"form-item\">{{panprod.produit.nomProd}}</i></li>\n            <li class=\"list-group-item\">Nbre exemplaire: <i class=\"form-item\">{{panprod.nbreExempl}}</i></li>\n            <li class=\"list-group-item\">Prix: <i class=\"form-item\">{{prixTotal}}</i></li>\n            <hr>\n            <li class=\"list-group-item\">Taxe: <i class=\"form-item\">{{taxe}} XAF</i></li>\n            <li class=\"list-group-item\">Solde Total: <i class=\"form-item\">{{cart.soldeTotal}}</i></li>\n          </ul>\n        </div>\n      </div>\n      <div class=\"ui-dialog-content\" *ngIf=\"cart===undefined\">\n        <i class=\"form-item\">Votre panier est vide pour l'instant...</i>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-mail-reply\" (click)=\"display2=false\" label=\"continue shopping\"></button>\n      <button type=\"button\" icon=\"fa fa-bolt\" pButton (click)=\"BuyNow()\" label=\"Buy now\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog header=\"Details sur les promotions\" [(visible)]=\"display3\" [modal]=\"true\" [responsive]=\"true\" [minWidth]=\"400\" [minY]=\"70\"\n      [maximizable]=\"false\" [baseZIndex]=\"10000\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\" *ngIf=\"promos!==undefined\">\n        <div *ngFor=\"let promo of promos\">\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\"><i class=\"form-item\">{{promo.descriptPromo}}</i></li>\n            <li class=\"list-group-item\">Produit: <i class=\"form-item\">{{promo.produit.nomProd}}</i></li>\n            <li class=\"list-group-item\">Prix promo: <i class=\"form-item\">{{promo.prixPromo}}</i></li>\n            <li class=\"list-group-item\">Durée: <i class=\"form-item\">{{promo.dureePromo}} jours de folie</i></li>\n            <li class=\"list-group-item\">Date de début: <i class=\"form-item\">{{promo.dateDebut}}</i></li>\n            <li class=\"list-group-item\">Date de fin: <i class=\"form-item\">{{promo.dateFin}}</i></li>\n          </ul>\n          <hr>\n        </div>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-check\" (click)=\"display3=false\" label=\"Ok\"></button>\n  </p-footer>\n</p-dialog>\n"
+module.exports = "<div class=\"ui-growl ui-growl-message\">\n  <p-growl [(value)]=\"msgs\" [style] = \"{'padding-top':'70px'}\"></p-growl>\n</div>\n<div class=\"row\">\n  <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n      <div class=\"ui-inputgroup\">\n        <input type=\"text\" pInputText placeholder=\"Product of TW Micronics\" class=\"btn-block\" [(ngModel)]=\"search\">\n        <button pButton type=\"button\" label=\"Search\" (onClick)=\"searchProd()\" class=\"btn ui-button-primary detail-promo\"><span class=\"glyphicon glyphicon-search\"></span></button>\n      </div>\n  </div>\n  <div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-12 btn-lg-style-filter\">\n    <div class=\"ui-splitbutton-button\">\n      <p-splitButton label=\"Sort By\" class=\"detail-promo\" icon=\"fa fa-filter\" (onClick)=\"save()\" [model]=\"items3\"></p-splitButton>\n    </div>\n  </div>\n  <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n    <div class=\"btn-block ui-splitbutton-button\">\n      <p-splitButton label=\"Pricelist of TW Micronics\" class=\"detail-promo\" icon=\"fa fa-balance-scale\" (onClick)=\"save()\" [model]=\"items4\"></p-splitButton>\n    </div>\n  </div>\n</div>\n<hr>\n<div class=\"row\">\n  <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n    <div class=\"ui-inputgroup\">\n      <div class=\"promotion btn-block\" *ngIf=\"promos!==undefined\">\n        <span>Profitez des promotions en cours...</span>\n      </div>\n      <div class=\"promotion btn-block\" *ngIf=\"promos===undefined\">\n        <span>Aucune promotion en cours...</span>\n      </div>\n      <button pButton type=\"button\" label=\"see detail\" icon=\"fa fa-dot-circle-o\" (click)=\"showPromotion()\" class=\"detail-promo\"></button>\n    </div>\n  </div>\n  <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n    <p-paginator [rows]=\"10\" [totalRecords]=\"120\" [rowsPerPageOptions]=\"[10,20,30]\" pageLinkSize=\"7\" (onPageChange)=\"paginate($event)\"></p-paginator>\n  </div>\n  <div  class=\"col-lg-2 col-md-2 col-sm-2 col-xs-12\">\n    <div class=\"panier-block\">\n      <div class=\"nbreprod\">{{lengthPan}}</div>\n      <button type=\"button\" (click)=\"showCart()\" class=\"btn-lg-style button-pan\"><img src=\"../assets/home/images/panier.png\" alt=\"Mon panier\" class=\"img-panier\"/></button>\n    </div>\n  </div>\n</div>\n<hr>\n<div class=\"row\">\n  <div *ngFor=\"let product of products;let index=index\">\n    <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim\">\n      <p-card styleClass=\"ui-card-shadow\" [@goals]=\"products.length\">\n          <p-header>\n              <img src=\"Card\" src=\"../assets/home/images/products/{{product.image}}\">\n          </p-header>\n          <div class=\"ui-card-content\">\n            <div id=\"card-content\" class=\"card-title\">\n              {{product.nomProd}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='FCFA'\">\n              {{product.prixUnit}} {{devise}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='dollar'\">\n              <i class=\"fa fa-dollar\"></i> {{roundDecimal(product.prixUnit * 0.0018, 2)}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='euro'\">\n              {{roundDecimal(product.prixUnit * 0.0015, 2)}} <i class=\"fa fa-euro\"></i>\n            </div>\n          </div>\n          <p-footer>\n            <div class=\"row\">\n              <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n                <div class=\"ui-inputgroup\">\n                  <button pButton type=\"button\" (click)=\"showDialogAdd(product.id, index)\" icon=\"fa fa-cart-plus\" label=\"Add to cart\"  class=\"ui-button-success card-responsive\"></button>\n                  <button type=\"button\" (click)=\"showDialog(product.id)\" pButton icon=\"fa fa-info-circle\" label=\"Detail prod\" class=\"ui-button-secondary card-responsive\"></button>\n                </div>\n              </div>\n            </div>\n          </p-footer>\n      </p-card>\n    </div>\n  </div>\n</div>\n\n<p-dialog header=\"Detail sur le produit\" [(visible)]=\"display1\" [modal]=\"true\" [responsive]=\"true\" [width]=\"450\" [minWidth]=\"200\" [minY]=\"70\"\n      [maximizable]=\"false\" [baseZIndex]=\"10000\" (onHide)=\"CancelAdd()\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\">\n        <ul class=\"list-group\" *ngIf=\"product!==undefined\">\n          <li class=\"list-group-item\">Nom du produit: <i class=\"form-item\">{{product.nomProd}}</i></li>\n          <li class=\"list-group-item\">Prix unitaire: <i class=\"form-item\">{{product.prixUnit}}</i></li>\n          <li class=\"list-group-item\">Type du produit: <i class=\"form-item\">{{product.type.type}}</i></li>\n          <li class=\"list-group-item\">Taille: <i class=\"form-item\">{{product.size / 1000000}} Mo</i></li>\n          <li class=\"list-group-item\">Description: <i class=\"form-item\">{{product.description}}</i></li>\n        </ul>\n        <i class=\"form-item\" *ngIf=\"add === true\">Choisir nombre d'exemplaires: </i><p-spinner *ngIf=\"add === true\" size=\"1\" [(ngModel)]=\"val\" [min]=\"1\"></p-spinner>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button *ngIf=\"add === false\" type=\"button\" pButton icon=\"fa fa-check\" (click)=\"display1=false\" label=\"Ok\"></button>\n      <button *ngIf=\"add === true\" type=\"button\" icon=\"fa fa-cart-plus\" pButton (click)=\"AddToCard(product.id)\" label=\"confirm the addition\"></button>\n      <button *ngIf=\"add === true\" type=\"button\" pButton icon=\"fa fa-close\" (click)=\"CancelAdd()\" label=\"Cancel\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog header=\"Mon panier\" [(visible)]=\"display2\" [modal]=\"true\" [responsive]=\"true\" [minWidth]=\"400\"\n[maximizable]=\"false\" [baseZIndex]=\"10000\" (onHide)=\"CancelBuy()\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\" *ngIf=\"lengthPan!==0\">\n        <p-table [columns]=\"cols\" [value]=\"panprods\" selectionMode=\"single\" [responsive]=\"true\">\n          <ng-template pTemplate=\"caption\">\n              Detail of my cart\n          </ng-template>\n          <ng-template pTemplate=\"header\">\n              <tr>\n                <th *ngFor=\"let col of columns\">\n                    {{col.header}}\n                </th>\n              </tr>\n          </ng-template>\n          <ng-template pTemplate=\"body\" let-panprod>\n            <tr>\n                <td>\n                    {{panprod.produit.nomProd}}\n                </td>\n                <td>\n                    {{panprod.produit.prixUnit}}\n                </td>\n                <td>\n                    {{panprod.nbreExempl}}\n                </td>\n                <td>\n                    {{panprod.prixTotal}}\n                </td>\n                <td>\n                    <button type=\"button\" pButton icon=\"fa fa-close\" class=\"btn btn-danger\"(click)=\"CancelToCart(panprod)\" label=\"Delete\"></button>\n                </td>\n            </tr>\n          </ng-template>\n          <ng-template pTemplate=\"footer\">\n              <tr>\n                <td colspan=\"3\">Prix hors Taxe</td>\n                <td>{{cart.soldeTotal}}</td>\n              </tr>\n              <tr>\n                <td colspan=\"3\">Taxe</td>\n                <td>{{prixTaxe}}</td>\n              </tr>\n              <tr>\n                <td colspan=\"3\">Somme totale</td>\n                <td>{{prixTaxe + cart.soldeTotal}}</td>\n              </tr>\n          </ng-template>\n          <ng-template pTemplate=\"summary\">\n              There are {{panprods?.length}} product(s)\n          </ng-template>\n        </p-table>\n      </div>\n      <div class=\"ui-dialog-content\" *ngIf=\"lengthPan===0\">\n        <i class=\"form-item\">Votre panier est vide pour l'instant...</i>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-mail-reply\" (click)=\"display2=false\" label=\"continue shopping\"></button>\n      <button type=\"button\" icon=\"fa fa-bolt\" pButton (click)=\"BuyNow()\" label=\"Buy now\" [disabled]=\"lengthPan===0\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog header=\"Details sur les promotions\" [(visible)]=\"display3\" [modal]=\"true\" [responsive]=\"true\" [minWidth]=\"400\" [minY]=\"70\"\n      [maximizable]=\"true\" [baseZIndex]=\"10000\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\" *ngIf=\"promos!==undefined\">\n        <div *ngFor=\"let promo of promos\">\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\"><i class=\"form-item\">{{promo.descriptPromo}}</i></li>\n            <li class=\"list-group-item\">Produit: <i class=\"form-item\">{{promo.produit.nomProd}}</i></li>\n            <li class=\"list-group-item\">Prix promo: <i class=\"form-item\">{{promo.prixPromo}}</i></li>\n            <li class=\"list-group-item\">Durée: <i class=\"form-item\">{{promo.dureePromo}} jours de folie</i></li>\n            <li class=\"list-group-item\">Date de début: <i class=\"form-item\">{{promo.dateDebut}}</i></li>\n            <li class=\"list-group-item\">Date de fin: <i class=\"form-item\">{{promo.dateFin}}</i></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-check\" (click)=\"display3=false\" label=\"Ok\"></button>\n  </p-footer>\n</p-dialog>\n"
 
 /***/ }),
 
 /***/ "./src/app/home/home.component.scss":
 /***/ (function(module, exports) {
 
-module.exports = ".card-responsive {\n  font-size: 12px;\n  font-weight: bold; }\n\n.card-title {\n  font-size: 13px;\n  font-weight: bold;\n  font-family: Arial, Helvetica, sans-serif;\n  padding-bottom: 5px;\n  color: #E35505; }\n\n.card-price {\n  font-weight: bold;\n  font-size: 12px;\n  color: #000; }\n\n#card-content {\n  width: 200px;\n  height: 50px;\n  background-color: #fff;\n  overflow: auto; }\n\n.ui-growl {\n  z-index: 2 !important; }\n\n.panier-block {\n  width: 50px;\n  height: 50px;\n  display: inline-block;\n  vertical-align: middle;\n  float: none; }\n\n.nbreprod {\n  width: auto;\n  height: auto;\n  background-color: #FF00FF;\n  padding-left: 6px;\n  padding-right: 6px;\n  color: #fff;\n  font-weight: bold;\n  font-size: 14px;\n  border-radius: 15px;\n  position: absolute;\n  z-index: 1; }\n\n.button-pan {\n  margin-right: -5px;\n  z-index: 0; }\n\n.img-panier {\n  width: 60px;\n  height: 60px;\n  border-radius: 25px;\n  margin-top: -5px;\n  margin-left: -12px;\n  z-index: 0; }\n\n.life-container {\n  background: #3FA0E1;\n  padding: .5em;\n  font-weight: bold;\n  font-size: 12px;\n  cursor: pointer; }\n\n.promotion {\n  height: 50px;\n  max-width: 90%;\n  background-color: #FFF8DC;\n  text-align: center;\n  padding: .5em;\n  font-weight: bolder; }\n\n.detail-promo {\n  font-weight: bolder;\n  background: #00BFFF;\n  color: #fff; }\n\n.detail-promo:hover {\n  background-color: #1E90FF; }\n\n.cart-anim {\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transition: 0.5s;\n  -webkit-transform-style: preserve-3d;\n  -moz-transition: 0.5s;\n  -moz-transform-style: preserve-3d;\n  -o-transition: 0.5s;\n  -o-transform-style: preserve-3d;\n  -ms-transition: 0.5s;\n  -ms-transform-style: preserve-3d;\n  transition: 0.5s;\n  transform-style: preserve-3d; }\n\n.cart-anim:hover {\n  -webkit-transform: rotateY(15deg);\n  transform: scale(1.05); }\n"
+module.exports = ".card-responsive {\n  font-size: 12px;\n  font-weight: bold; }\n\n.card-title {\n  font-size: 13px;\n  font-weight: bold;\n  font-family: Arial, Helvetica, sans-serif;\n  padding-bottom: 5px;\n  color: #E35505; }\n\n.card-price {\n  font-weight: bold;\n  font-size: 12px;\n  color: #000; }\n\n#card-content {\n  width: 200px;\n  height: 50px;\n  background-color: #fff;\n  overflow: auto; }\n\n.ui-growl {\n  z-index: 2 !important; }\n\n.panier-block {\n  width: 50px;\n  height: 50px;\n  display: inline-block;\n  vertical-align: middle;\n  float: none; }\n\n.nbreprod {\n  width: auto;\n  height: auto;\n  background-color: #FF00FF;\n  padding-left: 6px;\n  padding-right: 6px;\n  color: #fff;\n  font-weight: bold;\n  font-size: 14px;\n  border-radius: 15px;\n  position: absolute;\n  z-index: 1; }\n\n.button-pan {\n  margin-right: -5px;\n  z-index: 0; }\n\n.img-panier {\n  width: 60px;\n  height: 60px;\n  border-radius: 25px;\n  margin-top: -5px;\n  margin-left: -12px;\n  z-index: 0; }\n\n.life-container {\n  background: #3FA0E1;\n  padding: .5em;\n  font-weight: bold;\n  font-size: 12px;\n  cursor: pointer; }\n\n.promotion {\n  height: 50px;\n  max-width: 90%;\n  background-color: #FFF8DC;\n  text-align: center;\n  padding: .5em;\n  font-weight: bolder; }\n\n.detail-promo {\n  font-weight: bolder;\n  background: #00BFFF;\n  color: #fff; }\n\n.detail-promo:hover {\n  background-color: #1E90FF; }\n\n.cart-anim {\n  -webkit-backface-visibility: hidden;\n  backface-visibility: hidden;\n  -webkit-transition: 0.5s;\n  -webkit-transform-style: preserve-3d;\n  -moz-transition: 0.5s;\n  -moz-transform-style: preserve-3d;\n  -o-transition: 0.5s;\n  -o-transform-style: preserve-3d;\n  -ms-transition: 0.5s;\n  -ms-transform-style: preserve-3d;\n  transition: 0.5s;\n  transform-style: preserve-3d; }\n\n.cart-anim:hover {\n  -webkit-transform: rotateY(15deg);\n  transform: scale(1.05); }\n\n/* For responsive table */\n\n@media only all {\n  th.ui-p-6,\n  td.ui-p-6,\n  th.ui-p-5,\n  td.ui-p-5,\n  th.ui-p-4,\n  td.ui-p-4,\n  th.ui-p-3,\n  td.ui-p-3,\n  th.ui-p-2,\n  td.ui-p-2,\n  th.ui-p-1,\n  td.ui-p-1 {\n    display: none; } }\n\n/* Show priority 1 at 320px (20em x 16px) */\n\n@media screen and (min-width: 20em) {\n  th.ui-p-1,\n  td.ui-p-1 {\n    display: table-cell; } }\n\n/* Show priority 2 at 480px (30em x 16px) */\n\n@media screen and (min-width: 30em) {\n  th.ui-p-2,\n  td.ui-p-2 {\n    display: table-cell; } }\n\n/* Show priority 3 at 640px (40em x 16px) */\n\n@media screen and (min-width: 40em) {\n  th.ui-p-3,\n  td.ui-p-3 {\n    display: table-cell; } }\n\n/* Show priority 4 at 800px (50em x 16px) */\n\n@media screen and (min-width: 50em) {\n  th.ui-p-4,\n  td.ui-p-4 {\n    display: table-cell; } }\n\n/* Show priority 5 at 960px (60em x 16px) */\n\n@media screen and (min-width: 60em) {\n  th.ui-p-5,\n  td.ui-p-5 {\n    display: table-cell; } }\n\n/* Show priority 6 at 1,120px (70em x 16px) */\n\n@media screen and (min-width: 70em) {\n  th.ui-p-6,\n  td.ui-p-6 {\n    display: table-cell; } }\n"
 
 /***/ }),
 
@@ -375,6 +374,9 @@ module.exports = ".card-responsive {\n  font-size: 12px;\n  font-weight: bold; }
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_util_service__ = __webpack_require__("./src/app/services/util.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_product_service__ = __webpack_require__("./src/app/services/product.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_promotion_service__ = __webpack_require__("./src/app/services/promotion.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__models_cart__ = __webpack_require__("./src/app/models/cart.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__models_pan_prod__ = __webpack_require__("./src/app/models/pan-prod.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -391,50 +393,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent(utilService, productService, promoService, router, route) {
+    function HomeComponent(utilService, productService, promoService, userService, router, route) {
         var _this = this;
         this.utilService = utilService;
         this.productService = productService;
         this.promoService = promoService;
+        this.userService = userService;
         this.router = router;
         this.route = route;
         this.display1 = false;
         this.display2 = false;
         this.display3 = false;
         this.msgs = [];
-        this.val = 1;
         this.add = false;
         this.sort = "id";
         this.devise = "FCFA";
-        this.taxe = 0;
+        this.tva = 0.1925;
+        this.val = 1;
+        this.cart = new __WEBPACK_IMPORTED_MODULE_7__models_cart__["a" /* Cart */]('', 0, null, null, 0);
         this.panprods = [];
-        this.promos = [];
         this.products = [];
+        this.promos = [];
         this.items3 = [];
         productService.products().subscribe(function (data) { return _this.products = data.body.content; });
-        this.type = this.route.snapshot.params['type'];
-        this.sort = this.route.snapshot.params['sort'];
-        if (this.sort === "priceasc") {
-            productService.priceAsc().subscribe(function (data) { return _this.products = data.body.content; });
-        }
-        else if (this.sort === "pricedesc") {
-            productService.priceDesc().subscribe(function (data) { return _this.products = data.body.content; });
-        }
-        else if (this.sort === "nameasc") {
-            productService.nameAsc().subscribe(function (data) { return _this.products = data.body.content; });
-        }
-        else if (this.sort === "namedesc") {
-            productService.nameDesc().subscribe(function (data) { return _this.products = data.body.content; });
-        }
-        else {
-            promoService.promoState(1).subscribe(function (data) { return _this.promos = data.body.content; });
-        }
+        promoService.promoState(1).subscribe(function (data) { return _this.promos = data.body.content; });
+        this.lengthPan = utilService.count();
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.type = this.route.snapshot.params['type'];
         this.sort = this.route.snapshot.params['sort'];
+        this.search = this.route.snapshot.params['nameprod'];
+        this.panprods = this.utilService.getPanProd();
+        if (this.sort === "priceasc") {
+            this.productService.priceAsc().subscribe(function (data) { return _this.products = data.body.content; });
+        }
+        else if (this.sort === "pricedesc") {
+            this.productService.priceDesc().subscribe(function (data) { return _this.products = data.body.content; });
+        }
+        else if (this.sort === "nameasc") {
+            this.productService.nameAsc().subscribe(function (data) { return _this.products = data.body.content; });
+        }
+        else if (this.sort === "namedesc") {
+            this.productService.nameDesc().subscribe(function (data) { return _this.products = data.body.content; });
+        }
+        else {
+            this.productService.products().subscribe(function (data) { return _this.products = data.body.content; });
+        }
+        if (this.sort !== "undefined") {
+            this.productService.searchProduct(this.search).subscribe(function (data) { return _this.products = data.body.content; });
+        }
         this.items3 = [
             { label: 'sort ascending price', icon: 'fa fa-sort-asc', command: function () {
                     _this.priceasc();
@@ -460,16 +471,23 @@ var HomeComponent = /** @class */ (function () {
                     _this.changeToEuro();
                 } },
         ];
+        this.cols = [
+            { field: 'produit', header: 'Produit' },
+            { field: 'prix', header: 'Prix unitaire' },
+            { field: 'nombre', header: 'Nombre' },
+            { field: 'prix total', header: 'Prix total' }
+        ];
     };
     HomeComponent.prototype.showDialog = function (id) {
         var _this = this;
         this.productService.product(id).subscribe(function (data) { return _this.product = data.body; });
         this.display1 = true;
     };
-    HomeComponent.prototype.showDialogAdd = function (id) {
+    HomeComponent.prototype.showDialogAdd = function (id, index) {
         var _this = this;
         this.productService.product(id).subscribe(function (data) { return _this.product = data.body; });
-        //this.panprods.push(this.product);
+        this.saveIndex = index;
+        this.val = 1;
         this.add = true;
         this.display1 = true;
     };
@@ -477,7 +495,12 @@ var HomeComponent = /** @class */ (function () {
         this.msgs = [];
         this.msgs.push({ severity: 'success', summary: 'Success Message', detail: 'product successfully added to card' });
     };
-    HomeComponent.prototype.AddToCard = function () {
+    HomeComponent.prototype.AddToCard = function (id) {
+        var _this = this;
+        this.utilService.addProd(id, this.val);
+        this.lengthPan = this.utilService.count();
+        this.productService.product(id).subscribe(function (data) { return _this.product = data.body; });
+        this.hydrateCart();
         this.display1 = false;
         this.add = false;
         this.showSuccess();
@@ -486,48 +509,73 @@ var HomeComponent = /** @class */ (function () {
         this.display1 = false;
         this.add = false;
     };
-    HomeComponent.prototype.showCart = function () {
-        this.display2 = true;
+    HomeComponent.prototype.CancelToCart = function (panprod) {
+        var _this = this;
+        var id = this.utilService.getIdprod(this.panprods.indexOf(panprod));
+        this.productService.product(id).subscribe(function (data) { return _this.product = data.body; });
+        var nberProd = this.utilService.getNberProd(this.panprods.indexOf(panprod));
+        this.panprods.splice(this.panprods.indexOf(panprod), 1);
+        this.utilService.rmvProd(this.panprods.indexOf(panprod));
+        this.utilService.rmvPanProd(this.panprods.indexOf(panprod));
+        this.utilService.setSubTotal(this.product.prixUnit * nberProd);
     };
-    HomeComponent.prototype.CancelBuy = function () {
-        this.display2 = false;
+    HomeComponent.prototype.showCart = function () { this.display2 = true; };
+    HomeComponent.prototype.hydrateCart = function () {
+        var pp = new __WEBPACK_IMPORTED_MODULE_8__models_pan_prod__["a" /* PanProd */](null, null, 0, 0);
+        var lastIndex = this.utilService.getLastIndex();
+        var nberProd = this.utilService.getNberProd(lastIndex);
+        if (this.utilService.count() == 1) {
+            this.cart.indexPan = this.makeId();
+            this.cart.dateJour = this.makeDate();
+        }
+        this.utilService.setSubTotal(this.product.prixUnit * nberProd);
+        pp.produit = this.product;
+        pp.nbreExempl = nberProd;
+        pp.prixTotal = this.product.prixUnit * nberProd;
+        this.cart.soldeTotal = this.utilService.getSubTotal();
+        pp.panier = this.cart;
+        this.panprods.push(pp);
+        this.utilService.addPanProd(pp);
+        this.prixTaxe = this.roundDecimal(this.utilService.getSubTotal() * this.tva, 2);
     };
+    HomeComponent.prototype.CancelBuy = function () { this.display2 = false; };
     HomeComponent.prototype.BuyNow = function () {
         this.router.navigateByUrl('/share');
         this.display2 = false;
     };
-    HomeComponent.prototype.changeToDollar = function () {
-        this.devise = "dollar";
-    };
-    HomeComponent.prototype.changeToEuro = function () {
-        this.devise = "euro";
-    };
-    HomeComponent.prototype.changeToDefault = function () {
-        this.devise = "FCFA";
-    };
+    HomeComponent.prototype.changeToDollar = function () { this.devise = "dollar"; };
+    HomeComponent.prototype.changeToEuro = function () { this.devise = "euro"; };
+    HomeComponent.prototype.changeToDefault = function () { this.devise = "FCFA"; };
     HomeComponent.prototype.paginate = function (event) {
         //event.first = Index of the first record
         //event.rows = Number of rows to display in new page
         //event.page = Index of the new page
         //event.pageCount = Total number of pages
     };
-    HomeComponent.prototype.priceasc = function () {
-        this.router.navigateByUrl('/home/priceasc');
+    HomeComponent.prototype.priceasc = function () { this.router.navigateByUrl('/home/priceasc/priceasc'); };
+    HomeComponent.prototype.pricedesc = function () { this.router.navigateByUrl('/home/pricedesc/pricedesc'); };
+    HomeComponent.prototype.nameasc = function () { this.router.navigateByUrl('/home/nameasc/nameasc'); };
+    HomeComponent.prototype.namedesc = function () { this.router.navigateByUrl('/home/namedesc/namedesc'); };
+    HomeComponent.prototype.showPromotion = function () { this.display3 = true; };
+    HomeComponent.prototype.cancelPromotion = function () { this.display3 = false; };
+    HomeComponent.prototype.makeId = function () {
+        var id = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (var i = 0; i < 20; i++) {
+            id += possible.charAt(Math.floor(Math.random() * possible.length));
+        }
+        return id;
     };
-    HomeComponent.prototype.pricedesc = function () {
-        this.router.navigateByUrl('/home/pricedesc');
+    HomeComponent.prototype.roundDecimal = function (nombre, precision) {
+        var tmp = Math.pow(10, precision);
+        return Math.round(nombre * tmp) / tmp;
     };
-    HomeComponent.prototype.nameasc = function () {
-        this.router.navigateByUrl('/home/nameasc');
+    HomeComponent.prototype.makeDate = function () {
+        var date = new Date();
+        return date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate();
     };
-    HomeComponent.prototype.namedesc = function () {
-        this.router.navigateByUrl('/home/namedesc');
-    };
-    HomeComponent.prototype.showPromotion = function () {
-        this.display3 = true;
-    };
-    HomeComponent.prototype.cancelPromotion = function () {
-        this.display3 = false;
+    HomeComponent.prototype.searchProd = function () {
+        this.router.navigateByUrl('/home/search/' + this.search);
     };
     HomeComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -553,10 +601,50 @@ var HomeComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__services_util_service__["a" /* UtilService */],
             __WEBPACK_IMPORTED_MODULE_4__services_product_service__["a" /* ProductService */],
             __WEBPACK_IMPORTED_MODULE_5__services_promotion_service__["a" /* PromotionService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_user_service__["a" /* UserService */],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"],
             __WEBPACK_IMPORTED_MODULE_1__angular_router__["ActivatedRoute"]])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/cart.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Cart; });
+var Cart = /** @class */ (function () {
+    function Cart(indexPan, soldeTotal, client, dateJour, ack) {
+        this.indexPan = indexPan;
+        this.soldeTotal = soldeTotal;
+        this.client = client;
+        this.dateJour = dateJour;
+        this.ack = ack;
+    }
+    return Cart;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/pan-prod.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PanProd; });
+var PanProd = /** @class */ (function () {
+    function PanProd(panier, produit, nbreExempl, prixTotal) {
+        this.panier = panier;
+        this.produit = produit;
+        this.nbreExempl = nbreExempl;
+        this.prixTotal = prixTotal;
+    }
+    return PanProd;
 }());
 
 
@@ -640,16 +728,19 @@ var ProductService = /** @class */ (function () {
         return this.http.get('http://localhost:8080/twmsos-api/typeprod/' + type, { observe: 'response' });
     };
     ProductService.prototype.nameAsc = function () {
-        return this.http.get('http://localhost:8080/twmsos-api/nomasc', { observe: 'response' });
+        return this.http.get('http://localhost:8080/twmsos-api/produits/nomasc', { observe: 'response' });
     };
     ProductService.prototype.nameDesc = function () {
-        return this.http.get('http://localhost:8080/twmsos-api/nomdesc', { observe: 'response' });
+        return this.http.get('http://localhost:8080/twmsos-api/produits/nomdesc', { observe: 'response' });
     };
     ProductService.prototype.priceAsc = function () {
-        return this.http.get('http://localhost:8080/twmsos-api/prixasc', { observe: 'response' });
+        return this.http.get('http://localhost:8080/twmsos-api/produits/prixasc', { observe: 'response' });
     };
     ProductService.prototype.priceDesc = function () {
-        return this.http.get('http://localhost:8080/twmsos-api/prixdesc', { observe: 'response' });
+        return this.http.get('http://localhost:8080/twmsos-api/produits/prixdesc', { observe: 'response' });
+    };
+    ProductService.prototype.searchProduct = function (nameprod) {
+        return this.http.get('http://localhost:8080/twmsos-api/produits/nomprod/' + nameprod, { observe: 'response' });
     };
     ProductService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
@@ -704,6 +795,48 @@ var PromotionService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/services/user.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("./node_modules/@angular/common/esm5/http.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var UserService = /** @class */ (function () {
+    function UserService(http) {
+        this.http = http;
+    }
+    UserService.prototype.users = function () {
+        return this.http.get('http://localhost:8080/twmsos-api/users', { observe: 'response' });
+    };
+    UserService.prototype.auth1 = function (username) {
+        return this.http.get('http://localhost:8080/twmsos-api/users/' + username, { observe: 'response' });
+    };
+    UserService.prototype.auth2 = function (email) {
+        return this.http.get('http://localhost:8080/twmsos-api/users/' + email, { observe: 'response' });
+    };
+    UserService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
+    ], UserService);
+    return UserService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/util.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -723,11 +856,55 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var UtilService = /** @class */ (function () {
     function UtilService() {
     }
-    UtilService = __decorate([
+    UtilService_1 = UtilService;
+    UtilService.prototype.addProd = function (id, nber) {
+        UtilService_1.prodId.push(id);
+        UtilService_1.nberProd.push(nber);
+        if (UtilService_1.prodId.length > 0) {
+            UtilService_1.lastIndex = this.count() - 1;
+        }
+    };
+    UtilService.prototype.rmvProd = function (index) {
+        UtilService_1.prodId.splice(index, 1);
+        UtilService_1.nberProd.splice(index, 1);
+    };
+    UtilService.prototype.getIdprod = function (index) {
+        return UtilService_1.prodId[index];
+    };
+    UtilService.prototype.getNberProd = function (id) {
+        return UtilService_1.nberProd[id];
+    };
+    UtilService.prototype.getLastIndex = function () {
+        return UtilService_1.lastIndex;
+    };
+    UtilService.prototype.getSubTotal = function () {
+        return UtilService_1.subTotal;
+    };
+    UtilService.prototype.setSubTotal = function (total) {
+        UtilService_1.subTotal += total;
+    };
+    UtilService.prototype.count = function () {
+        return UtilService_1.prodId.length;
+    };
+    UtilService.prototype.addPanProd = function (pp) {
+        UtilService_1.panprods.push(pp);
+    };
+    UtilService.prototype.rmvPanProd = function (index) {
+        UtilService_1.panprods.splice(index, 1);
+    };
+    UtilService.prototype.getPanProd = function () {
+        return UtilService_1.panprods;
+    };
+    UtilService.prodId = [];
+    UtilService.nberProd = [];
+    UtilService.subTotal = 0;
+    UtilService.panprods = [];
+    UtilService = UtilService_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [])
     ], UtilService);
     return UtilService;
+    var UtilService_1;
 }());
 
 

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
@@ -16,6 +15,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 import { UtilService } from '../services/util.service';
 import { ProductService } from '../services/product.service';
 import { PromotionService } from '../services/promotion.service';
+import { UserService } from '../services/user.service';
 
 import { Product } from '../models/product';
 import { Promotion } from '../models/promotion';
@@ -49,56 +49,70 @@ export class HomeComponent implements OnInit {
   display2: boolean = false;
   display3: boolean = false;
   msgs: Message[] = [];
-  val: number = 1;
   add: boolean = false;
   items3: MenuItem[];
   items4: MenuItem[];
-  select: number;
+  cols: any[];
 
   type: string;
   sort: string = "id";
+  search: string;
   devise: string = "FCFA";
-  taxe: number = 0;
+  tva: number = 0.1925;
+  lengthPan: number;
+  saveIndex: number;
+  val: number = 1;
 
-  cart: Cart;
-  panprods: PanProd[]=[];
+  cart = new Cart('', 0, null, null, 0);
+  panprods: PanProd[] = [];
+  prixTaxe: number;
 
   product: Product;
-  promos: Promotion[]=[];
-  products = [];
+  products: Product[] = [];
+  promos: Promotion[] = [];
+
   constructor(
     private utilService: UtilService,
     private productService: ProductService,
     private promoService: PromotionService,
+    private userService: UserService,
     private router : Router,
     private route: ActivatedRoute) {
       this.items3 = [];
       productService.products().subscribe(data => this.products = data.body.content);
-
-      this.type = this.route.snapshot.params['type'];
-      this.sort = this.route.snapshot.params['sort'];
-
-      if(this.sort==="priceasc"){
-        productService.priceAsc().subscribe(data => this.products = data.body.content);
-      }
-      else if(this.sort==="pricedesc"){
-        productService.priceDesc().subscribe(data => this.products = data.body.content);
-      }
-      else if(this.sort==="nameasc"){
-        productService.nameAsc().subscribe(data => this.products = data.body.content);
-      }
-      else if(this.sort==="namedesc"){
-        productService.nameDesc().subscribe(data => this.products = data.body.content);
-      }
-      else{
-        promoService.promoState(1).subscribe(data => this.promos = data.body.content);
-      }
+      promoService.promoState(1).subscribe(data => this.promos = data.body.content);
+      this.lengthPan = utilService.count();
   }
 
   ngOnInit() {
 
     this.type = this.route.snapshot.params['type'];
     this.sort = this.route.snapshot.params['sort'];
+    this.search = this.route.snapshot.params['nameprod'];
+
+    if(this.panprods.length == 0){
+      this.panprods = this.utilService.getPanProd();
+    }
+
+    if(this.sort==="priceasc"){
+      this.productService.priceAsc().subscribe(data => this.products = data.body.content);
+    }
+    else if(this.sort==="pricedesc"){
+      this.productService.priceDesc().subscribe(data => this.products = data.body.content);
+    }
+    else if(this.sort==="nameasc"){
+      this.productService.nameAsc().subscribe(data => this.products = data.body.content);
+    }
+    else if(this.sort==="namedesc"){
+      this.productService.nameDesc().subscribe(data => this.products = data.body.content);
+    }
+    else{
+      this.productService.products().subscribe(data => this.products = data.body.content);
+    }
+
+    if(this.sort!=="undefined"){
+      this.productService.searchProduct(this.search).subscribe(data => this.products = data.body.content);
+    }
 
     this.items3 = [
         {label: 'sort ascending price', icon: 'fa fa-sort-asc', command: () => {
@@ -126,6 +140,14 @@ export class HomeComponent implements OnInit {
             this.changeToEuro();
         }},
     ];
+
+    this.cols = [
+        { field: 'produit', header: 'Produit' },
+        { field: 'prix', header: 'Prix unitaire' },
+        { field: 'nombre', header: 'Nombre' },
+        { field: 'prix total', header: 'Prix total' }
+    ];
+
   }
 
   showDialog(id: number) {
@@ -133,9 +155,10 @@ export class HomeComponent implements OnInit {
     this.display1 = true;
   }
 
-  showDialogAdd(id: number) {
+  showDialogAdd(id: number, index: number) {
     this.productService.product(id).subscribe(data => this.product = data.body);
-    //this.panprods.push(this.product);
+    this.saveIndex = index;
+    this.val = 1;
     this.add = true;
     this.display1 = true;
   }
@@ -145,7 +168,11 @@ export class HomeComponent implements OnInit {
     this.msgs.push({severity:'success', summary:'Success Message', detail:'product successfully added to card'});
   }
 
-  AddToCard(){
+  AddToCard(id: number){
+    this.utilService.addProd(id, this.val);
+    this.lengthPan = this.utilService.count();
+    this.productService.product(id).subscribe(data => this.product = data.body);
+    this.hydrateCart();
     this.display1 = false;
     this.add = false;
     this.showSuccess();
@@ -156,30 +183,51 @@ export class HomeComponent implements OnInit {
     this.add = false;
   }
 
-  showCart() {
-    this.display2 = true;
+  CancelToCart(panprod: PanProd){
+    let id = this.utilService.getIdprod(this.panprods.indexOf(panprod));
+    this.productService.product(id).subscribe(data => this.product = data.body);
+    let nberProd = this.utilService.getNberProd(this.panprods.indexOf(panprod));
+    this.panprods.splice(this.panprods.indexOf(panprod), 1);
+    this.utilService.rmvProd(this.panprods.indexOf(panprod));
+    this.utilService.rmvPanProd(this.panprods.indexOf(panprod));
+    this.utilService.setSubTotal(this.product.prixUnit * nberProd * (-1));
+    this.cart.soldeTotal = this.utilService.getSubTotal();
+    this.lengthPan = this.utilService.count();
   }
 
-  CancelBuy(){
-    this.display2 = false;
+  showCart() {this.display2 = true;}
+
+  hydrateCart(){
+    let pp = new PanProd(null, null, 0, 0);
+    let lastIndex: number = this.utilService.getLastIndex();
+    let nberProd: number = this.utilService.getNberProd(lastIndex);
+    if(this.utilService.count() == 1){
+      this.cart.indexPan = this.makeId();
+      this.cart.dateJour = this.makeDate();
+    }
+    this.utilService.setSubTotal(this.product.prixUnit * nberProd);
+    pp.produit = this.product;
+    pp.nbreExempl = nberProd;
+    pp.prixTotal = this.product.prixUnit * nberProd;
+    this.cart.soldeTotal = this.utilService.getSubTotal();
+    pp.panier = this.cart;
+    this.panprods.push(pp);
+    this.utilService.addPanProd(pp);
+    this.prixTaxe = this.roundDecimal(this.utilService.getSubTotal() * this.tva, 2);
   }
+
+  CancelBuy(){this.display2 = false;}
 
   BuyNow(){
     this.router.navigateByUrl('/share');
     this.display2 = false;
   }
 
-  changeToDollar(){
-    this.devise = "dollar"
-  }
+  changeToDollar(){this.devise = "dollar"}
 
-  changeToEuro(){
-    this.devise = "euro";
-  }
+  changeToEuro(){this.devise = "euro";}
 
-  changeToDefault(){
-    this.devise = "FCFA";
-  }
+  changeToDefault(){this.devise = "FCFA";}
 
   paginate(event) {
     //event.first = Index of the first record
@@ -188,27 +236,39 @@ export class HomeComponent implements OnInit {
     //event.pageCount = Total number of pages
   }
 
-  priceasc(){
-    this.router.navigateByUrl('/home/priceasc');
+  priceasc(){this.router.navigateByUrl('/home/priceasc/priceasc');}
+
+  pricedesc(){this.router.navigateByUrl('/home/pricedesc/pricedesc');}
+
+  nameasc(){this.router.navigateByUrl('/home/nameasc/nameasc');}
+
+  namedesc(){this.router.navigateByUrl('/home/namedesc/namedesc');}
+
+  showPromotion(){this.display3 = true;}
+
+  cancelPromotion(){this.display3 = false;}
+
+  makeId() {
+    let id: string = "";
+    let possible: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    for (let i = 0; i < 20; i++){
+      id += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return id;
   }
 
-  pricedesc(){
-    this.router.navigateByUrl('/home/pricedesc');
+  roundDecimal(nombre, precision){
+    let tmp = Math.pow(10, precision);
+    return Math.round( nombre*tmp )/tmp;
   }
 
-  nameasc(){
-    this.router.navigateByUrl('/home/nameasc');
+  makeDate(){
+    let date = new Date();
+    return date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate()
   }
 
-  namedesc(){
-    this.router.navigateByUrl('/home/namedesc');
-  }
-
-  showPromotion(){
-    this.display3 = true;
-  }
-  cancelPromotion(){
-    this.display3 = false;
+  searchProd(){
+    this.router.navigateByUrl('/home/search/'+this.search);
   }
 
 }

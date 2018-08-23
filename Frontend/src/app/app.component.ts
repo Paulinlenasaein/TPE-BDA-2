@@ -3,7 +3,6 @@ import {PanelMenuModule} from 'primeng/panelmenu';
 import {MenuItem} from 'primeng/api';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
-import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 import { UtilService } from './services/util.service';
 
@@ -13,21 +12,6 @@ import { UtilService } from './services/util.service';
   templateUrl: './app.component.html',
   providers: [UtilService],
   styleUrls: ['./app.component.scss'],
-  animations: [
-    trigger('goals', [
-      transition('* => *', [
-
-        query(':enter', style({ opacity: 0 }), {optional: true}),
-
-        query(':enter', stagger('300ms', [
-          animate('.6s ease-in', keyframes([
-            style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
-            style({opacity: .5, transform: 'translateY(35px)',  offset: 0.3}),
-            style({opacity: 1, transform: 'translateY(0)',     offset: 1.0}),
-          ]))]), {optional: true})
-      ])
-    ])
-  ]
 })
 export class AppComponent {
   title = 'Service online de ventesécurisée de TW Micronics';

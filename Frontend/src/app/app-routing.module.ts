@@ -7,8 +7,13 @@ import { ShareComponent } from './share/share.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/:type', component: HomeComponent },
-  { path: 'home/:sort', component: HomeComponent },
+  { path: 'home/priceasc/:sort', component: HomeComponent },
+  { path: 'home/pricedesc/:sort', component: HomeComponent },
+  { path: 'home/nameasc/:sort', component: HomeComponent },
+  { path: 'home/namedesc/:sort', component: HomeComponent },
+  { path: 'home/search/:nameprod', component: HomeComponent },
   { path: 'share', component: ShareComponent },
+  { path: 'cart', component: ShareComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home'}
 ];
 

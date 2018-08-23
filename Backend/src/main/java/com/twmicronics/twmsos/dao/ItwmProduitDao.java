@@ -18,9 +18,11 @@ public interface ItwmProduitDao extends JpaRepository<twmProduit, Long> {
      * retourne un produit ayant un nom donné
      *
      * @param nomProd nom du produit recherché
-     * @return un objet twmProduit
+     * @param page pour la pagination des résultats
+     * @return une page d'objets twmProduit ayant un nom semblable à celui passé
+     * en argument
      */
-    public twmProduit findByNomProdIgnoreCase(String nomProd);
+    public Page<twmProduit> findByNomProdIgnoreCaseLike(String nomProd, Pageable page);
 
     /**
      * retourne les produits ayant un type donné
@@ -30,7 +32,7 @@ public interface ItwmProduitDao extends JpaRepository<twmProduit, Long> {
      * @return une page d'objets twmProduit
      */
     public Page<twmProduit> findByType(twmTypeProduit type, Pageable page);
-    
+
     /**
      * retourne un produit ayant un prix unitaire donné
      *

@@ -15,12 +15,12 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li routerLinkActive="active"><a routerLink="home"><span class="glyphicon glyphicon-share"></span>  Shop </a></li>
-          <li routerLinkActive="active"><a routerLink="share"><span class="glyphicon glyphicon-shopping-cart"></span>  Mon panier</a></li>
-          <li routerLinkActive="active"><a routerLink="about"><span class="glyphicon glyphicon-tint"></span>  About</a></li>
-          <li routerLinkActive="active" class="navbar-right"><a routerLink="account"><span class="glyphicon glyphicon-user"></span> Sign in</a></li>
+          <li routerLinkActive="active"><a routerLink="home"><span class="fa fa-shopping-bag"></span>  Shop </a></li>
+          <li routerLinkActive="active"><a routerLink="cart"><span class="glyphicon glyphicon-shopping-cart"></span>  Mon panier</a></li>
+          <li routerLinkActive="active" class="navbar-right"><a routerLink="account"><span class="glyphicon glyphicon-user"></span> Mon compte</a></li>
         </ul>
         <div class="navbar-nav navbar-right langue">
+          <a routerLink="account" class="signin"><span class="fa fa-user-circle fa"></span> Login</a>
           <p-splitButton label="Choisir la langue" icon="fa fa-adjust" (onClick)="save()" [model]="items1"></p-splitButton>
         </div>
       </div>

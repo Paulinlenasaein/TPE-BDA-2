@@ -31,6 +31,7 @@ ul li {
 
 .position-responsive {padding-top: 10px;font-size: 18px;font-weight: bold;text-align: center;}
 .langue {padding-top: 20px;padding-right: 20px;font-size: 18px;font-weight: bold;text-align: center;}
+.signin{padding-right: 15px;float: left;text-decoration: none;font-weight: bold;color: #fff;}
 
 ul li {font-weight: bold;}
 
@@ -54,22 +55,22 @@ section .section-title {
 }
 #footer h5, h3 {
 	padding-left: 10px;
-    border-left: 3px solid #eeeeee;
-    padding-bottom: 6px;
-    margin-bottom: 20px;
-    color:#ffffff;
+  border-left: 3px solid #eeeeee;
+  padding-bottom: 6px;
+  margin-bottom: 20px;
+  color:#ffffff;
 }
 #footer a {
-    color: #ffffff;
-    text-decoration: none !important;
-    background-color: transparent;
-    -webkit-text-decoration-skip: objects;
+  color: #ffffff;
+  text-decoration: none !important;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
 }
 #footer ul.social li{
 	padding: 3px 0;
 }
 #footer ul.social li a i {
-    margin-right: 5px;
+  margin-right: 5px;
 	font-size:25px;
 	-webkit-transition: .5s all ease;
 	-moz-transition: .5s all ease;

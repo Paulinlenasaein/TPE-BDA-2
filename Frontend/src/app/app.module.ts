@@ -22,10 +22,13 @@ import {PasswordModule} from 'primeng/password';
 import {KeyFilterModule} from 'primeng/keyfilter';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import {TableModule} from 'primeng/table';
 
 import { UtilService } from './services/util.service';
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
+import { PromotionService } from './services/promotion.service';
+import { UserService } from './services/user.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -59,12 +62,15 @@ import { ShareComponent } from './share/share.component';
     PasswordModule,
     KeyFilterModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    TableModule
   ],
   providers: [
     ProductService,
     CartService,
-    UtilService
+    UtilService,
+    PromotionService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
