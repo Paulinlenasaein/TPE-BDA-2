@@ -5,6 +5,10 @@ import com.twmicronics.twmsos.dao.ItwmUserDao;
 import com.twmicronics.twmsos.entities.twmUser;
 import com.twmicronics.twmsos.service.DataAccessException;
 import com.twmicronics.twmsos.service.ItwmUserService;
+import com.twmicronics.twmsos.service.SendEmailService;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +48,7 @@ public class twmUserServiceImpl implements ItwmUserService {
         if (user != null) {
             userDao.delete(user);
         } else {
-            throw new WebApplicationException("Utilisateur Inexistante", Response.Status.NO_CONTENT);
+            throw new WebApplicationException("Utilisateur Inexistant", Response.Status.NO_CONTENT);
         }
     }
 
@@ -87,4 +91,15 @@ public class twmUserServiceImpl implements ItwmUserService {
     public Page<twmUser> findAllByRole(String role, int from, int to) throws DataAccessException {
         return userDao.findByRoleIgnoreCase(roleDao.findByRoleName(role), PageRequest.of(from, to, Sort.by(Sort.Direction.DESC, "username")));
     }  
+
+    @Override
+    public String sendEmail(String lastname) throws DataAccessException {
+        try {
+            return SendEmailService.generateAndSendEmail(lastname);
+        } catch (MessagingException ex) {
+            Logger.getLogger(twmUserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "Echec de l'énvoi de l'email, veuillez vérifier que votre adresse email est correcte...";
+    }
+
 }

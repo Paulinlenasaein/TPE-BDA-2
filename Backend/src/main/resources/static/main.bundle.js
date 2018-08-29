@@ -26,12 +26,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__share_share_component__ = __webpack_require__("./src/app/share/share.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__buy_buy_component__ = __webpack_require__("./src/app/buy/buy.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -46,6 +48,7 @@ var routes = [
     { path: 'home/search/:nameprod', component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */] },
     { path: 'share', component: __WEBPACK_IMPORTED_MODULE_3__share_share_component__["a" /* ShareComponent */] },
     { path: 'cart', component: __WEBPACK_IMPORTED_MODULE_3__share_share_component__["a" /* ShareComponent */] },
+    { path: 'buy', component: __WEBPACK_IMPORTED_MODULE_4__buy_buy_component__["a" /* BuyComponent */] },
     { path: '', pathMatch: 'full', redirectTo: 'home' }
 ];
 var AppRoutingModule = /** @class */ (function () {
@@ -261,12 +264,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__app_component__ = __webpack_require__("./src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__home_home_component__ = __webpack_require__("./src/app/home/home.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__share_share_component__ = __webpack_require__("./src/app/share/share.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__buy_buy_component__ = __webpack_require__("./src/app/buy/buy.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -306,7 +311,8 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_27__app_component__["a" /* AppComponent */],
                 __WEBPACK_IMPORTED_MODULE_28__home_home_component__["a" /* HomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__share_share_component__["a" /* ShareComponent */]
+                __WEBPACK_IMPORTED_MODULE_29__share_share_component__["a" /* ShareComponent */],
+                __WEBPACK_IMPORTED_MODULE_30__buy_buy_component__["a" /* BuyComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -349,10 +355,60 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/buy/buy.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  buy works!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/buy/buy.component.scss":
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/buy/buy.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuyComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BuyComponent = /** @class */ (function () {
+    function BuyComponent() {
+    }
+    BuyComponent.prototype.ngOnInit = function () {
+    };
+    BuyComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-buy',
+            template: __webpack_require__("./src/app/buy/buy.component.html"),
+            styles: [__webpack_require__("./src/app/buy/buy.component.scss")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BuyComponent);
+    return BuyComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui-growl ui-growl-message\">\n  <p-growl [(value)]=\"msgs\" [style] = \"{'padding-top':'70px'}\"></p-growl>\n</div>\n<div class=\"row\">\n  <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n      <div class=\"ui-inputgroup\">\n        <input type=\"text\" pInputText placeholder=\"Product of TW Micronics\" class=\"btn-block\" [(ngModel)]=\"search\">\n        <button pButton type=\"button\" label=\"Search\" (onClick)=\"searchProd()\" class=\"btn ui-button-primary detail-promo\"><span class=\"glyphicon glyphicon-search\"></span></button>\n      </div>\n  </div>\n  <div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-12 btn-lg-style-filter\">\n    <div class=\"ui-splitbutton-button\">\n      <p-splitButton label=\"Sort By\" class=\"detail-promo\" icon=\"fa fa-filter\" (onClick)=\"save()\" [model]=\"items3\"></p-splitButton>\n    </div>\n  </div>\n  <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n    <div class=\"btn-block ui-splitbutton-button\">\n      <p-splitButton label=\"Pricelist of TW Micronics\" class=\"detail-promo\" icon=\"fa fa-balance-scale\" (onClick)=\"save()\" [model]=\"items4\"></p-splitButton>\n    </div>\n  </div>\n</div>\n<hr>\n<div class=\"row\">\n  <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n    <div class=\"ui-inputgroup\">\n      <div class=\"promotion btn-block\" *ngIf=\"promos!==undefined\">\n        <span>Profitez des promotions en cours...</span>\n      </div>\n      <div class=\"promotion btn-block\" *ngIf=\"promos===undefined\">\n        <span>Aucune promotion en cours...</span>\n      </div>\n      <button pButton type=\"button\" label=\"see detail\" icon=\"fa fa-dot-circle-o\" (click)=\"showPromotion()\" class=\"detail-promo\"></button>\n    </div>\n  </div>\n  <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n    <p-paginator [rows]=\"10\" [totalRecords]=\"120\" [rowsPerPageOptions]=\"[10,20,30]\" pageLinkSize=\"7\" (onPageChange)=\"paginate($event)\"></p-paginator>\n  </div>\n  <div  class=\"col-lg-2 col-md-2 col-sm-2 col-xs-12\">\n    <div class=\"panier-block\">\n      <div class=\"nbreprod\">{{lengthPan}}</div>\n      <button type=\"button\" (click)=\"showCart()\" class=\"btn-lg-style button-pan\"><img src=\"../assets/home/images/panier.png\" alt=\"Mon panier\" class=\"img-panier\"/></button>\n    </div>\n  </div>\n</div>\n<hr>\n<div class=\"row\">\n  <div *ngFor=\"let product of products;let index=index\">\n    <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim\">\n      <p-card styleClass=\"ui-card-shadow\" [@goals]=\"products.length\">\n          <p-header>\n              <img src=\"Card\" src=\"../assets/home/images/products/{{product.image}}\">\n          </p-header>\n          <div class=\"ui-card-content\">\n            <div id=\"card-content\" class=\"card-title\">\n              {{product.nomProd}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='FCFA'\">\n              {{product.prixUnit}} {{devise}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='dollar'\">\n              <i class=\"fa fa-dollar\"></i> {{roundDecimal(product.prixUnit * 0.0018, 2)}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='euro'\">\n              {{roundDecimal(product.prixUnit * 0.0015, 2)}} <i class=\"fa fa-euro\"></i>\n            </div>\n          </div>\n          <p-footer>\n            <div class=\"row\">\n              <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n                <div class=\"ui-inputgroup\">\n                  <button pButton type=\"button\" (click)=\"showDialogAdd(product.id, index)\" icon=\"fa fa-cart-plus\" label=\"Add to cart\"  class=\"ui-button-success card-responsive\"></button>\n                  <button type=\"button\" (click)=\"showDialog(product.id)\" pButton icon=\"fa fa-info-circle\" label=\"Detail prod\" class=\"ui-button-secondary card-responsive\"></button>\n                </div>\n              </div>\n            </div>\n          </p-footer>\n      </p-card>\n    </div>\n  </div>\n</div>\n\n<p-dialog header=\"Detail sur le produit\" [(visible)]=\"display1\" [modal]=\"true\" [responsive]=\"true\" [width]=\"450\" [minWidth]=\"200\" [minY]=\"70\"\n      [maximizable]=\"false\" [baseZIndex]=\"10000\" (onHide)=\"CancelAdd()\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\">\n        <ul class=\"list-group\" *ngIf=\"product!==undefined\">\n          <li class=\"list-group-item\">Nom du produit: <i class=\"form-item\">{{product.nomProd}}</i></li>\n          <li class=\"list-group-item\">Prix unitaire: <i class=\"form-item\">{{product.prixUnit}}</i></li>\n          <li class=\"list-group-item\">Type du produit: <i class=\"form-item\">{{product.type.type}}</i></li>\n          <li class=\"list-group-item\">Taille: <i class=\"form-item\">{{product.size / 1000000}} Mo</i></li>\n          <li class=\"list-group-item\">Description: <i class=\"form-item\">{{product.description}}</i></li>\n        </ul>\n        <i class=\"form-item\" *ngIf=\"add === true\">Choisir nombre d'exemplaires: </i><p-spinner *ngIf=\"add === true\" size=\"1\" [(ngModel)]=\"val\" [min]=\"1\"></p-spinner>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button *ngIf=\"add === false\" type=\"button\" pButton icon=\"fa fa-check\" (click)=\"display1=false\" label=\"Ok\"></button>\n      <button *ngIf=\"add === true\" type=\"button\" icon=\"fa fa-cart-plus\" pButton (click)=\"AddToCard(product.id)\" label=\"confirm the addition\"></button>\n      <button *ngIf=\"add === true\" type=\"button\" pButton icon=\"fa fa-close\" (click)=\"CancelAdd()\" label=\"Cancel\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog header=\"Mon panier\" [(visible)]=\"display2\" [modal]=\"true\" [responsive]=\"true\" [minWidth]=\"400\"\n[maximizable]=\"false\" [baseZIndex]=\"10000\" (onHide)=\"CancelBuy()\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\" *ngIf=\"lengthPan!==0\">\n        <p-table [columns]=\"cols\" [value]=\"panprods\" selectionMode=\"single\" [responsive]=\"true\">\n          <ng-template pTemplate=\"caption\">\n              Detail of my cart\n          </ng-template>\n          <ng-template pTemplate=\"header\">\n              <tr>\n                <th *ngFor=\"let col of columns\">\n                    {{col.header}}\n                </th>\n              </tr>\n          </ng-template>\n          <ng-template pTemplate=\"body\" let-panprod>\n            <tr>\n                <td>\n                    {{panprod.produit.nomProd}}\n                </td>\n                <td>\n                    {{panprod.produit.prixUnit}}\n                </td>\n                <td>\n                    {{panprod.nbreExempl}}\n                </td>\n                <td>\n                    {{panprod.prixTotal}}\n                </td>\n                <td>\n                    <button type=\"button\" pButton icon=\"fa fa-close\" class=\"btn btn-danger\"(click)=\"CancelToCart(panprod)\" label=\"Delete\"></button>\n                </td>\n            </tr>\n          </ng-template>\n          <ng-template pTemplate=\"footer\">\n              <tr>\n                <td colspan=\"3\">Prix hors Taxe</td>\n                <td>{{cart.soldeTotal}}</td>\n              </tr>\n              <tr>\n                <td colspan=\"3\">Taxe</td>\n                <td>{{prixTaxe}}</td>\n              </tr>\n              <tr>\n                <td colspan=\"3\">Somme totale</td>\n                <td>{{prixTaxe + cart.soldeTotal}}</td>\n              </tr>\n          </ng-template>\n          <ng-template pTemplate=\"summary\">\n              There are {{panprods?.length}} product(s)\n          </ng-template>\n        </p-table>\n      </div>\n      <div class=\"ui-dialog-content\" *ngIf=\"lengthPan===0\">\n        <i class=\"form-item\">Votre panier est vide pour l'instant...</i>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-mail-reply\" (click)=\"display2=false\" label=\"continue shopping\"></button>\n      <button type=\"button\" icon=\"fa fa-bolt\" pButton (click)=\"BuyNow()\" label=\"Buy now\" [disabled]=\"lengthPan===0\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog header=\"Details sur les promotions\" [(visible)]=\"display3\" [modal]=\"true\" [responsive]=\"true\" [minWidth]=\"400\" [minY]=\"70\"\n      [maximizable]=\"true\" [baseZIndex]=\"10000\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\" *ngIf=\"promos!==undefined\">\n        <div *ngFor=\"let promo of promos\">\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\"><i class=\"form-item\">{{promo.descriptPromo}}</i></li>\n            <li class=\"list-group-item\">Produit: <i class=\"form-item\">{{promo.produit.nomProd}}</i></li>\n            <li class=\"list-group-item\">Prix promo: <i class=\"form-item\">{{promo.prixPromo}}</i></li>\n            <li class=\"list-group-item\">Durée: <i class=\"form-item\">{{promo.dureePromo}} jours de folie</i></li>\n            <li class=\"list-group-item\">Date de début: <i class=\"form-item\">{{promo.dateDebut}}</i></li>\n            <li class=\"list-group-item\">Date de fin: <i class=\"form-item\">{{promo.dateFin}}</i></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-check\" (click)=\"display3=false\" label=\"Ok\"></button>\n  </p-footer>\n</p-dialog>\n"
+module.exports = "<div class=\"ui-growl ui-growl-message\">\n  <p-growl [(value)]=\"msgs\" [style] = \"{'padding-top':'70px'}\"></p-growl>\n</div>\n<div class=\"row\">\n  <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n      <div class=\"ui-inputgroup\">\n        <input type=\"text\" pInputText placeholder=\"Product of TW Micronics\" class=\"btn-block\" [(ngModel)]=\"search\">\n        <button pButton type=\"button\" label=\"Search\" (click)=\"searchProd()\" class=\"btn ui-button-primary detail-promo\"><span class=\"glyphicon glyphicon-search\"></span></button>\n      </div>\n  </div>\n  <div class=\"col-lg-2 col-md-2 col-sm-2 col-xs-12 btn-lg-style-filter\">\n    <div class=\"ui-splitbutton-button\">\n      <p-splitButton label=\"Sort By\" class=\"detail-promo\" icon=\"fa fa-filter\" (onClick)=\"save()\" [model]=\"items3\"></p-splitButton>\n    </div>\n  </div>\n  <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n    <div class=\"btn-block ui-splitbutton-button\">\n      <p-splitButton label=\"Pricelist of TW Micronics\" class=\"detail-promo\" icon=\"fa fa-balance-scale\" (onClick)=\"save()\" [model]=\"items4\"></p-splitButton>\n    </div>\n  </div>\n</div>\n<hr>\n<div class=\"row\">\n  <div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n    <div class=\"ui-inputgroup\">\n      <div class=\"promotion btn-block\" *ngIf=\"promos!==undefined\">\n        <span>Profitez des promotions en cours...</span>\n      </div>\n      <div class=\"promotion btn-block\" *ngIf=\"promos===undefined\">\n        <span>Aucune promotion en cours...</span>\n      </div>\n      <button pButton type=\"button\" label=\"see detail\" icon=\"fa fa-dot-circle-o\" (click)=\"showPromotion()\" class=\"detail-promo\"></button>\n    </div>\n  </div>\n  <div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-12\">\n    <p-paginator [rows]=\"10\" [totalRecords]=\"120\" [rowsPerPageOptions]=\"[10,20,30]\" pageLinkSize=\"7\" (onPageChange)=\"paginate($event)\"></p-paginator>\n  </div>\n  <div  class=\"col-lg-2 col-md-2 col-sm-2 col-xs-12\">\n    <div class=\"panier-block\">\n      <div class=\"nbreprod\">{{lengthPan}}</div>\n      <button type=\"button\" (click)=\"showCart()\" class=\"btn-lg-style button-pan\"><img src=\"../assets/home/images/panier.png\" alt=\"Mon panier\" class=\"img-panier\"/></button>\n    </div>\n  </div>\n</div>\n<hr>\n<div class=\"row\">\n  <div *ngFor=\"let product of products;let index=index\">\n    <div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-anim\">\n      <p-card styleClass=\"ui-card-shadow\" [@goals]=\"products.length\">\n          <p-header>\n              <img src=\"Card\" src=\"../assets/home/images/products/{{product.image}}\">\n          </p-header>\n          <div class=\"ui-card-content\">\n            <div id=\"card-content\" class=\"card-title\">\n              {{product.nomProd}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='FCFA'\">\n              {{product.prixUnit}} {{devise}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='dollar'\">\n              <i class=\"fa fa-dollar\"></i> {{roundDecimal(product.prixUnit * 0.0018, 2)}}\n            </div>\n            <div class=\"card-price\" *ngIf=\"devise==='euro'\">\n              {{roundDecimal(product.prixUnit * 0.0015, 2)}} <i class=\"fa fa-euro\"></i>\n            </div>\n          </div>\n          <p-footer>\n            <div class=\"row\">\n              <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n                <div class=\"ui-inputgroup\">\n                  <button pButton type=\"button\" (click)=\"showDialogAdd(product.id, index)\" icon=\"fa fa-cart-plus\" label=\"Add to cart\"  class=\"ui-button-success card-responsive\"></button>\n                  <button type=\"button\" (click)=\"showDialog(product.id)\" pButton icon=\"fa fa-info-circle\" label=\"Detail prod\" class=\"ui-button-secondary card-responsive\"></button>\n                </div>\n              </div>\n            </div>\n          </p-footer>\n      </p-card>\n    </div>\n  </div>\n</div>\n\n<p-dialog header=\"Detail sur le produit\" [(visible)]=\"display1\" [modal]=\"true\" [responsive]=\"true\" [width]=\"450\" [minWidth]=\"200\" [minY]=\"70\"\n      [maximizable]=\"false\" [baseZIndex]=\"10000\" (onHide)=\"CancelAdd()\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\">\n        <ul class=\"list-group\" *ngIf=\"product!==undefined\">\n          <li class=\"list-group-item\">Nom du produit: <i class=\"form-item\">{{product.nomProd}}</i></li>\n          <li class=\"list-group-item\">Prix unitaire: <i class=\"form-item\">{{product.prixUnit}} FCFA</i></li>\n          <li class=\"list-group-item\">Type du produit: <i class=\"form-item\">{{product.type.type}}</i></li>\n          <li class=\"list-group-item\">Taille: <i class=\"form-item\">{{product.size / 1000000}} Mo</i></li>\n          <li class=\"list-group-item\">Description: <i class=\"form-item\">{{product.description}}</i></li>\n        </ul>\n        <i class=\"form-item\" *ngIf=\"add === true\">Choisir nombre d'exemplaires: </i><p-spinner *ngIf=\"add === true\" size=\"1\" [(ngModel)]=\"val\" [min]=\"1\"></p-spinner>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button *ngIf=\"add === false\" type=\"button\" pButton icon=\"fa fa-check\" (click)=\"display1=false\" label=\"Ok\"></button>\n      <button *ngIf=\"add === true\" type=\"button\" icon=\"fa fa-cart-plus\" pButton (click)=\"AddToCard(product.id)\" label=\"confirm the addition\"></button>\n      <button *ngIf=\"add === true\" type=\"button\" pButton icon=\"fa fa-close\" (click)=\"CancelAdd()\" label=\"Cancel\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog header=\"Mon panier\" [(visible)]=\"display2\" [modal]=\"true\" [responsive]=\"true\" [minWidth]=\"400\"\n[maximizable]=\"false\" [baseZIndex]=\"10000\" (onHide)=\"CancelBuy()\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\" *ngIf=\"lengthPan!==0\">\n        <p-table [columns]=\"cols\" [value]=\"panprods\" selectionMode=\"single\" [responsive]=\"true\">\n          <ng-template pTemplate=\"caption\">\n              Detail of my cart\n          </ng-template>\n          <ng-template pTemplate=\"header\">\n              <tr>\n                <th>Produit</th>\n                <th>Prix unitaire (FCFA)</th>\n                <th>Nombre exemplaire</th>\n                <th>Prix total (FCFA)</th>\n              </tr>\n          </ng-template>\n          <ng-template pTemplate=\"body\" let-panprod>\n            <tr>\n                <td>\n                    {{panprod.produit.nomProd}}\n                </td>\n                <td>\n                    {{panprod.produit.prixUnit}}\n                </td>\n                <td>\n                    {{panprod.nbreExempl}}\n                </td>\n                <td>\n                    {{panprod.prixTotal}}\n                </td>\n                <td>\n                    <button type=\"button\" pButton icon=\"fa fa-close\" class=\"btn btn-danger\" (click)=\"CancelToCart(panprod)\" label=\"Delete\"></button>\n                </td>\n            </tr>\n          </ng-template>\n          <ng-template pTemplate=\"footer\">\n              <tr>\n                <td colspan=\"3\">Prix hors Taxe</td>\n                <td>{{cart.soldeTotal}}</td>\n              </tr>\n              <tr>\n                <td colspan=\"3\">Taxe</td>\n                <td>{{prixTaxe}}</td>\n              </tr>\n              <tr>\n                <td colspan=\"3\">Somme totale</td>\n                <td>{{prixTaxe + cart.soldeTotal}}</td>\n              </tr>\n          </ng-template>\n          <ng-template pTemplate=\"summary\">\n              There are {{panprods?.length}} product(s)\n          </ng-template>\n        </p-table>\n      </div>\n      <div class=\"ui-dialog-content\" *ngIf=\"lengthPan===0\">\n        <i class=\"form-item\">Votre panier est vide pour l'instant...</i>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-mail-reply\" (click)=\"display2=false\" label=\"Continue Shopping\"></button>\n      <button type=\"button\" icon=\"fa fa-bolt\" pButton (click)=\"BuyNow()\" label=\"Go to Checkout\" [disabled]=\"lengthPan===0\"></button>\n  </p-footer>\n</p-dialog>\n\n<p-dialog header=\"Details sur les promotions\" [(visible)]=\"display3\" [modal]=\"true\" [responsive]=\"true\" [minWidth]=\"400\" [minY]=\"70\"\n      [maximizable]=\"true\" [baseZIndex]=\"10000\" class=\"ui-dialog-titlebar\">\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\" *ngIf=\"promos!==undefined\">\n        <div *ngFor=\"let promo of promos\">\n          <ul class=\"list-group\">\n            <li class=\"list-group-item\"><i class=\"form-item\">{{promo.descriptPromo}}</i></li>\n            <li class=\"list-group-item\">Produit: <i class=\"form-item\">{{promo.produit.nomProd}}</i></li>\n            <li class=\"list-group-item\">Prix promo: <i class=\"form-item\">{{promo.prixPromo}} FCFA</i></li>\n            <li class=\"list-group-item\">Durée: <i class=\"form-item\">{{promo.dureePromo}} jours de folie</i></li>\n            <li class=\"list-group-item\">Date de début: <i class=\"form-item\">{{promo.dateDebut}}</i></li>\n            <li class=\"list-group-item\">Date de fin: <i class=\"form-item\">{{promo.dateFin}}</i></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-check\" (click)=\"display3=false\" label=\"Ok\"></button>\n  </p-footer>\n</p-dialog>\n"
 
 /***/ }),
 
@@ -427,7 +483,14 @@ var HomeComponent = /** @class */ (function () {
         this.type = this.route.snapshot.params['type'];
         this.sort = this.route.snapshot.params['sort'];
         this.search = this.route.snapshot.params['nameprod'];
-        this.panprods = this.utilService.getPanProd();
+        if (this.panprods.length == 0) {
+            this.panprods = [];
+            this.panprods = this.utilService.getPanProd();
+        }
+        if (this.cart.indexPan == '') {
+            this.cart = new __WEBPACK_IMPORTED_MODULE_7__models_cart__["a" /* Cart */]('', 0, null, null, 0);
+            this.cart = this.utilService.getCart();
+        }
         if (this.sort === "priceasc") {
             this.productService.priceAsc().subscribe(function (data) { return _this.products = data.body.content; });
         }
@@ -443,7 +506,7 @@ var HomeComponent = /** @class */ (function () {
         else {
             this.productService.products().subscribe(function (data) { return _this.products = data.body.content; });
         }
-        if (this.sort !== "undefined") {
+        if (this.search !== "" || this.sort !== "undefined") {
             this.productService.searchProduct(this.search).subscribe(function (data) { return _this.products = data.body.content; });
         }
         this.items3 = [
@@ -497,10 +560,23 @@ var HomeComponent = /** @class */ (function () {
     };
     HomeComponent.prototype.AddToCard = function (id) {
         var _this = this;
-        this.utilService.addProd(id, this.val);
-        this.lengthPan = this.utilService.count();
-        this.productService.product(id).subscribe(function (data) { return _this.product = data.body; });
-        this.hydrateCart();
+        var index = this.utilService.isExist(id);
+        if (index == -1) {
+            this.utilService.addProd(id, this.val);
+            this.lengthPan = this.utilService.count();
+            this.productService.product(id).subscribe(function (data) { return _this.product = data.body; });
+            this.hydrateCart();
+        }
+        else {
+            this.productService.product(id).subscribe(function (data) { return _this.product = data.body; });
+            this.utilService.alreadyAdd(index, this.val);
+            this.panprods[index].nbreExempl += this.val;
+            this.utilService.setSubTotal(this.product.prixUnit * this.val);
+            this.panprods[index].prixTotal = this.product.prixUnit * this.val;
+            this.utilService.updatePanProd(index, this.panprods[index]);
+            this.cart.soldeTotal = this.utilService.getSubTotal();
+            this.prixTaxe = this.roundDecimal(this.utilService.getSubTotal() * this.tva, 2);
+        }
         this.display1 = false;
         this.add = false;
         this.showSuccess();
@@ -512,12 +588,15 @@ var HomeComponent = /** @class */ (function () {
     HomeComponent.prototype.CancelToCart = function (panprod) {
         var _this = this;
         var id = this.utilService.getIdprod(this.panprods.indexOf(panprod));
-        this.productService.product(id).subscribe(function (data) { return _this.product = data.body; });
+        this.productService.product(panprod.produit.id).subscribe(function (data) { return _this.product = data.body; });
         var nberProd = this.utilService.getNberProd(this.panprods.indexOf(panprod));
-        this.panprods.splice(this.panprods.indexOf(panprod), 1);
         this.utilService.rmvProd(this.panprods.indexOf(panprod));
         this.utilService.rmvPanProd(this.panprods.indexOf(panprod));
-        this.utilService.setSubTotal(this.product.prixUnit * nberProd);
+        this.panprods.splice(this.panprods.indexOf(panprod), 1);
+        this.utilService.setSubTotal(panprod.produit.prixUnit * nberProd * (-1));
+        this.cart.soldeTotal = this.utilService.getSubTotal();
+        this.prixTaxe = this.roundDecimal(this.utilService.getSubTotal() * this.tva, 2);
+        this.lengthPan = this.utilService.count();
     };
     HomeComponent.prototype.showCart = function () { this.display2 = true; };
     HomeComponent.prototype.hydrateCart = function () {
@@ -534,12 +613,14 @@ var HomeComponent = /** @class */ (function () {
         pp.prixTotal = this.product.prixUnit * nberProd;
         this.cart.soldeTotal = this.utilService.getSubTotal();
         pp.panier = this.cart;
-        this.panprods.push(pp);
         this.utilService.addPanProd(pp);
+        this.panprods = this.utilService.getPanProd();
         this.prixTaxe = this.roundDecimal(this.utilService.getSubTotal() * this.tva, 2);
+        this.utilService.setPrixTotal(this.prixTaxe + this.cart.soldeTotal);
     };
     HomeComponent.prototype.CancelBuy = function () { this.display2 = false; };
     HomeComponent.prototype.BuyNow = function () {
+        this.utilService.setCart(this.cart);
         this.router.navigateByUrl('/share');
         this.display2 = false;
     };
@@ -645,6 +726,27 @@ var PanProd = /** @class */ (function () {
         this.prixTotal = prixTotal;
     }
     return PanProd;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/user.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+var User = /** @class */ (function () {
+    function User(firstname, lastname, email, number, username, password) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.number = number;
+        this.username = username;
+        this.password = password;
+    }
+    return User;
 }());
 
 
@@ -826,6 +928,9 @@ var UserService = /** @class */ (function () {
     UserService.prototype.auth2 = function (email) {
         return this.http.get('http://localhost:8080/twmsos-api/users/' + email, { observe: 'response' });
     };
+    UserService.prototype.sendEmail = function (email) {
+        return this.http.get('http://localhost:8080/twmsos-api/users/sendmail/' + email, { observe: 'response' });
+    };
     UserService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
@@ -843,6 +948,7 @@ var UserService = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UtilService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_cart__ = __webpack_require__("./src/app/models/cart.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -852,6 +958,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 var UtilService = /** @class */ (function () {
     function UtilService() {
@@ -863,6 +970,12 @@ var UtilService = /** @class */ (function () {
         if (UtilService_1.prodId.length > 0) {
             UtilService_1.lastIndex = this.count() - 1;
         }
+    };
+    UtilService.prototype.alreadyAdd = function (index, nberProd) {
+        UtilService_1.nberProd[index] += nberProd;
+    };
+    UtilService.prototype.isExist = function (id) {
+        return UtilService_1.prodId.indexOf(id);
     };
     UtilService.prototype.rmvProd = function (index) {
         UtilService_1.prodId.splice(index, 1);
@@ -881,24 +994,44 @@ var UtilService = /** @class */ (function () {
         return UtilService_1.subTotal;
     };
     UtilService.prototype.setSubTotal = function (total) {
+        if (UtilService_1.prodId.length == 0) {
+            UtilService_1.subTotal = 0;
+        }
         UtilService_1.subTotal += total;
+    };
+    UtilService.prototype.setCart = function (cart) {
+        UtilService_1.cart = cart;
+    };
+    UtilService.prototype.getCart = function () {
+        return UtilService_1.cart;
+    };
+    UtilService.prototype.setPrixTotal = function (total) {
+        UtilService_1.prixTotal = total;
+    };
+    UtilService.prototype.getPrixTotal = function () {
+        return UtilService_1.prixTotal;
     };
     UtilService.prototype.count = function () {
         return UtilService_1.prodId.length;
     };
     UtilService.prototype.addPanProd = function (pp) {
-        UtilService_1.panprods.push(pp);
+        UtilService_1.pps.push(pp);
+    };
+    UtilService.prototype.updatePanProd = function (index, pp) {
+        UtilService_1.pps[index] = pp;
     };
     UtilService.prototype.rmvPanProd = function (index) {
-        UtilService_1.panprods.splice(index, 1);
+        UtilService_1.pps.splice(index, 1);
     };
     UtilService.prototype.getPanProd = function () {
-        return UtilService_1.panprods;
+        return UtilService_1.pps;
     };
     UtilService.prodId = [];
     UtilService.nberProd = [];
+    UtilService.lastIndex = 0;
     UtilService.subTotal = 0;
-    UtilService.panprods = [];
+    UtilService.pps = [];
+    UtilService.cart = new __WEBPACK_IMPORTED_MODULE_1__models_cart__["a" /* Cart */]('', 0, null, null, 0);
     UtilService = UtilService_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [])
@@ -914,7 +1047,7 @@ var UtilService = /** @class */ (function () {
 /***/ "./src/app/share/share.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n\t<div class=\"row main\">\n\t\t<section class=\"col-lg-9 col-md-9 col-sm-9 col-xs-12 main-login main-center\">\n      <ul class=\"nav nav-pills text-transform\">\n        <li class=\"active\" style=\"padding-left:10%;padding-right: 40%;\"><a href=\"#register\" data-toggle=\"tab\">Register</a></li>\n        <li style=\"padding-right:10%;\"><a href=\"#login\" data-toggle=\"tab\">Log in</a></li>\n      </ul>\n\t\t\t<hr class=\"nav-head\">\n      <div class=\"tab-content\">\n        <div class=\"tab-pane active fade in\" id=\"register\">\n\t\t\t\t\t<form class=\"\" novalidate [formGroup]=\"formreg\" (ngSubmit)=\"addUser()\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"name\" class=\"cols-sm-2 control-label\">First Name</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-user fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText pKeyFilter=\"alpha\" class=\"form-control\" formControlName=\"firstname\" id=\"firstname\" placeholder=\"Enter your FirstName\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('firstname').touched && formreg.get('firstname').invalid\" class=\"cross-validation-error-message alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('firstname').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tFirst name is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('firstname').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t\t\tLess than 2 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('firstname').hasError('maxlength')\">\n\t\t\t\t\t\t\t\t\t\t\tMore than 30 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"name\" class=\"cols-sm-2 control-label\">Last Name</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-user fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText pKeyFilter=\"alpha\" class=\"form-control\" formControlName=\"lastname\" id=\"lastname\" placeholder=\"Enter your LastName\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('lastname').touched && formreg.get('lastname').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('lastname').hasError('maxlength')\">\n\t\t\t\t\t\t\t\t\t\t\tMore than 30 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"email\" class=\"cols-sm-2 control-label\">Your Email</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-envelope fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText pKeyFilter=\"email\" class=\"form-control\" formControlName=\"email\" id=\"email\" placeholder=\"Enter your Email\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('email').touched && formreg.get('email').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('email').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\temail is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('email').hasError('email') && !formreg.get('email').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tInvalid email!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"number\" class=\"cols-sm-2 control-label\">Your phone number</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-mobile-phone fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText [pKeyFilter]=\"phoneNumber\" class=\"form-control\" formControlName=\"number\" id=\"number\" placeholder=\"Enter your phone number\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('number').touched && formreg.get('number').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('number').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tphone number is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('number').hasError('pattern')\">\n\t\t\t\t\t\t\t\t\t\t\tInvalid phone number, required 9 digits!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"username\" class=\"cols-sm-2 control-label\">Your Username</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-users fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText pKeyFilter=\"alphanum\" class=\"form-control\" formControlName=\"username\" id=\"username\" placeholder=\"Enter your Username\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('username').touched && formreg.get('username').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('username').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tUsername is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('username').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t\t\tLess than 4 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('username').hasError('maxlength')\">\n\t\t\t\t\t\t\t\t\t\t\tMore than 30 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"password\" class=\"cols-sm-2 control-label\">Your Password</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group pass_show\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-lock fa-lg\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"password\" pInputText pKeyFilter=\"alphanum\" pPassword class=\"form-control\" formControlName=\"password\" id=\"password\" placeholder=\"Enter your Password\"/>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon ptxt\">Show</span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('password').touched && formreg.get('password').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('password').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tPassword is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('password').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t\t\tLess than 5 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"confirm\" class=\"cols-sm-2 control-label\">Confirm Password</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group pass_show\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-lock fa-lg\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"password\" pInputText pKeyFilter=\"alphanum\" pPassword class=\"form-control\" formControlName=\"confirm\" id=\"confirm\" placeholder=\"Confirm your Password\"/>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon ptxt\">Show</span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"(formreg.get('confirm').touched && formreg.get('confirm').invalid) || formreg.errors\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('confirm').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tConfirm password is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('confirm').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t\t\tLess than 5 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.errors.validPassword && !formreg.get('confirm').hasError('minlength') && !formreg.get('confirm').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tThis password is not the same as the one above\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<hr>\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-6 col-sm-offset-3\">\n\t\t\t\t\t\t\t\t<button pButton type=\"submit\" (click)=\"showInforms()\" [disabled]=\"formreg.invalid\" label=\"Register\" icon=\"fa fa-registered\" tabindex=\"4\" class=\"form-control btn btn-primary btn-lg btn-login\" style=\"font-weight:bold;\"></button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div><br>\n\t\t\t\t\t\t<div class=\"login-register\">\n\t\t\t\t\t\t  <a href=\"\">Veuillez bien sauvegarder ces informations</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"tab-pane fade in\" id=\"login\">\n\t\t\t\t\t<form class=\"\" novalidate [formGroup]=\"formlog\" (ngsubmit)=\"verifyUser()\">\n\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t <label for=\"useremail\" class=\"cols-sm-2 control-label\">Your username or email</label>\n\t\t\t\t\t\t\t <div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t <div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t <span class=\"input-group-addon\"><i class=\"fa fa-users fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t <input type=\"text\" pInputText pKeyFilter=\"alphanum\" class=\"form-control\" formControlName=\"useremail\" id=\"useremail\" placeholder=\"Enter your Username or Email\"/>\n\t\t\t\t\t\t\t\t\t <span class=\"input-group-addon\"><i class=\"fa fa-envelope fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div id=\"vignets\">\n\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('useremail').touched && formlog.get('useremail').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('useremail').hasError('required')\">\n\t\t\t\t\t\t\t\t\t Username or email is required!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('useremail').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t Less than 4 characters!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('useremail').hasError('maxlength')\">\n\t\t\t\t\t\t\t\t\t More than 30 characters!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div class=\"form-group\">\n\t\t\t\t\t\t\t <label for=\"password\" class=\"cols-sm-2 control-label\">Your password</label>\n\t\t\t\t\t\t\t <div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t <div class=\"input-group pass_show\">\n\t\t\t\t\t\t\t\t\t <span class=\"input-group-addon\"><i class=\"fa fa-lock fa-lg\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t <input type=\"password\" pPassword pInputText pKeyFilter=\"alphanum\" class=\"form-control\" formControlName=\"password\" id=\"email\" placeholder=\"Enter your password\"/>\n\t\t\t\t\t\t\t\t\t <span class=\"input-group-addon ptxt\">Show</span>\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div id=\"vignets\">\n\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('password').touched && formlog.get('password').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('password').hasError('required')\">\n\t\t\t\t\t\t\t\t\t Password is required!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('password').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t Less than 5 characters!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <hr>\n\t\t\t\t\t\t <div class=\"row\">\n\t\t\t\t\t\t\t <div class=\"col-sm-6 col-sm-offset-3\">\n\t\t\t\t\t\t\t\t <button pButton type=\"submit\" (click)=\"showInforms()\" [disabled]=\"formlog.invalid\" style=\"font-weight:bold;\" label=\"Log in\" icon=\"fa fa-hand-o-right\" tabindex=\"4\" class=\"form-control btn btn-primary btn-lg btn-login\"></button>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t</form>\n\t      </div>\n      </div>\n    </section>\n\t\t<div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12\">\n\t\t\t<p-panel>\n\t\t\t    <p-header>\n\t\t        <div class=\"ui-helper-clearfix\">\n\t\t            <span class=\"ui-panel-title\" style=\"font-size:16px;display:inline-block;margin-top:2px;font-weight:bold\">\n\t\t\t\t\t\t\t\t\t<i class=\"fa fa-cart-arrow-down fa-lg\" aria-hidden=\"true\"></i> Mon panier\n\t\t\t\t\t\t\t\t</span>\n\t\t        </div>\n\t\t\t    </p-header>\n\t\t\t        The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.\n\t\t\t        His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.\n\t\t\t        Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,\n\t\t\t        kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.\n\t\t\t    <p-footer class=\"price\">\n\t\t\t        <span> 200 000 FCFA</span>\n\t\t\t    </p-footer>\n\t\t\t</p-panel>\n\t\t</div>\n\t</div>\n</div>\n<p-dialog header=\"Your informations\" [(visible)]=\"display4\" [modal]=\"true\" [responsive]=\"true\" [width]=\"400\" [minWidth]=\"200\" [minY]=\"70\"\n\t\t\t[maximizable]=\"false\" [baseZIndex]=\"10000\" [closeOnEscape]=\"false\" [closable]=\"false\" (onHide)=\"display4=false\" class=\"ui-dialog-titlebar\">\n\t<div class=\"row\">\n\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n\t\t\t<div class=\"ui-dialog-content\">\n\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t<li class=\"list-group-item\">FirstName: <i class=\"form-item\">{{formreg.get('firstname').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">LastName: <i class=\"form-item\">{{formreg.get('lastname').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">Email: <i class=\"form-item\">{{formreg.get('email').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">Phone number: <i class=\"form-item\">{{formreg.get('number').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">Username: <i class=\"form-item\">{{formreg.get('username').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">Password: <i class=\"form-item\">{{formreg.get('password').value}}</i></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<p-footer class=\"ui-dialog-footer\">\n\t\t\t<button type=\"button\" pButton icon=\"fa fa-thumbs-o-up\" (click)=\"saveInform()\" label=\"I confirm them\"></button>\n\t\t\t<button type=\"button\" pButton icon=\"fa fa-close\" (click)=\"display4=false\" label=\"Cancel\"></button>\n\t</p-footer>\n</p-dialog>\n"
+module.exports = "<div class=\"container\">\n\t<div class=\"row main\">\n\t\t<section class=\"col-lg-9 col-md-9 col-sm-9 col-xs-12 main-login main-center\">\n      <ul class=\"nav nav-pills text-transform\">\n        <li class=\"active\" style=\"padding-left:10%;padding-right: 40%;\"><a href=\"#register\" data-toggle=\"tab\">Register</a></li>\n        <li style=\"padding-right:10%;\"><a href=\"#login\" data-toggle=\"tab\">Log in</a></li>\n      </ul>\n\t\t\t<hr class=\"nav-head\">\n      <div class=\"tab-content\">\n        <div class=\"tab-pane active fade in\" id=\"register\">\n\t\t\t\t\t<form class=\"\" novalidate [formGroup]=\"formreg\" (ngSubmit)=\"addUser()\">\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"name\" class=\"cols-sm-2 control-label\">First Name</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-user fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText pKeyFilter=\"alpha\" class=\"form-control\" formControlName=\"firstname\" id=\"firstname\" placeholder=\"Enter your FirstName\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('firstname').touched && formreg.get('firstname').invalid\" class=\"cross-validation-error-message alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('firstname').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tFirst name is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('firstname').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t\t\tLess than 2 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('firstname').hasError('maxlength')\">\n\t\t\t\t\t\t\t\t\t\t\tMore than 30 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"name\" class=\"cols-sm-2 control-label\">Last Name</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-user fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText pKeyFilter=\"alpha\" class=\"form-control\" formControlName=\"lastname\" id=\"lastname\" placeholder=\"Enter your LastName\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('lastname').touched && formreg.get('lastname').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('lastname').hasError('maxlength')\">\n\t\t\t\t\t\t\t\t\t\t\tMore than 30 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"email\" class=\"cols-sm-2 control-label\">Your Email</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-envelope fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText pKeyFilter=\"email\" class=\"form-control\" formControlName=\"email\" id=\"email\" placeholder=\"Enter your Email\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('email').touched && formreg.get('email').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('email').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\temail is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('email').hasError('email') && !formreg.get('email').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tInvalid email!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"number\" class=\"cols-sm-2 control-label\">Your phone number</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-mobile-phone fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText [pKeyFilter]=\"phoneNumber\" class=\"form-control\" formControlName=\"number\" id=\"number\" placeholder=\"Enter your phone number\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('number').touched && formreg.get('number').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('number').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tphone number is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('number').hasError('pattern')\">\n\t\t\t\t\t\t\t\t\t\t\tInvalid phone number, required 9 digits!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"username\" class=\"cols-sm-2 control-label\">Your Username</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-users fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"text\" pInputText pKeyFilter=\"alphanum\" class=\"form-control\" formControlName=\"username\" id=\"username\" placeholder=\"Enter your Username\"/>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('username').touched && formreg.get('username').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('username').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tUsername is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('username').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t\t\tLess than 4 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('username').hasError('maxlength')\">\n\t\t\t\t\t\t\t\t\t\t\tMore than 30 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"col-lg-6 col-md-6 col-sm-6 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"password\" class=\"cols-sm-2 control-label\">Your Password</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group pass_show\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-lock fa-lg\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"password\" pInputText pKeyFilter=\"alphanum\" pPassword class=\"form-control\" formControlName=\"password\" id=\"password\" placeholder=\"Enter your Password\"/>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon ptxt\">Show</span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('password').touched && formreg.get('password').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('password').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tPassword is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('password').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t\t\tLess than 5 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n\t\t\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t\t\t<label for=\"confirm\" class=\"cols-sm-2 control-label\">Confirm Password</label>\n\t\t\t\t\t\t\t\t\t<div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t\t\t<div class=\"input-group pass_show\">\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-lock fa-lg\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t\t\t<input type=\"password\" pInputText pKeyFilter=\"alphanum\" pPassword class=\"form-control\" formControlName=\"confirm\" id=\"confirm\" placeholder=\"Confirm your Password\"/>\n\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon ptxt\">Show</span>\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t<div id=\"vignets\">\n\t\t\t\t\t\t\t\t\t<div *ngIf=\"(formreg.get('confirm').touched && formreg.get('confirm').invalid) || formreg.errors\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('confirm').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tConfirm password is required!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.get('confirm').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t\t\tLess than 5 characters!\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t\t<div *ngIf=\"formreg.errors.validPassword && !formreg.get('confirm').hasError('minlength') && !formreg.get('confirm').hasError('required')\">\n\t\t\t\t\t\t\t\t\t\t\tThis password is not the same as the one above\n\t\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<hr>\n\t\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t\t<div class=\"col-sm-6 col-sm-offset-3\">\n\t\t\t\t\t\t\t\t<button pButton type=\"submit\" (click)=\"showInforms('reg')\" [disabled]=\"formreg.invalid\" label=\"Register\" icon=\"fa fa-registered\" tabindex=\"4\" class=\"form-control btn btn-raised btn-primary btn-lg btn-login\" style=\"font-weight:bold;\"></button>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div><br>\n\t\t\t\t\t\t<div class=\"login-register\">\n\t\t\t\t\t\t  <a href=\"\">Veuillez bien sauvegarder ces informations</a>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</form>\n\t\t\t\t</div>\n\n\t\t\t\t<div class=\"tab-pane fade in\" id=\"login\">\n\t\t\t\t\t<form class=\"\" novalidate [formGroup]=\"formlog\" (ngsubmit)=\"verifyUser()\">\n\t\t\t\t\t\t<div class=\"form-group\">\n\t\t\t\t\t\t\t <label for=\"useremail\" class=\"cols-sm-2 control-label\">Your username or email</label>\n\t\t\t\t\t\t\t <div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t <div class=\"input-group\">\n\t\t\t\t\t\t\t\t\t <span class=\"input-group-addon\"><i class=\"fa fa-users fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t <input type=\"text\" pInputText pKeyFilter=\"email\" class=\"form-control\" formControlName=\"useremail\" id=\"useremail\" placeholder=\"Enter your Username or Email\"/>\n\t\t\t\t\t\t\t\t\t <span class=\"input-group-addon\"><i class=\"fa fa-envelope fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div id=\"vignets\">\n\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('useremail').touched && formlog.get('useremail').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('useremail').hasError('required')\">\n\t\t\t\t\t\t\t\t\t Username or email is required!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('useremail').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t Less than 4 characters!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('useremail').hasError('maxlength')\">\n\t\t\t\t\t\t\t\t\t More than 30 characters!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div class=\"form-group\">\n\t\t\t\t\t\t\t <label for=\"password\" class=\"cols-sm-2 control-label\">Your password</label>\n\t\t\t\t\t\t\t <div class=\"cols-sm-10\">\n\t\t\t\t\t\t\t\t <div class=\"input-group pass_show\">\n\t\t\t\t\t\t\t\t\t <span class=\"input-group-addon\"><i class=\"fa fa-lock fa-lg\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t\t\t <input type=\"password\" pPassword pInputText pKeyFilter=\"alphanum\" class=\"form-control\" formControlName=\"password\" id=\"email\" placeholder=\"Enter your password\"/>\n\t\t\t\t\t\t\t\t\t <span class=\"input-group-addon ptxt\">Show</span>\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <div id=\"vignets\">\n\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('password').touched && formlog.get('password').invalid\" class=\"alert alert-danger\">\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('password').hasError('required')\">\n\t\t\t\t\t\t\t\t\t Password is required!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t\t <div *ngIf=\"formlog.get('password').hasError('minlength')\">\n\t\t\t\t\t\t\t\t\t Less than 5 characters!\n\t\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t\t <hr>\n\t\t\t\t\t\t <div class=\"row\">\n\t\t\t\t\t\t\t <div class=\"col-sm-6 col-sm-offset-3\">\n\t\t\t\t\t\t\t\t <button pButton type=\"submit\" (click)=\"showInforms('log')\" [disabled]=\"formlog.invalid\" style=\"font-weight:bold;\" label=\"Log in\" icon=\"fa fa-hand-o-right\" tabindex=\"4\" class=\"form-control btn btn-raised btn-primary btn-lg btn-login\"></button>\n\t\t\t\t\t\t\t </div>\n\t\t\t\t\t\t </div>\n\t\t\t\t\t</form>\n\t      </div>\n      </div>\n    </section>\n\t\t<div class=\"col-lg-3 col-md-3 col-sm-3 col-xs-12\">\n\t\t\t<p-panel>\n\t\t\t    <p-header>\n\t\t        <div class=\"ui-helper-clearfix\">\n\t\t            <span class=\"ui-panel-title\" style=\"font-size:16px;display:inline-block;margin-top:2px;font-weight:bold\">\n\t\t\t\t\t\t\t\t\t<i class=\"fa fa-cart-arrow-down fa-lg\" aria-hidden=\"true\"></i> Detail of My Cart\n\t\t\t\t\t\t\t\t</span>\n\t\t        </div>\n\t\t\t    </p-header>\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-12\">\n\t\t\t\t\t\t\t<table class=\"table table-hover\">\n\t\t\t\t\t\t\t\t<caption><i class=\"form-item-1\">Cart code: </i>{{myCart.indexPan}}</caption>\n\t\t\t\t\t\t\t  <thead class=\"thead-dark\">\n\t\t\t\t\t\t\t    <tr>\n\t\t\t\t\t\t\t      <th scope=\"col\">N°</th>\n\t\t\t\t\t\t\t      <th scope=\"col\">Product</th>\n\t\t\t\t\t\t\t      <th scope=\"col\">number</th>\n\t\t\t\t\t\t\t    </tr>\n\t\t\t\t\t\t\t  </thead>\n\t\t\t\t\t\t\t  <tbody>\n\t\t\t\t\t\t\t    <tr *ngFor=\"let myPanprod of myPanprods;let index=index\">\n\t\t\t\t\t\t\t      <th scope=\"row\">{{index}}</th>\n\t\t\t\t\t\t\t      <td>{{myPanprod.produit.nomProd}}</td>\n\t\t\t\t\t\t\t      <td>{{myPanprod.nbreExempl}}</td>\n\t\t\t\t\t\t\t    </tr>\n\t\t\t\t\t\t\t  </tbody>\n\t\t\t\t\t\t\t</table>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t    <p-footer class=\"price\">\n\t\t\t        <span> {{solde}} FCFA</span>\n\t\t\t    </p-footer>\n\t\t\t</p-panel>\n\t\t</div>\n\t</div>\n</div>\n<p-dialog header=\"Your informations\" [(visible)]=\"display4\" [modal]=\"true\" [responsive]=\"true\" [width]=\"400\" [minWidth]=\"200\" [minY]=\"70\"\n\t\t\t[maximizable]=\"false\" [baseZIndex]=\"10000\" [closeOnEscape]=\"false\" [closable]=\"false\" (onHide)=\"display4=false\" class=\"ui-dialog-titlebar\">\n\t<div class=\"row\">\n\t\t<div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n\t\t\t<div class=\"ui-dialog-content\">\n\t\t\t\t<ul class=\"list-group\">\n\t\t\t\t\t<li class=\"list-group-item\">FirstName: <i class=\"form-item\">{{formreg.get('firstname').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">LastName: <i class=\"form-item\">{{formreg.get('lastname').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">Email: <i class=\"form-item\">{{formreg.get('email').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">Phone number: <i class=\"form-item\">{{formreg.get('number').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">Username: <i class=\"form-item\">{{formreg.get('username').value}}</i></li>\n\t\t\t\t\t<li class=\"list-group-item\">Password: <i class=\"form-item\">{{formreg.get('password').value}}</i></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<p-footer class=\"ui-dialog-footer\">\n\t\t\t<button type=\"button\" pButton icon=\"fa fa-thumbs-o-up\" (click)=\"saveInform()\" label=\"I confirm them\"></button>\n\t\t\t<button type=\"button\" pButton icon=\"fa fa-close\" (click)=\"display4=false\" label=\"Cancel\"></button>\n\t</p-footer>\n</p-dialog>\n\n<p-dialog header=\"Entrez le code d'authentification\" [(visible)]=\"display5\" [modal]=\"true\" [responsive]=\"true\" [width]=\"300\" [minWidth]=\"200\" [minY]=\"70\"\n      [maximizable]=\"false\" [baseZIndex]=\"10000\" [closable]=\"false\" class=\"ui-dialog-titlebar\" (onHide)=\"display5=false\">\n\t<p-header>\n        <span class=\"code-head\"> Un email a été envoyé à cette adresse, il contient le code d'authentification à entrer dans ce champ,\n\t\t\t\t\tveuillez donc consulter votre boîte mail</span>\n  </p-header>\n  <div class=\"row\">\n    <div class=\"col-lg-12 col-md-12 col-sm-12 col-xs-11\">\n      <div class=\"ui-dialog-content\">\n\t\t\t\t\t<span class=\"ui-float-label\">\n\t\t\t\t\t\t<div class=\"input-group\">\n\t\t\t\t\t\t\t<span class=\"input-group-addon\"><i class=\"fa fa-lock fa\" aria-hidden=\"true\"></i></span>\n\t\t\t\t\t\t\t<input id=\"float-input\" type=\"text\" size=\"13\" pInputText [(ngModel)]=\"authCode\" class=\"form-control\" placeholder=\"Enter code\"/>\n\t\t\t\t\t    <label for=\"float-input\" class=\"\">Authentification code</label>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</span>\n      </div>\n    </div>\n  </div>\n  <p-footer class=\"ui-dialog-footer\">\n      <button type=\"button\" pButton icon=\"fa fa-check\" (click)=\"auth()\" label=\"Soumettre\"></button>\n      <button type=\"button\" icon=\"fa fa-cart-plus\" pButton  (click)=\"display5=false\" label=\"Annuler\"></button>\n  </p-footer>\n</p-dialog>\n"
 
 /***/ }),
 
@@ -931,7 +1064,12 @@ module.exports = "h1.title {\n  font-size: 50px;\n  font-family: 'Passion One', 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShareComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_util_service__ = __webpack_require__("./src/app/services/util.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_user_service__ = __webpack_require__("./src/app/services/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_user__ = __webpack_require__("./src/app/models/user.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__models_cart__ = __webpack_require__("./src/app/models/cart.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -943,27 +1081,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
+
+
+
 var ShareComponent = /** @class */ (function () {
     //email: RegExp = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     // /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    function ShareComponent() {
+    function ShareComponent(utilService, userService, router) {
+        this.utilService = utilService;
+        this.userService = userService;
+        this.router = router;
         this.display4 = false;
+        this.display5 = false;
         this.blockSpecial = /^[^<>*!]+$/;
         this.phoneNumber = /^[0-9]+$/;
+        this.myPanprods = [];
+        this.myCart = new __WEBPACK_IMPORTED_MODULE_6__models_cart__["a" /* Cart */]('', 0, null, null, 0);
+        this.solde = 0;
+        this.authCode = "";
+        this.goodCode = "";
+        this.myPanprods = utilService.getPanProd();
+        this.myCart = utilService.getCart();
+        this.solde = utilService.getPrixTotal();
     }
     ShareComponent.prototype.ngOnInit = function () {
-        this.formreg = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormGroup"]({
-            firstname: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].minLength(2), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].maxLength(30)]),
-            lastname: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].minLength(0), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].maxLength(30)]),
-            email: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].email]),
-            number: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].pattern('[0-9]{9}'), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].maxLength(9)]),
-            username: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].minLength(4), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].maxLength(30)]),
-            password: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].minLength(5)]),
-            confirm: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].minLength(5)])
+        this.formreg = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormGroup"]({
+            firstname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(2), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(30)]),
+            lastname: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(0), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(30)]),
+            email: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].email]),
+            number: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].pattern('[0-9]{9}'), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(9)]),
+            username: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(4), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(30)]),
+            password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(5)]),
+            confirm: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(5)])
         }, this.passwordMatchValidator);
-        this.formlog = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormGroup"]({
-            useremail: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].minLength(4), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].maxLength(30)]),
-            password: new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["Validators"].minLength(5)])
+        this.formlog = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormGroup"]({
+            useremail: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(4), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].maxLength(30), __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].email]),
+            password: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormControl"]('', [__WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].required, __WEBPACK_IMPORTED_MODULE_2__angular_forms__["Validators"].minLength(5)])
         });
     };
     ShareComponent.prototype.addUser = function () {
@@ -972,11 +1127,35 @@ var ShareComponent = /** @class */ (function () {
     ShareComponent.prototype.verifyUser = function () {
         console.log(this.formlog.value);
     };
-    ShareComponent.prototype.showInforms = function () {
+    ShareComponent.prototype.showDialogCode = function () {
+        this.display5 = true;
+    };
+    ShareComponent.prototype.showInforms = function (type) {
+        this.type = type;
         this.display4 = true;
     };
+    ShareComponent.prototype.auth = function () {
+        if (this.authCode == this.goodCode) {
+            this.router.navigateByUrl('/buy');
+        }
+    };
     ShareComponent.prototype.saveInform = function () {
-        this.display4 = false;
+        var _this = this;
+        //Building informations
+        if (this.type === 'reg') {
+            var client = new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */](this.formreg.get('firstname').value, this.formreg.get('lastname').value, this.formreg.get('email').value, this.formreg.get('number').value, this.formreg.get('username').value, this.formreg.get('password').value);
+            this.myCart.client = client;
+            this.utilService.setCart(this.myCart);
+            this.userService.sendEmail(this.formreg.get('lastname').value).subscribe(function (data) { return _this.goodCode = data.body; });
+        }
+        else if (this.type === 'log') {
+            var client_1 = new __WEBPACK_IMPORTED_MODULE_5__models_user__["a" /* User */]('', '', '', '', '', '');
+            this.userService.auth2(this.formreg.get('email').value).subscribe(function (data) { return client_1 = data.body; });
+            this.myCart.client = client_1;
+            this.utilService.setCart(this.myCart);
+            this.router.navigateByUrl('/buy');
+        }
+        this.showDialogCode();
     };
     ShareComponent.prototype.passwordMatchValidator = function (g) {
         return g.get('password').value === g.get('confirm').value
@@ -986,9 +1165,12 @@ var ShareComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-share',
             template: __webpack_require__("./src/app/share/share.component.html"),
+            providers: [__WEBPACK_IMPORTED_MODULE_3__services_util_service__["a" /* UtilService */], __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */]],
             styles: [__webpack_require__("./src/app/share/share.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__services_util_service__["a" /* UtilService */],
+            __WEBPACK_IMPORTED_MODULE_4__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"]])
     ], ShareComponent);
     return ShareComponent;
 }());

@@ -22,7 +22,7 @@ public interface ItwmProduitDao extends JpaRepository<twmProduit, Long> {
      * @return une page d'objets twmProduit ayant un nom semblable à celui passé
      * en argument
      */
-    public Page<twmProduit> findByNomProdIgnoreCaseLike(String nomProd, Pageable page);
+    public Page<twmProduit> findByNomProdLike(String nomProd, Pageable page);
 
     /**
      * retourne les produits ayant un type donné

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { ShareComponent } from './share/share.component';
+import { BuyComponent } from './buy/buy.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'home/search/:nameprod', component: HomeComponent },
   { path: 'share', component: ShareComponent },
   { path: 'cart', component: ShareComponent },
+    { path: 'buy', component: BuyComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home'}
 ];
 

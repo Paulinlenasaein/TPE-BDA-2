@@ -117,5 +117,14 @@ public interface ItwmUserService {
      * @throws DataAccessException si un événement non prévu survient
      */
     public Page<twmUser> findAllByRole(String role, int from, int to) throws DataAccessException;
+    
+    /**
+     * Envoi un mail d'authentification à un utilisateur
+     *
+     * @param lastname lastname du futur utilisateur
+     * @return les utilisateurs corresponsants
+     * @throws DataAccessException si un événement non prévu survient
+     */
+    public String sendEmail(String lastname) throws DataAccessException;
 
 }

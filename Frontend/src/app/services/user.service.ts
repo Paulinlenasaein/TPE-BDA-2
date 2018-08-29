@@ -19,4 +19,8 @@ export class UserService {
     return this.http.get<any>('http://localhost:8080/twmsos-api/users/'+email, { observe: 'response' });
   }
 
+  sendEmail(email: string): Observable<HttpResponse<any>> {
+    return this.http.get<any>('http://localhost:8080/twmsos-api/users/sendmail/'+email, { observe: 'response' });
+  }
+
 }

@@ -91,7 +91,13 @@ export class HomeComponent implements OnInit {
     this.search = this.route.snapshot.params['nameprod'];
 
     if(this.panprods.length == 0){
+      this.panprods = [];
       this.panprods = this.utilService.getPanProd();
+    }
+
+    if(this.cart.indexPan == ''){
+      this.cart = new Cart('', 0, null, null, 0);
+      this.cart = this.utilService.getCart();
     }
 
     if(this.sort==="priceasc"){
@@ -110,7 +116,7 @@ export class HomeComponent implements OnInit {
       this.productService.products().subscribe(data => this.products = data.body.content);
     }
 
-    if(this.sort!=="undefined"){
+    if(this.search!=="" || this.sort!=="undefined"){
       this.productService.searchProduct(this.search).subscribe(data => this.products = data.body.content);
     }
 
@@ -169,10 +175,23 @@ export class HomeComponent implements OnInit {
   }
 
   AddToCard(id: number){
-    this.utilService.addProd(id, this.val);
-    this.lengthPan = this.utilService.count();
-    this.productService.product(id).subscribe(data => this.product = data.body);
-    this.hydrateCart();
+    let index = this.utilService.isExist(id);
+    if(index == -1){
+      this.utilService.addProd(id, this.val);
+      this.lengthPan = this.utilService.count();
+      this.productService.product(id).subscribe(data => this.product = data.body);
+      this.hydrateCart();
+    }
+    else{
+      this.productService.product(id).subscribe(data => this.product = data.body);
+      this.utilService.alreadyAdd(index, this.val);
+      this.panprods[index].nbreExempl += this.val;
+      this.utilService.setSubTotal(this.product.prixUnit * this.val);
+      this.panprods[index].prixTotal = this.product.prixUnit * this.val;
+      this.utilService.updatePanProd(index, this.panprods[index]);
+      this.cart.soldeTotal = this.utilService.getSubTotal();
+      this.prixTaxe = this.roundDecimal(this.utilService.getSubTotal() * this.tva, 2);
+    }
     this.display1 = false;
     this.add = false;
     this.showSuccess();
@@ -185,13 +204,14 @@ export class HomeComponent implements OnInit {
 
   CancelToCart(panprod: PanProd){
     let id = this.utilService.getIdprod(this.panprods.indexOf(panprod));
-    this.productService.product(id).subscribe(data => this.product = data.body);
+    this.productService.product(panprod.produit.id).subscribe(data => this.product = data.body);
     let nberProd = this.utilService.getNberProd(this.panprods.indexOf(panprod));
-    this.panprods.splice(this.panprods.indexOf(panprod), 1);
     this.utilService.rmvProd(this.panprods.indexOf(panprod));
     this.utilService.rmvPanProd(this.panprods.indexOf(panprod));
-    this.utilService.setSubTotal(this.product.prixUnit * nberProd * (-1));
+    this.panprods.splice(this.panprods.indexOf(panprod), 1);
+    this.utilService.setSubTotal(panprod.produit.prixUnit * nberProd * (-1));
     this.cart.soldeTotal = this.utilService.getSubTotal();
+    this.prixTaxe = this.roundDecimal(this.utilService.getSubTotal() * this.tva, 2);
     this.lengthPan = this.utilService.count();
   }
 
@@ -211,14 +231,16 @@ export class HomeComponent implements OnInit {
     pp.prixTotal = this.product.prixUnit * nberProd;
     this.cart.soldeTotal = this.utilService.getSubTotal();
     pp.panier = this.cart;
-    this.panprods.push(pp);
     this.utilService.addPanProd(pp);
+    this.panprods = this.utilService.getPanProd();
     this.prixTaxe = this.roundDecimal(this.utilService.getSubTotal() * this.tva, 2);
+    this.utilService.setPrixTotal(this.prixTaxe + this.cart.soldeTotal);
   }
 
   CancelBuy(){this.display2 = false;}
 
   BuyNow(){
+    this.utilService.setCart(this.cart);
     this.router.navigateByUrl('/share');
     this.display2 = false;
   }

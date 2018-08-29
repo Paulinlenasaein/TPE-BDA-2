@@ -5,7 +5,7 @@
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
       <div class="ui-inputgroup">
         <input type="text" pInputText placeholder="Product of TW Micronics" class="btn-block" [(ngModel)]="search">
-        <button pButton type="button" label="Search" (onClick)="searchProd()" class="btn ui-button-primary detail-promo"><span class="glyphicon glyphicon-search"></span></button>
+        <button pButton type="button" label="Search" (click)="searchProd()" class="btn ui-button-primary detail-promo"><span class="glyphicon glyphicon-search"></span></button>
       </div>
   </div>
   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 btn-lg-style-filter">
@@ -86,7 +86,7 @@
       <div class="ui-dialog-content">
         <ul class="list-group" *ngIf="product!==undefined">
           <li class="list-group-item">Nom du produit: <i class="form-item">{{product.nomProd}}</i></li>
-          <li class="list-group-item">Prix unitaire: <i class="form-item">{{product.prixUnit}}</i></li>
+          <li class="list-group-item">Prix unitaire: <i class="form-item">{{product.prixUnit}} FCFA</i></li>
           <li class="list-group-item">Type du produit: <i class="form-item">{{product.type.type}}</i></li>
           <li class="list-group-item">Taille: <i class="form-item">{{product.size / 1000000}} Mo</i></li>
           <li class="list-group-item">Description: <i class="form-item">{{product.description}}</i></li>
@@ -113,9 +113,10 @@
           </ng-template>
           <ng-template pTemplate="header">
               <tr>
-                <th *ngFor="let col of columns">
-                    {{col.header}}
-                </th>
+                <th>Produit</th>
+                <th>Prix unitaire (FCFA)</th>
+                <th>Nombre exemplaire</th>
+                <th>Prix total (FCFA)</th>
               </tr>
           </ng-template>
           <ng-template pTemplate="body" let-panprod>
@@ -133,7 +134,7 @@
                     {{panprod.prixTotal}}
                 </td>
                 <td>
-                    <button type="button" pButton icon="fa fa-close" class="btn btn-danger"(click)="CancelToCart(panprod)" label="Delete"></button>
+                    <button type="button" pButton icon="fa fa-close" class="btn btn-danger" (click)="CancelToCart(panprod)" label="Delete"></button>
                 </td>
             </tr>
           </ng-template>
@@ -162,8 +163,8 @@
     </div>
   </div>
   <p-footer class="ui-dialog-footer">
-      <button type="button" pButton icon="fa fa-mail-reply" (click)="display2=false" label="continue shopping"></button>
-      <button type="button" icon="fa fa-bolt" pButton (click)="BuyNow()" label="Buy now" [disabled]="lengthPan===0"></button>
+      <button type="button" pButton icon="fa fa-mail-reply" (click)="display2=false" label="Continue Shopping"></button>
+      <button type="button" icon="fa fa-bolt" pButton (click)="BuyNow()" label="Go to Checkout" [disabled]="lengthPan===0"></button>
   </p-footer>
 </p-dialog>
 
@@ -176,7 +177,7 @@
           <ul class="list-group">
             <li class="list-group-item"><i class="form-item">{{promo.descriptPromo}}</i></li>
             <li class="list-group-item">Produit: <i class="form-item">{{promo.produit.nomProd}}</i></li>
-            <li class="list-group-item">Prix promo: <i class="form-item">{{promo.prixPromo}}</i></li>
+            <li class="list-group-item">Prix promo: <i class="form-item">{{promo.prixPromo}} FCFA</i></li>
             <li class="list-group-item">Durée: <i class="form-item">{{promo.dureePromo}} jours de folie</i></li>
             <li class="list-group-item">Date de début: <i class="form-item">{{promo.dateDebut}}</i></li>
             <li class="list-group-item">Date de fin: <i class="form-item">{{promo.dateFin}}</i></li>

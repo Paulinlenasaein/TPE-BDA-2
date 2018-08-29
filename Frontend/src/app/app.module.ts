@@ -33,13 +33,15 @@ import { UserService } from './services/user.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ShareComponent } from './share/share.component';
+import { BuyComponent } from './buy/buy.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ShareComponent
+    ShareComponent,
+    BuyComponent
   ],
   imports: [
     BrowserModule,

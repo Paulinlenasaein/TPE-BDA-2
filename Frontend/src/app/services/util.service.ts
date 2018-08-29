@@ -2,24 +2,35 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { PanProd } from '../models/pan-prod';
+import { Cart } from '../models/cart';
 
 @Injectable()
 export class UtilService {
 
   static prodId: number[] = [];
   static nberProd: number[] = [];
-  static lastIndex: number;
+  static lastIndex: number = 0;
   static subTotal: number = 0;
-  static panprods: PanProd[] = [];
+  static pps: PanProd[] = [];
+  static cart = new Cart('', 0, null, null, 0);
+  static prixTotal: number;
 
   constructor() { }
 
   addProd(id: number, nber: number){
-    UtilService.prodId.push(id);
-    UtilService.nberProd.push(nber);
-    if(UtilService.prodId.length > 0){
-      UtilService.lastIndex = this.count() - 1;
-    }
+      UtilService.prodId.push(id);
+      UtilService.nberProd.push(nber);
+      if(UtilService.prodId.length > 0){
+        UtilService.lastIndex = this.count() - 1;
+      }
+  }
+
+  alreadyAdd(index: number, nberProd: number){
+    UtilService.nberProd[index] += nberProd;
+  }
+
+  isExist(id: number){
+    return UtilService.prodId.indexOf(id);
   }
 
   rmvProd(index: number){
@@ -44,7 +55,26 @@ export class UtilService {
   }
 
   setSubTotal(total: number){
+    if(UtilService.prodId.length == 0){
+      UtilService.subTotal = 0;
+    }
     UtilService.subTotal += total;
+  }
+
+  setCart(cart: Cart){
+    UtilService.cart = cart;
+  }
+
+  getCart(){
+    return UtilService.cart;
+  }
+
+  setPrixTotal(total: number){
+    UtilService.prixTotal = total;
+  }
+
+  getPrixTotal(){
+    return UtilService.prixTotal;
   }
 
   count(){
@@ -52,15 +82,19 @@ export class UtilService {
   }
 
   addPanProd(pp: PanProd){
-    UtilService.panprods.push(pp);
+    UtilService.pps.push(pp);
+  }
+
+  updatePanProd(index: number, pp: PanProd){
+    UtilService.pps[index] = pp;
   }
 
   rmvPanProd(index: number){
-    UtilService.panprods.splice(index, 1);
+    UtilService.pps.splice(index, 1);
   }
 
   getPanProd(){
-    return UtilService.panprods;
+    return UtilService.pps;
   }
 
 }
