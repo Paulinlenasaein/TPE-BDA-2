@@ -29,7 +29,7 @@ public class SendEmailService {
         return pass;
     }
 
-    public static String generateAndSendEmail(String lastname) throws AddressException, MessagingException {
+    public static String generateAndSendEmail(String toEmail, String lastname) throws AddressException, MessagingException {
 
         // Step1
         System.out.println("\n 1st ===> setup Mail Server Properties..");
@@ -43,11 +43,11 @@ public class SendEmailService {
         System.out.println("\n\n 2nd ===> get Mail Session..");
         getMailSession = Session.getDefaultInstance(mailServerProperties, null);
         generateMailMessage = new MimeMessage(getMailSession);
-        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress("paulinlenasaein@gmail.com"));
-        generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress("paulinlenasaein@gmail.com"));
+        generateMailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(toEmail));
+        generateMailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(toEmail));
         String code = generateCode(13);
         generateMailMessage.setSubject("Email Authentification");
-        String emailBody = "Hello " + lastname + ", here is the link that was asked of you: <b>" + code + "</b><br>Copy it and paste in this field." + "<br><br><b> Email Service Authentification. </b><br><b><i>TW Micronics</i></b>";
+        String emailBody = "Hello " + lastname + ", here is the code that was asked of you: <b>" + code + "</b><br>Copy it and paste in this field." + "<br><br><b> Email Service Authentification. </b><br><b><i>TW Micronics</i></b>";
         generateMailMessage.setContent(emailBody, "text/html");
         System.out.println("Mail Session has been created successfully..");
 
@@ -61,6 +61,6 @@ public class SendEmailService {
         transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
         transport.close();
         
-        return code;
+        return "{\"code\":\""+code+"\"}";
     }
 }

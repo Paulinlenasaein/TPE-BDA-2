@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 
+import { User } from '../models/user';
+
 @Injectable()
 export class UserService {
 
@@ -19,8 +21,12 @@ export class UserService {
     return this.http.get<any>('http://localhost:8080/twmsos-api/users/'+email, { observe: 'response' });
   }
 
-  sendEmail(email: string): Observable<HttpResponse<any>> {
-    return this.http.get<any>('http://localhost:8080/twmsos-api/users/sendmail/'+email, { observe: 'response' });
+  sendEmail(email: string, lastname: string): Observable<HttpResponse<any>> {
+    return this.http.get<any>('http://localhost:8080/twmsos-api/users/sendmail/'+email+'/'+lastname, { observe: 'response' });
   }
+
+  addClient(client: User): Observable<User> {
+   return this.http.post<User>('http://localhost:8080/twmsos-api/users', client);
+ }
 
 }

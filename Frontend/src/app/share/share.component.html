@@ -311,7 +311,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
       <div class="ui-dialog-content">
 					<span class="ui-float-label">
-							<input id="float-input" type="text" size="13" pInputText [(ngModel)]="authCode" class="form-control" placeholder="Enter code"/>
+							<input id="float-input" type="text" size="13" pInputText [(ngModel)]="authCode" class="form-control"/>
 					    <label for="float-input" class="floatlabel">Authentification code</label>
 					</span>
       </div>
@@ -320,5 +320,19 @@
   <p-footer class="ui-dialog-footer">
       <button type="button" pButton icon="fa fa-check" (click)="auth()" label="Soumettre"></button>
       <button type="button" icon="fa fa-close" pButton  (click)="display5=false" label="Annuler"></button>
+  </p-footer>
+</p-dialog>
+
+<p-dialog header="Error on authentification code" [(visible)]="display6" [modal]="true" [responsive]="true" [width]="300" [minWidth]="200" [minY]="70"
+      [maximizable]="false" [baseZIndex]="10000" [closable]="false" class="ui-dialog-titlebar" (onHide)="onConfirm()">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-11">
+      <div class="ui-dialog-content messageState" style="color: green">
+					{{message}}
+      </div>
+    </div>
+  </div>
+  <p-footer class="ui-dialog-footer">
+      <button type="button" icon="fa fa-check" pButton  (click)="onConfirm()" label="Ok"></button>
   </p-footer>
 </p-dialog>

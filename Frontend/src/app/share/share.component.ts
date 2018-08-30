@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { KeyFilterModule } from 'primeng/keyfilter';
+
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { PasswordValidator } from '../validators/password.validator';
 
@@ -27,21 +28,24 @@ export class ShareComponent implements OnInit {
 
   display4 : boolean = false;
   display5 : boolean = false;
+  display6 : boolean = false;
   blockSpecial: RegExp = /^[^<>*!]+$/;
   phoneNumber: RegExp = /^[0-9]+$/;
   myPanprods: PanProd[]=[];
   myCart = new Cart('', 0, null, null, 0);
   solde: number = 0;
   authCode: string = "";
-  goodCode: string = "";
+  goodCode: any;
   type: string;
+  client = new User('', '', '', '', '', '');
+  message: string = "";
   //email: RegExp = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   // /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
   constructor(
     private utilService: UtilService,
     private userService: UserService,
-    private router : Router,){
+    private router : Router){
       this.myPanprods = utilService.getPanProd();
       this.myCart = utilService.getCart();
       this.solde = utilService.getPrixTotal();
@@ -82,39 +86,63 @@ export class ShareComponent implements OnInit {
   }
 
   auth(){
-    if(this.authCode == this.goodCode){
-          this.router.navigateByUrl('/buy');
+    if(this.authCode == this.goodCode.code){
+      console.log(this.client.password);
+      this.userService.addClient(this.client)
+      .subscribe(data => {this.message = "Succesfully Added account TW Micronics"; this.showState()},Error => {this.message = "failed while adding your account"; this.showState()});
+      this.router.navigateByUrl('/buy');
+    }
+    else{
+      this.showState();
     }
   }
 
   saveInform(){
     //Building informations
+    this.display4 = false;
+
     if(this.type==='reg'){
-      let client = new User(this.formreg.get('firstname').value,
-                            this.formreg.get('lastname').value,
-                          this.formreg.get('email').value,
-                        this.formreg.get('number').value,
-                      this.formreg.get('username').value,
-                    this.formreg.get('password').value);
-      this.myCart.client = client;
+      this.client.firstname = this.formreg.get('firstname').value,
+      this.client.lastname = this.formreg.get('lastname').value,
+      this.client.email = this.formreg.get('email').value,
+      this.client.number = this.formreg.get('number').value,
+      this.client.username = this.formreg.get('username').value,
+      this.client.password = this.utilService.crypt(this.formreg.get('password').value);
+      this.myCart.client = this.client;
       this.utilService.setCart(this.myCart);
-      this.userService.sendEmail(this.formreg.get('lastname').value).subscribe(data => this.goodCode = data.body);
-      alert(this.goodCode);
+      this.userService.sendEmail(this.formreg.get('email').value, this.formreg.get('lastname').value).subscribe(data => this.goodCode = data.body);
+      this.message = "Code d'authentification incorrecte, veuillez vérifier votre boîte mail...";
+      this.showDialogCode();
+      console.log(this.goodCode.code);
     }
     else if(this.type==='log'){
-      let client = new User('', '', '', '', '', '');
-      this.userService.auth2(this.formreg.get('email').value).subscribe(data => client = data.body);
-      this.myCart.client = client;
+      this.userService.auth2(this.formreg.get('email').value).subscribe(data => this.client = data.body);
+      this.myCart.client = this.client;
       this.utilService.setCart(this.myCart);
       this.router.navigateByUrl('/buy');
     }
-
-    this.showDialogCode();
   }
 
   passwordMatchValidator(g: FormGroup) {
    return g.get('password').value === g.get('confirm').value
       ? null : {'validPassword': true};
+  }
+
+  showState() {
+    this.display6 = true;
+  }
+
+  onConfirm() {
+    this.message = "";
+    this.display6 = false;
+  }
+
+  maskPassword(password: string){
+    let maskPass = '';
+    for(let i = 0; i < password.length; i++){
+      maskPass += '*';
+    }
+    return maskPass;
   }
 
 }

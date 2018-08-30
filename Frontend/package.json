@@ -22,7 +22,6 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "@ng-bootstrap/ng-bootstrap": "^2.1.1",
-    "bcrypt": "^3.0.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
@@ -30,6 +29,7 @@
     "primeng": "^6.0.1",
     "rxjs": "^5.5.6",
     "save": "^2.3.2",
+    "ts-md5": "^1.2.4",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

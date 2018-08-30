@@ -37,10 +37,10 @@ public class twmUserResource {
     }
     
     @GET
-    @Path("/sendmail/{lastname}")
+    @Path("/sendmail/{email}/{lastname}")
     @Produces(value = MediaType.APPLICATION_JSON)
-    public String sendAuthMailToUser(@PathParam("lastname") String lastname) throws DataAccessException {
-        return userService.sendEmail(lastname);
+    public String sendAuthMailToUser(@PathParam("email") String email, @PathParam("lastname") String lastname) throws DataAccessException {
+        return userService.sendEmail(email, lastname);
     }
     
     @GET

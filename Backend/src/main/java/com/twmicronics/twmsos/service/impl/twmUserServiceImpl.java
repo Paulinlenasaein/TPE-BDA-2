@@ -93,9 +93,9 @@ public class twmUserServiceImpl implements ItwmUserService {
     }  
 
     @Override
-    public String sendEmail(String lastname) throws DataAccessException {
+    public String sendEmail(String toEmail, String lastname) throws DataAccessException {
         try {
-            return SendEmailService.generateAndSendEmail(lastname);
+            return SendEmailService.generateAndSendEmail(toEmail, lastname);
         } catch (MessagingException ex) {
             Logger.getLogger(twmUserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -121,10 +121,11 @@ public interface ItwmUserService {
     /**
      * Envoi un mail d'authentification à un utilisateur
      *
+     * @param toEmail adresse mail du client
      * @param lastname lastname du futur utilisateur
      * @return les utilisateurs corresponsants
      * @throws DataAccessException si un événement non prévu survient
      */
-    public String sendEmail(String lastname) throws DataAccessException;
+    public String sendEmail(String toEmail, String lastname) throws DataAccessException;
 
 }

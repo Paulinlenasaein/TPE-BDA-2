@@ -4,6 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { PanProd } from '../models/pan-prod';
 import { Cart } from '../models/cart';
 
+import { Md5 } from 'ts-md5/dist/md5';
+
 @Injectable()
 export class UtilService {
 
@@ -14,6 +16,7 @@ export class UtilService {
   static pps: PanProd[] = [];
   static cart = new Cart('', 0, null, null, 0);
   static prixTotal: number;
+  saltRounds = 10;
 
   constructor() { }
 
@@ -97,4 +100,16 @@ export class UtilService {
     return UtilService.pps;
   }
 
+  crypt(passwordPlain: string){
+    return Md5.hashStr(passwordPlain).toString();
+  }
+
+  compareHash(bdhash: string, passwordPlain){
+    if(bdhash == this.crypt(passwordPlain)){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }
