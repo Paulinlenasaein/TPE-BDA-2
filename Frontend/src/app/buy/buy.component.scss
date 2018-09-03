@@ -1,0 +1,60 @@
+.paylist{
+  padding: 20px 20px 20px 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+li:hover {
+  background-color: #F0F8FF;
+}
+
+.pp{
+  color: #1E90FF;
+}
+.om{
+  color: orange;
+}
+.momo{
+  color: #FFD700;
+}
+
+.title{
+  font-weight: bold;
+  text-align: center;
+  color: #1E90FF;
+}
+
+.btn-pos{
+  padding-top: 30px;
+}
+
+.btn-color-om{
+  background-color: orange;
+}
+.btn-color-momo{
+  background-color: #FFD700;
+}
+
+.payments-anim{
+  -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 0.5s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 0.5s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 0.5s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 0.5s;
+    -ms-transform-style: preserve-3d;
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.payments-anim:hover {
+  -webkit-transform: rotateY(15deg);
+  -moz-transform: rotateY(15deg);
+  -o-transform: rotateY(15deg);
+  transform: scale(1.03);
+}

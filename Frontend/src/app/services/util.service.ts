@@ -16,6 +16,7 @@ export class UtilService {
   static pps: PanProd[] = [];
   static cart = new Cart('', 0, null, null, 0);
   static prixTotal: number;
+  static component: string;
   saltRounds = 10;
 
   constructor() { }
@@ -112,4 +113,18 @@ export class UtilService {
       return false;
     }
   }
+
+  getComponent(){
+    return UtilService.component;
+  }
+
+  setComponent(component: string){
+    UtilService.component = component;
+  }
+
+  roundDecimal(nombre, precision){
+    let tmp = Math.pow(10, precision);
+    return Math.round( nombre*tmp )/tmp;
+  }
+
 }

@@ -237,7 +237,7 @@ module.exports = "@charset \"UTF-8\";\n.ui-widget {\n  font-family: \"Roboto\", 
 /***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/sass-loader/lib/loader.js??ref--8-3!./src/styles.scss":
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\nbody {\n  padding-top: 100px; }\n.btn-lg-style {\n  width: 50px;\n  height: 50px;\n  border-radius: 25px; }\n.form-item {\n  font-weight: bold;\n  font-family: Arial, Helvetica, sans-serif;\n  padding-left: 10px; }\n.form-item-1 {\n  font-weight: bold;\n  font-family: Arial, Helvetica, sans-serif; }\n.code-head {\n  font-size: 12px;\n  font-weight: bold;\n  font-style: italic;\n  padding-top: 20px; }\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\nbody {\n  padding-top: 100px; }\n.btn-lg-style {\n  width: 50px;\n  height: 50px;\n  border-radius: 25px; }\n.form-item {\n  font-weight: bold;\n  font-family: Arial, Helvetica, sans-serif;\n  padding-left: 10px; }\n.form-item-1 {\n  font-weight: bold;\n  font-family: Arial, Helvetica, sans-serif; }\n.code-head {\n  font-size: 12px;\n  font-weight: bold;\n  font-style: italic;\n  padding-top: 20px; }\n.main-login, .main-pan {\n  background-color: #fff;\n  /* shadows and rounded borders */\n  border-radius: 10px;\n  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);\n  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); }\n.main-center {\n  margin-top: 30px;\n  margin: 0 auto;\n  padding: 20px 20px; }\n"
 
 /***/ }),
 

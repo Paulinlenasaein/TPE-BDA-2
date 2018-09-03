@@ -18,6 +18,7 @@ export class AppComponent {
   items1: MenuItem[];
   items2: MenuItem[];
   display: boolean = false;
+  comp: string;
 
   constructor(private utilService: UtilService) {
     this.items1 = [];
@@ -25,8 +26,9 @@ export class AppComponent {
    }
 
   ngOnInit() {
+    this.comp = this.utilService.getComponent();
     this.items1 = [
-        {label: 'Englais', icon: 'fa fa-flag', command: () => {
+        {label: 'Anglais', icon: 'fa fa-flag', command: () => {
             this.english();
         }},
         {label: 'Français', icon: 'fa fa-flag-checkered', command: () => {

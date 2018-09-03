@@ -23,6 +23,9 @@ import {KeyFilterModule} from 'primeng/keyfilter';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {TableModule} from 'primeng/table';
+import {InputMaskModule} from 'primeng/inputmask';
+import {RadioButtonModule} from 'primeng/radiobutton';
+import {DropdownModule} from 'primeng/dropdown';
 
 import { UtilService } from './services/util.service';
 import { ProductService } from './services/product.service';
@@ -65,7 +68,10 @@ import { BuyComponent } from './buy/buy.component';
     KeyFilterModule,
     MessagesModule,
     MessageModule,
-    TableModule
+    TableModule,
+    InputMaskModule,
+    RadioButtonModule,
+    DropdownModule
   ],
   providers: [
     ProductService,

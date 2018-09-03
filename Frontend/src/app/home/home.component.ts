@@ -85,6 +85,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.utilService.setComponent("home");
 
     this.type = this.route.snapshot.params['type'];
     this.sort = this.route.snapshot.params['sort'];

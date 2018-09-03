@@ -52,6 +52,8 @@ export class ShareComponent implements OnInit {
     }
 
   ngOnInit() {
+    this.utilService.setComponent("share");
+
     this.formreg = new FormGroup({
       firstname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(30)]),
       lastname: new FormControl('', [Validators.minLength(0), Validators.maxLength(30)]),
@@ -87,7 +89,6 @@ export class ShareComponent implements OnInit {
 
   auth(){
     if(this.authCode == this.goodCode.code){
-      console.log(this.client.password);
       this.userService.addClient(this.client)
       .subscribe(data => {this.message = "Succesfully Added account TW Micronics"; this.showState()},Error => {this.message = "failed while adding your account"; this.showState()});
       this.router.navigateByUrl('/buy');
@@ -102,8 +103,9 @@ export class ShareComponent implements OnInit {
     this.display4 = false;
 
     if(this.type==='reg'){
-      this.client.firstname = this.formreg.get('firstname').value,
-      this.client.lastname = this.formreg.get('lastname').value,
+      this.client.firstName = this.formreg.value.firstname,
+      console.log(this.client.firstName);
+      this.client.lastName = this.formreg.get('lastname').value,
       this.client.email = this.formreg.get('email').value,
       this.client.number = this.formreg.get('number').value,
       this.client.username = this.formreg.get('username').value,
@@ -113,7 +115,6 @@ export class ShareComponent implements OnInit {
       this.userService.sendEmail(this.formreg.get('email').value, this.formreg.get('lastname').value).subscribe(data => this.goodCode = data.body);
       this.message = "Code d'authentification incorrecte, veuillez vérifier votre boîte mail...";
       this.showDialogCode();
-      console.log(this.goodCode.code);
     }
     else if(this.type==='log'){
       this.userService.auth2(this.formreg.get('email').value).subscribe(data => this.client = data.body);
