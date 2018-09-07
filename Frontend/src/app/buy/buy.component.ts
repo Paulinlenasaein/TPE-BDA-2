@@ -7,13 +7,17 @@ import {DropdownModule} from 'primeng/dropdown';
 import {RadioButtonModule} from 'primeng/radiobutton';
 
 import { UtilService } from '../services/util.service';
+import { PaypalService } from '../services/paypal.service';
+import { OmService } from '../services/om.service';
+import { MomoService} from '../services/momo.service';
 
 import { Cart } from '../models/cart';
+import { PanProd } from '../models/pan-prod';
 
 @Component({
   selector: 'app-buy',
   templateUrl: './buy.component.html',
-    providers: [UtilService],
+    providers: [UtilService, PaypalService, OmService, MomoService],
   styleUrls: ['./buy.component.scss']
 })
 export class BuyComponent implements OnInit {
@@ -25,8 +29,16 @@ export class BuyComponent implements OnInit {
   totalsume: number = 0;
   countries: any = [];
   formpaypal: FormGroup;
+  message: string = "";
+  state: number;
+  panprods: PanProd[] = [];
 
-  constructor(private utilService: UtilService) { }
+  constructor(private utilService: UtilService,
+    private paypalService: PaypalService,
+    private omService: OmService,
+    private momoService: MomoService) {
+      this.panprods = utilService.getPanProd();
+    }
 
   ngOnInit() {
     this.utilService.setComponent("buy");
@@ -112,4 +124,14 @@ export class BuyComponent implements OnInit {
     this.paymode = "Mobile Money";
   }
 
+  pay(){
+    this.state = this.paypalService.transaction(this.cart.client, this.totalsum);
+    if(this.state == 1){
+      this.message = "Transaction éffectuée avec succès, un mail vous a été envoyé contenant la référence!"
+    }
+    else{
+      this.message = "Echec de la transaction, le solde de votre carte est insuffisant!"
+    }
+    this.paymode = "payment";
+  }
 }

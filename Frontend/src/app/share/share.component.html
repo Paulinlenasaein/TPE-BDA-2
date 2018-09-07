@@ -330,6 +330,9 @@
       <div class="ui-dialog-content messageState" style="color: green">
 					{{message}}
       </div>
+			<div class="ui-dialog-content messageState" style="color: red" *ngIf="error===true">
+					{{message}}
+      </div>
     </div>
   </div>
   <p-footer class="ui-dialog-footer">

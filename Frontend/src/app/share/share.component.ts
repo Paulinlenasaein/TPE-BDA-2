@@ -39,6 +39,7 @@ export class ShareComponent implements OnInit {
   type: string;
   client = new User('', '', '', '', '', '');
   message: string = "";
+  error: boolean = false;
   //email: RegExp = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   // /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -91,9 +92,12 @@ export class ShareComponent implements OnInit {
     if(this.authCode == this.goodCode.code){
       this.userService.addClient(this.client)
       .subscribe(data => {this.message = "Succesfully Added account TW Micronics"; this.showState()},Error => {this.message = "failed while adding your account"; this.showState()});
+      this.showState();
       this.router.navigateByUrl('/buy');
     }
     else{
+      this.message = "Code d'authentification incorrecte, veuillez vérifier votre boîte mail...";
+      this.error = true;
       this.showState();
     }
   }
@@ -104,16 +108,14 @@ export class ShareComponent implements OnInit {
 
     if(this.type==='reg'){
       this.client.firstName = this.formreg.value.firstname,
-      console.log(this.client.firstName);
       this.client.lastName = this.formreg.get('lastname').value,
       this.client.email = this.formreg.get('email').value,
-      this.client.number = this.formreg.get('number').value,
+      this.client.telephone = this.formreg.get('number').value,
       this.client.username = this.formreg.get('username').value,
       this.client.password = this.utilService.crypt(this.formreg.get('password').value);
       this.myCart.client = this.client;
       this.utilService.setCart(this.myCart);
       this.userService.sendEmail(this.formreg.get('email').value, this.formreg.get('lastname').value).subscribe(data => this.goodCode = data.body);
-      this.message = "Code d'authentification incorrecte, veuillez vérifier votre boîte mail...";
       this.showDialogCode();
     }
     else if(this.type==='log'){

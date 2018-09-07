@@ -26,12 +26,16 @@ import {TableModule} from 'primeng/table';
 import {InputMaskModule} from 'primeng/inputmask';
 import {RadioButtonModule} from 'primeng/radiobutton';
 import {DropdownModule} from 'primeng/dropdown';
+import {ProgressSpinnerModule} from 'primeng/progressspinner'
 
 import { UtilService } from './services/util.service';
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
 import { PromotionService } from './services/promotion.service';
 import { UserService } from './services/user.service';
+import { PaypalService } from './services/paypal.service';
+import { OmService } from './services/om.service';
+import { MomoService} from './services/momo.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -71,14 +75,18 @@ import { BuyComponent } from './buy/buy.component';
     TableModule,
     InputMaskModule,
     RadioButtonModule,
-    DropdownModule
+    DropdownModule,
+    ProgressSpinnerModule
   ],
   providers: [
     ProductService,
     CartService,
     UtilService,
     PromotionService,
-    UserService
+    UserService,
+    PaypalService,
+    OmService,
+    MomoService
   ],
   bootstrap: [AppComponent]
 })

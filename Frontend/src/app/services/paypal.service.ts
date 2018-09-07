@@ -2,22 +2,24 @@ import { Injectable } from '@angular/core';
 
 import { UserService } from '../services/user.service';
 
+import { User } from '../models/user';
+
 @Injectable()
 export class PaypalService {
 
   static cardAmount = 1000000;
-  message: string;
+  state: number;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
-  transaction(infos: any){
-    if(infos.amount < PaypalService.cardAmount){
-      this.setCardAmount(infos.amount * -1);
-      //this.userService.sendEmailTransaction(infos.email).subscribe(data => this.message = data.body);
-      return this.message;
+  transaction(client: User, amount: number){
+    if(amount < PaypalService.cardAmount){
+      this.setCardAmount(amount * -1);
+      this.userService.sendEmailTransaction(client.email, client.firstName, client.lastName).subscribe(data => this.state = data.body);
+      return this.state;
     }
     else{
-      return "Echec de la transaction, le solde de votre carte est insuffisant!"
+      return
     }
   }
 
