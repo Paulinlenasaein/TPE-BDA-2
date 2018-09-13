@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 import {InputMaskModule} from 'primeng/inputmask';
 import {DropdownModule} from 'primeng/dropdown';
@@ -30,14 +31,21 @@ export class BuyComponent implements OnInit {
   countries: any = [];
   formpaypal: FormGroup;
   message: string = "";
-  state: number;
+  state: number = 1;
+  refTransaction: string = "";
   panprods: PanProd[] = [];
+  urls: SafeUrl[] = [];
 
   constructor(private utilService: UtilService,
     private paypalService: PaypalService,
     private omService: OmService,
-    private momoService: MomoService) {
+    private momoService: MomoService,
+    private sanitizer: DomSanitizer) {
       this.panprods = utilService.getPanProd();
+
+      for(let pp of this.panprods){
+        this.urls.push(this.trustyUrl("localhost:8080/src/assets/products/"+pp.produit.nomProd+".zip"));
+      }
     }
 
   ngOnInit() {
@@ -125,13 +133,19 @@ export class BuyComponent implements OnInit {
   }
 
   pay(){
-    this.state = this.paypalService.transaction(this.cart.client, this.totalsum);
-    if(this.state == 1){
-      this.message = "Transaction éffectuée avec succès, un mail vous a été envoyé contenant la référence!"
+    this.refTransaction = this.paypalService.transaction(this.cart.client, this.totalsum, this.paymode);
+    if(this.refTransaction !== "false"){
+      this.message = "Transaction éffectuée avec succès, un mail vous a été envoyé. Réderence de la transaction: "+this.refTransaction;
+      this.state = 1;
     }
     else{
-      this.message = "Echec de la transaction, le solde de votre carte est insuffisant!"
+      this.message = "Echec de la transaction, le solde de votre carte est insuffisant!";
+      this.state = -1;
     }
     this.paymode = "payment";
+  }
+
+  trustyUrl(url: string){
+    return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 }

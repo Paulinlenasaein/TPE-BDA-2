@@ -99,7 +99,17 @@ public class twmUserServiceImpl implements ItwmUserService {
         } catch (MessagingException ex) {
             Logger.getLogger(twmUserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return "Echec de l'énvoi de l'email, veuillez vérifier que votre adresse email est correcte...";
+        return "Echec de l'énvoi de l'email, veuillez vérifier que votre adresse email est correcte ou que vous êtes bien connecté...";
+    }
+
+    @Override
+    public String sendEmailTransaction(String toEmail, String firstName, String lastName, Double amount, String paymode) throws DataAccessException {
+        try {
+            return SendEmailService.SendEmailTransaction(toEmail, firstName, lastName, amount, paymode);
+        } catch (MessagingException ex) {
+            Logger.getLogger(twmUserServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return "Echec de l'énvoi de l'email, veuillez vérifier que votre adresse email est correcte, que vous êtes bien connecté...";
     }
 
 }

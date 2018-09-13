@@ -123,9 +123,22 @@ public interface ItwmUserService {
      *
      * @param toEmail adresse mail du client
      * @param lastname lastname du futur utilisateur
-     * @return les utilisateurs corresponsants
+     * @return le code d'authentification généré
      * @throws DataAccessException si un événement non prévu survient
      */
     public String sendEmail(String toEmail, String lastname) throws DataAccessException;
+    
+    /**
+     * Envoi un mail d'authentification à un utilisateur
+     *
+     * @param toEmail email of user
+     * @param firstName firstName of user
+     * @param lastName lastName of user
+     * @param amount amount of transaction
+     * @param paymode payment mode used
+     * @return la référence de la transaction
+     * @throws DataAccessException si un événement non prévu survient
+     */
+    public String sendEmailTransaction(String toEmail, String firstName, String lastName, Double amount, String paymode) throws DataAccessException;
 
 }

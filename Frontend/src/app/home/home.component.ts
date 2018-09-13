@@ -172,7 +172,7 @@ export class HomeComponent implements OnInit {
 
   showSuccess() {
     this.msgs = [];
-    this.msgs.push({severity:'success', summary:'Success Message', detail:'product successfully added to card'});
+    this.msgs.push({severity:'success', summary:'Success Message', detail:'product successfully added to cart'});
   }
 
   AddToCard(id: number){

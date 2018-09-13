@@ -25,8 +25,8 @@ export class UserService {
     return this.http.get<any>('http://localhost:8080/twmsos-api/users/sendmail/'+email+'/'+lastname, { observe: 'response' });
   }
 
-  sendEmailTransaction(email: string, firstname:string, lastname: string): Observable<HttpResponse<any>> {
-    return this.http.get<any>('http://localhost:8080/twmsos-api/users/sendmail/'+email+'/'+firstname+'/'+lastname, { observe: 'response' });
+  sendEmailTransaction(email: string, firstname:string, lastname: string, amount: number, paymode: string): Observable<HttpResponse<any>> {
+    return this.http.get<any>('http://localhost:8080/twmsos-api/users/sendmailtransaction/'+email+'/'+firstname+'/'+lastname+'/'+amount+'/'+paymode, { observe: 'response' });
   }
 
   addClient(client: User): Observable<User> {

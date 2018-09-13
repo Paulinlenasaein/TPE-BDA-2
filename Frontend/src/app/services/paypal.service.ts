@@ -7,19 +7,19 @@ import { User } from '../models/user';
 @Injectable()
 export class PaypalService {
 
-  static cardAmount = 1000000;
-  state: number;
+  static cardAmount = 500000000;
+  ref: any;
 
   constructor(private userService: UserService) { }
 
-  transaction(client: User, amount: number){
+  transaction(client: User, amount: number, paymode: string){
     if(amount < PaypalService.cardAmount){
       this.setCardAmount(amount * -1);
-      this.userService.sendEmailTransaction(client.email, client.firstName, client.lastName).subscribe(data => this.state = data.body);
-      return this.state;
+      this.userService.sendEmailTransaction(client.email, client.firstName, client.lastName, amount, paymode).subscribe(data => this.ref = data.body);
+      return this.ref.code;
     }
     else{
-      return
+      return "false";
     }
   }
 

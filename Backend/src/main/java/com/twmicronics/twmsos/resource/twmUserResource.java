@@ -44,6 +44,13 @@ public class twmUserResource {
     }
     
     @GET
+    @Path("/sendmailtransaction/{email}/{firstName}/{lastName}/{amount}/{paymode}")
+    @Produces(value = MediaType.APPLICATION_JSON)
+    public String sendMailTransaction(@PathParam("email") String email, @PathParam("firstName") String firstName, @PathParam("lastName") String lastName, @PathParam("amount") Double amount, @PathParam("paymode") String paymode) throws DataAccessException {
+        return userService.sendEmailTransaction(email, firstName, lastName, amount, paymode);
+    }
+    
+    @GET
     @Produces(value = MediaType.APPLICATION_JSON)
     public Page<twmUser> returnAll(@DefaultValue("0") @QueryParam("from")int from, @DefaultValue("50") @QueryParam("to")int to) throws DataAccessException{
         return userService.findAll(from, to);
